@@ -12,19 +12,18 @@
 </template>
 
 <script lang="ts">
+import datamap from 'datamaps';
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import actors from '../utils/actors';
+
 
 @Component
 export default class ThreatActorMap extends Vue {
     private actors = actors.values;
     private selectedActor: number = 0;
     public mounted() {
-        // Preventing linting errors through requiring datamaps here.
-        const datamap = require('datamaps');
-
         // Using datamaps this way crashed. Don't know why.
-        const map = datamap({
+        const map = new datamap({
              element: document.getElementById('actor-map'),
              fills: {
                 'defaultFill': '#ccc',
