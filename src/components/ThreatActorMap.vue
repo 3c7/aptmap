@@ -58,7 +58,7 @@
 </template>
 
 <script lang="ts">
-import 'datamaps';
+import * as DataMap from 'datamaps';
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import { Actor } from '../models/actor';
 import actors from '../utils/actors';
