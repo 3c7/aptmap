@@ -1,13 +1,12 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <ThreatActorMap message="TLP:WHITE Threat Actor Map"></ThreatActorMap>
+    <ThreatActorMap></ThreatActorMap>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
 import ThreatActorMap from './components/ThreatActorMap.vue';
 
 @Component({
