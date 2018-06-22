@@ -21,7 +21,15 @@
                         <dt>Synonyms: </dt>
                         <dd>{{actorSynonyms || 'None'}}</dd>
                         <dt>Description: </dt>
-                        <dd>{{actorDescription}}</dd> 
+                        <dd>{{actorDescription}}</dd>
+                        <dt>References: </dt>
+                        <dd>
+                            <ul>
+                                <li v-for="(ref, index) in actorRefs" :key="index">
+                                    <a :href="ref">{{ref}}</a>
+                                </li>
+                            </ul>
+                        </dd>
                     </dl>
                 </div>
             </div>
