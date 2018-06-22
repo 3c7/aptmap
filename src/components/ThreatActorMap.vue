@@ -58,7 +58,7 @@
 </template>
 
 <script lang="ts">
-import Datamap from 'datamaps';
+import 'datamaps';
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import { Actor } from '../models/actor';
 import actors from '../utils/actors';
@@ -81,8 +81,8 @@ export default class ThreatActorMap extends Vue {
     }
 
     public mounted() {
-        this.threatActorMap = new Datamap({
-             element: document.getElementById('actor-map'),
+        this.threatActorMap = new DataMap({
+             element: document.getElementById('actor-map') || new HTMLElement(),
              fills: {
                 'defaultFill': '#ccc',
                 'Threat Actor': '#c00',
