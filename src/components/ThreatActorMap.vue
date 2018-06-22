@@ -1,6 +1,6 @@
 <template>
-    <div class="container">
-        <div class="row" @keydown="shortcut">
+    <div class="container" v-on:keydown="shortcut">
+        <div class="row">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <a class="navbar-brand" href="#">Threat Actor Map</a>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -15,7 +15,7 @@
                 </div>
             </nav>
         </div>
-        <div class="row" @keydown="shortcut">
+        <div class="row">
             <div id="actor-list" class="col-xl-3 scroll">
                 <div class="list-group list-group-flush">
                     <a class="list-group-item" v-bind:class="{active: index === selectedActor}" v-for="(actor, index) in actors" :key="index" :href="'#' + actor.name" v-on:click="selectActor(index)">
@@ -23,7 +23,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-xl-8" @keydown="shortcut">
+            <div class="col-xl-8">
                 <div class="row">
                     <div id="actor-map">
                     </div>
