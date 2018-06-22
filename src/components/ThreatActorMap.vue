@@ -9,9 +9,9 @@
                             <a class="nav-link disabled" href="#">Disabled item as reminder</a>
                         </li>
                     </ul>
-                    <a class="btn btn-danger" href="#">Sources</a>&nbsp;
+                    <button class="btn btn-danger" data-toggle="modal" data-target="#modal-sources">Sources</button>&nbsp;
                     <!-- Here goes the keyboard shortcuts modal -->
-                    <a class="btn btn-warning" href="#">?</a>
+                    <button class="btn btn-warning" data-toggle="modal" data-target="#modal-help">?</button>
                 </div>
             </nav>
         </div>
@@ -56,6 +56,65 @@
                 <p>Thanks to everyone that shares infosec related threat information | Information based on <a href="https://github.com/MISP/misp-galaxy/blob/master/clusters/threat-actor.json">MISP-Galaxy</a></p>
             </div>
         </footer>
+
+        <!-- Modals -->
+        <div class="modal fade" id="modal-help" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Help</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5>Shortcuts</h5>
+                    <dl>
+                        <dt>
+                            <span class="badge badge-secondary">j</span> or <span class="badge badge-secondary">&uarr;</span>
+                        </dt>
+                        <dd>
+                            Move up
+                        </dd>
+                        <dt>
+                            <span class="badge badge-secondary">k</span> or <span class="badge badge-secondary">&darr;</span>
+                        </dt>
+                        <dd>
+                            Move down
+                        </dd>
+                    </dl>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modal-sources" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabel">Sources</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>The data source for this map is the cluster 'Threat Actor' from the open source MISP Galaxy that can be found in the respective <a href="https://github.com/MISP/misp-galaxy/blob/master/clusters/threat-actor.json" target="_blank">Github</a> repository.<br />Thanks to </p>
+                    <ul>
+                        <li>Alexandre Dulaunoy</li>
+                        <li>Florian Roth</li>
+                        <li>Thomas Schreck</li>
+                        <li>Timo Steffens</li>
+                    </ul>
+                    <p>and the other various contributors for sharing their knowledge and researches.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+                </div>
+            </div>
+        </div>
     </div>    
 </template>
 
@@ -174,5 +233,4 @@ a.list-group-item {
 a.list-group-item.active {
     color: #fff;
 }
-
 </style>
