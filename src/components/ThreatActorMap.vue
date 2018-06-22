@@ -9,12 +9,12 @@
             <div class="row">
             <div id="actor-list" class="col-xl-3 scroll">
                 <div class="list-group list-group-flush">
-                    <a class="list-group-item" v-bind:class="{active: index === selectedActor}" v-for="(actor, index) in actors" :key="index" :href="'#' + actor.value" v-on:click="selectActor(index)">
-                        {{actor.value}}
+                    <a class="list-group-item" v-bind:class="{active: index === selectedActor}" v-for="(actor, index) in actors" :key="index" :href="'#' + actor.name" v-on:click="selectActor(index)">
+                        {{actor.name}}
                     </a>
                 </div>
             </div>
-            <div class="col-xl-9">
+            <div class="col-xl-8">
                 <div class="row">
                     <div id="actor-map">
                     </div>
@@ -22,15 +22,17 @@
                 <div class="row">
                     <dl class="dl-horizontal left">
                         <dt>Name:</dt>
-                        <dd>{{actorName}}</dd>
+                        <dd>{{actor.name}}</dd>
                         <dt>Synonyms: </dt>
-                        <dd>{{actorSynonyms || 'None'}}</dd>
+                        <dd>{{actor.synonymsString() || 'None'}}</dd>
+                        <dt>Operating from: </dt>
+                        <dd>{{actor.countryCode || 'Unknown'}}</dd>
                         <dt>Description: </dt>
-                        <dd>{{actorDescription || 'None'}}</dd>
+                        <dd>{{actor.description || 'None'}}</dd>
                         <dt>References: </dt>
                         <dd>
                             <ul>
-                                <li v-for="(ref, index) in actorRefs" :key="index">
+                                <li v-for="(ref, index) in actor.references" :key="index">
                                     <a :href="ref">{{ref}}</a>
                                 </li>
                             </ul>
@@ -51,20 +53,25 @@
 <script lang="ts">
 import Datamap from 'datamaps';
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Actor } from '../models/actor';
 import actors from '../utils/actors';
-
 
 @Component
 export default class ThreatActorMap extends Vue {
-    private actors: any[] = actors.values;
+    private actors: Actor[];
+    private actor: Actor;
     private selectedActor: number = 0;
-    private actorName: string = this.actors[this.selectedActor].value;
-    private actorSynonyms: string = this.actors[this.selectedActor].meta.synonyms.join(', ');
-    private actorDescription: string = this.actors[this.selectedActor].description;
-    private actorRefs: string[] = this.actors[this.selectedActor].meta.refs;
-    private actorCountry: string = this.actors[this.selectedActor].meta.country;
     private previousCountry!: string;
     private threatActorMap!: any;
+
+    constructor() {
+        super();
+        this.actors = new Array();
+        for (const actor of actors.values) {
+            this.actors.push(new Actor(actor));
+        }
+        this.actor = this.actors[0];
+    }
 
     public mounted() {
         this.threatActorMap = new Datamap({
@@ -75,7 +82,7 @@ export default class ThreatActorMap extends Vue {
                 'Clean': '#ccc',
              },
              data: {
-                 [this.actors[this.selectedActor].meta.country || '']: {
+                 [this.actors[this.selectedActor].countryCode || '']: {
                      fillKey: 'Threat Actor',
                  },
              },
@@ -83,22 +90,16 @@ export default class ThreatActorMap extends Vue {
     }
 
     public selectActor(actorIndex: number) {
-        this.selectedActor = actorIndex;
-        this.actorName = this.actors[this.selectedActor].value;
-        this.actorSynonyms = (this.actors[this.selectedActor].meta.synonyms || []).join(', ') || '';
-        this.actorDescription = this.actors[this.selectedActor].description || '';
-        this.actorRefs = this.actors[this.selectedActor].meta.refs || [];
-
-        if (this.actorCountry !== this.actors[actorIndex].meta.country) {
-            this.previousCountry = this.actorCountry;
+        if (this.actor.countryCode !== this.actors[actorIndex].countryCode) {
+            this.previousCountry = this.actor.countryCode;
         } else {
             this.previousCountry = '';
         }
 
-        this.actorCountry = this.actors[actorIndex].meta.country;
-
+        this.selectedActor = actorIndex;
+        this.actor = this.actors[actorIndex];
         this.threatActorMap.updateChoropleth({
-            [this.actorCountry]: {
+            [this.actor.countryCode]: {
                 fillKey: 'Threat Actor',
             },
             [this.previousCountry]: {
@@ -116,8 +117,9 @@ export default class ThreatActorMap extends Vue {
 }
 #actor-list {
     text-align: left;
-    max-height: calc(100vh - 300px);
-    padding: 0px;
+    max-height: calc(100vh - 200px);
+    margin-right: 15px;
+    padding: 0;
 }
 .scroll {
     overflow-y: scroll;
@@ -128,6 +130,7 @@ export default class ThreatActorMap extends Vue {
 .jumbotron {
     width: 100%;
     padding: 2em 2em;
+    margin: 0;
 }
 footer {
     padding-top: 1.9rem;
