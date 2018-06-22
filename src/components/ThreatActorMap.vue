@@ -17,9 +17,9 @@
                     </div>
                 </div>
                 <div class="row">
-                    <dl>
+                    <dl class="dl-horizontal">
                         <dt>Synonyms: </dt>
-                        <dd></dd>
+                        <dd>{{actorSynonyms}}</dd>
                     </dl>
                 </div>
             </div>
@@ -41,14 +41,17 @@ export default class ThreatActorMap extends Vue {
     private actorSynonyms!: string;
     private actorDescription!: string;
     private actorRefs!: string[];
+    private actorCountry!: string;
+    private threatActorMap!: any;
 
     public mounted() {
         // Using datamaps this way crashed. Don't know why.
-        const map = new Datamap({
+        this.threatActorMap = new Datamap({
              element: document.getElementById('actor-map'),
              fills: {
                 'defaultFill': '#ccc',
                 'Threat Actor': '#c00',
+                'Clean': '#ccc',
              },
              data: {
                  [this.actors[this.selectedActor].meta.country || '']: {
@@ -61,9 +64,20 @@ export default class ThreatActorMap extends Vue {
     public selectActor(actorIndex: number) {
         this.selectedActor = actorIndex;
         this.actorName = this.actors[actorIndex].value;
-        this.actorSynonyms = this.actors[actorIndex].meta.synonyms.join(', ') || '';
+        this.actorSynonyms = (this.actors[actorIndex].meta.synonyms || []).join(', ') || '';
         this.actorDescription = this.actors[actorIndex].description || '';
         this.actorRefs = this.actors[actorIndex].meta.refs || [];
+        const previousCountry = this.actorCountry;
+        this.actorCountry = this.actors[actorIndex].meta.country;
+
+        this.threatActorMap.updateChoropleth({
+            [this.actorCountry]: {
+                fillKey: 'Threat Actor',
+            },
+            [previousCountry]: {
+                fillKey: 'Clean',
+            },
+        });
     }
 }
 </script>
