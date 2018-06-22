@@ -17,9 +17,11 @@
                     </div>
                 </div>
                 <div class="row">
-                    <dl class="dl-horizontal">
+                    <dl class="dl-horizontal left">
                         <dt>Synonyms: </dt>
-                        <dd>{{actorSynonyms}}</dd>
+                        <dd>{{actorSynonyms || 'None'}}</dd>
+                        <dt>Description: </dt>
+                        <dd>{{actorDescription}}</dd> 
                     </dl>
                 </div>
             </div>
@@ -42,6 +44,7 @@ export default class ThreatActorMap extends Vue {
     private actorDescription!: string;
     private actorRefs!: string[];
     private actorCountry!: string;
+    private previousCountry!: string;
     private threatActorMap!: any;
 
     public mounted() {
@@ -67,14 +70,20 @@ export default class ThreatActorMap extends Vue {
         this.actorSynonyms = (this.actors[actorIndex].meta.synonyms || []).join(', ') || '';
         this.actorDescription = this.actors[actorIndex].description || '';
         this.actorRefs = this.actors[actorIndex].meta.refs || [];
-        const previousCountry = this.actorCountry;
+
+        if (this.actorCountry !== this.actors[actorIndex].meta.country) {
+            this.previousCountry = this.actorCountry;
+        } else {
+            this.previousCountry = '';
+        }
+
         this.actorCountry = this.actors[actorIndex].meta.country;
 
         this.threatActorMap.updateChoropleth({
             [this.actorCountry]: {
                 fillKey: 'Threat Actor',
             },
-            [previousCountry]: {
+            [this.previousCountry]: {
                 fillKey: 'Clean',
             },
         });
@@ -85,7 +94,6 @@ export default class ThreatActorMap extends Vue {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #actor-map {
-    width: 1200px;
     height: 400px;
 }
 #actor-list {
@@ -94,5 +102,8 @@ export default class ThreatActorMap extends Vue {
 }
 .scroll {
     overflow-y: scroll;
+}
+.left {
+    text-align: left;
 }
 </style>
