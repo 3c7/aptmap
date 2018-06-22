@@ -1,10 +1,17 @@
 <template>
     <div class="container">
         <div class="row">
-            <div class="jumbotron">
-                <h1 class="display-4">Threat Actor Map</h1>
-                <p class="lead">This map aims to give an overview about threat actors. Information used is the MISP Threat Actor Galaxy.</p>
-            </div>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="#">Threat Actor Map</a>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#">Disabled item as reminder</a>
+                        </li>
+                    </ul>
+                    <a class="btn btn-danger" href="#">Sources</a>
+                </div>
+            </nav>
         </div>
             <div class="row">
             <div id="actor-list" class="col-xl-3 scroll">
@@ -117,7 +124,7 @@ export default class ThreatActorMap extends Vue {
 }
 #actor-list {
     text-align: left;
-    max-height: calc(100vh - 200px);
+    max-height: calc(100vh - 150px);
     margin-right: 15px;
     padding: 0;
 }
@@ -136,4 +143,18 @@ footer {
     padding-top: 1.9rem;
     padding-bottom: 0.8rem;
 }
+.navbar {
+    width: 100%;
+}
+.list-group-item.active {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+a.list-group-item {
+    color: #dc3545;
+}
+a.list-group-item.active {
+    color: #fff;
+}
+
 </style>

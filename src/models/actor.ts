@@ -7,7 +7,7 @@ export class Actor {
 
     constructor(actorObject: any) {
         this.name = actorObject.value;
-        this.synonyms = actorObject.meta.synonyms;
+        this.synonyms = actorObject.meta.synonyms || [];
         this.description = actorObject.description;
         this.countryCode = actorObject.meta.country;
         this.references = actorObject.meta.refs;
