@@ -1,7 +1,10 @@
 <template>
     <div class="container">
         <div class="row">
-            <h1>Threat Actor Map (currently displaying: {{actors[selectedActor].value}})</h1>
+            <div class="jumbotron">
+                <h1 class="display-4">Threat Actor Map</h1>
+                <p class="lead">This map aims to give an overview about threat actors. Information used is the MISP Threat Actor Galaxy.</p>
+            </div>
         </div>
             <div class="row">
             <div id="actor-list" class="col-xl-3 scroll">
@@ -18,10 +21,12 @@
                 </div>
                 <div class="row">
                     <dl class="dl-horizontal left">
+                        <dt>Name:</dt>
+                        <dd>{{actorName}}</dd>
                         <dt>Synonyms: </dt>
                         <dd>{{actorSynonyms || 'None'}}</dd>
                         <dt>Description: </dt>
-                        <dd>{{actorDescription}}</dd>
+                        <dd>{{actorDescription || 'None'}}</dd>
                         <dt>References: </dt>
                         <dd>
                             <ul>
@@ -34,6 +39,12 @@
                 </div>
             </div>
         </div>
+        <footer class="text-muted">
+            <div class="container">
+                <p class="float-right">&copy; Nils Kuhnert, 2018</p>
+                <p>Thanks to everyone that shares infosec related threat information | Information based on <a href="https://github.com/MISP/misp-galaxy/blob/master/clusters/threat-actor.json">MISP-Galaxy</a></p>
+            </div>
+        </footer>
     </div>    
 </template>
 
@@ -47,16 +58,15 @@ import actors from '../utils/actors';
 export default class ThreatActorMap extends Vue {
     private actors: any[] = actors.values;
     private selectedActor: number = 0;
-    private actorName!: string;
-    private actorSynonyms!: string;
-    private actorDescription!: string;
-    private actorRefs!: string[];
-    private actorCountry!: string;
+    private actorName: string = this.actors[this.selectedActor].value;
+    private actorSynonyms: string = this.actors[this.selectedActor].meta.synonyms.join(', ');
+    private actorDescription: string = this.actors[this.selectedActor].description;
+    private actorRefs: string[] = this.actors[this.selectedActor].meta.refs;
+    private actorCountry: string = this.actors[this.selectedActor].meta.country;
     private previousCountry!: string;
     private threatActorMap!: any;
 
     public mounted() {
-        // Using datamaps this way crashed. Don't know why.
         this.threatActorMap = new Datamap({
              element: document.getElementById('actor-map'),
              fills: {
@@ -74,10 +84,10 @@ export default class ThreatActorMap extends Vue {
 
     public selectActor(actorIndex: number) {
         this.selectedActor = actorIndex;
-        this.actorName = this.actors[actorIndex].value;
-        this.actorSynonyms = (this.actors[actorIndex].meta.synonyms || []).join(', ') || '';
-        this.actorDescription = this.actors[actorIndex].description || '';
-        this.actorRefs = this.actors[actorIndex].meta.refs || [];
+        this.actorName = this.actors[this.selectedActor].value;
+        this.actorSynonyms = (this.actors[this.selectedActor].meta.synonyms || []).join(', ') || '';
+        this.actorDescription = this.actors[this.selectedActor].description || '';
+        this.actorRefs = this.actors[this.selectedActor].meta.refs || [];
 
         if (this.actorCountry !== this.actors[actorIndex].meta.country) {
             this.previousCountry = this.actorCountry;
@@ -106,12 +116,21 @@ export default class ThreatActorMap extends Vue {
 }
 #actor-list {
     text-align: left;
-    max-height: calc(100vh - 200px);
+    max-height: calc(100vh - 300px);
+    padding: 0px;
 }
 .scroll {
     overflow-y: scroll;
 }
 .left {
     text-align: left;
+}
+.jumbotron {
+    width: 100%;
+    padding: 2em 2em;
+}
+footer {
+    padding-top: 1.9rem;
+    padding-bottom: 0.8rem;
 }
 </style>
