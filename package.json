@@ -12,7 +12,8 @@
     "datamaps": "^0.5.9",
     "vue": "^2.5.16",
     "vue-class-component": "^6.0.0",
-    "vue-property-decorator": "^6.0.0"
+    "vue-property-decorator": "^6.0.0",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.0-beta.15",
