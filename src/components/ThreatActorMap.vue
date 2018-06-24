@@ -18,7 +18,7 @@
         <div class="row">
             <div id="actor-list" class="col-xl-3 scroll">
                 <div class="list-group list-group-flush">
-                    <input type="text" class="form-control" placeholder="🔍 Search Actor" v-model="searchTerm" v-on:keydown="filterActors">
+                    <input type="text" class="form-control" placeholder="🔍 Search Actor" v-model="searchTerm" v-on:keyup="filterActors">
                     <a class="list-group-item" v-bind:class="{active: index === selectedActor}" v-for="(actor, index) in filteredActors" :key="index" :href="'#' + actor.name" v-on:click="selectActor(index)">
                         {{actor.name}}
                     </a>
