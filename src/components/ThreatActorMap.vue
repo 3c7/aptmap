@@ -18,7 +18,8 @@
         <div class="row">
             <div id="actor-list" class="col-xl-3 scroll">
                 <div class="list-group list-group-flush">
-                    <a class="list-group-item" v-bind:class="{active: index === selectedActor}" v-for="(actor, index) in actors" :key="index" :href="'#' + actor.name" v-on:click="selectActor(index)">
+                    <input type="text" class="form-control" placeholder="🔍 Search Actor" v-model="searchTerm" v-on:keydown="filterActors">
+                    <a class="list-group-item" v-bind:class="{active: index === selectedActor}" v-for="(actor, index) in filteredActors" :key="index" :href="'#' + actor.name" v-on:click="selectActor(index)">
                         {{actor.name}}
                     </a>
                 </div>
@@ -123,14 +124,17 @@ import Datamap from 'datamaps';
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import { Actor } from '../models/actor';
 import actors from '../utils/actors';
+import { constants } from 'http2';
 
 @Component
 export default class ThreatActorMap extends Vue {
     private actors: Actor[];
+    private filteredActors: Actor[];
     private actor: Actor;
     private selectedActor: number = 0;
     private previousCountry!: string;
     private threatActorMap!: any;
+    private searchTerm: string = '';
 
     constructor() {
         super();
@@ -138,10 +142,12 @@ export default class ThreatActorMap extends Vue {
         for (const actor of actors.values) {
             this.actors.push(new Actor(actor));
         }
+        this.filteredActors = this.actors;
         this.actor = this.actors[0];
     }
 
     public mounted() {
+        this.filterActors();
         this.threatActorMap = new Datamap({
              element: document.getElementById('actor-map'),
              fills: {
@@ -158,14 +164,14 @@ export default class ThreatActorMap extends Vue {
     }
 
     public selectActor(actorIndex: number) {
-        if (this.actor.countryCode !== this.actors[actorIndex].countryCode) {
+        if (this.actor.countryCode !== this.filteredActors[actorIndex].countryCode) {
             this.previousCountry = this.actor.countryCode;
         } else {
             this.previousCountry = '';
         }
 
         this.selectedActor = actorIndex;
-        this.actor = this.actors[actorIndex];
+        this.actor = this.filteredActors[actorIndex];
         this.threatActorMap.updateChoropleth({
             [this.actor.countryCode]: {
                 fillKey: 'Threat Actor',
@@ -191,6 +197,27 @@ export default class ThreatActorMap extends Vue {
                 this.selectActor((this.selectedActor + 1) % this.actors.length);
         }
     }
+
+    public filterActors() {
+        const filteredActors = new Array<Actor>();
+        if (this.searchTerm === '') {
+            this.filteredActors = this.actors;
+        } else {
+            for (const actor of this.actors) {
+                if (actor.name.includes(this.searchTerm)) {
+                    filteredActors.push(actor);
+                } else {
+                    for (const synonym of actor.synonyms) {
+                        if (synonym.includes(this.searchTerm)) {
+                            filteredActors.push(actor);
+                            break;
+                        }
+                    }
+                }
+            }
+            this.filteredActors = filteredActors;
+        }
+    }
 }
 </script>
 
@@ -206,7 +233,7 @@ export default class ThreatActorMap extends Vue {
     padding: 0;
 }
 .scroll {
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 .left {
     text-align: left;
