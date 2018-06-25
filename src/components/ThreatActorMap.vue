@@ -18,7 +18,7 @@
         <div class="row">
             <div id="actor-list" class="col-xl-3 scroll">
                 <div class="list-group list-group-flush">
-                    <input type="text" class="form-control" placeholder="🔍 Search Actor" v-model="searchTerm" v-on:keyup="filterActors">
+                    <input type="text" class="form-control" placeholder="🔍 Search Actor" v-model="searchActorName" v-on:keyup="filterActors">
                     <a class="list-group-item" v-bind:class="{active: index === selectedActor}" v-for="(actor, index) in filteredActors" :key="index" :href="'#' + actor.name" v-on:click="selectActor(index)">
                         {{actor.name}}
                     </a>
@@ -26,6 +26,7 @@
             </div>
             <div class="col-xl-8">
                 <div class="row">
+                    <span v-if="searchActorCountry !== ''" class="badge badge-secondary">Country: {{searchActorCountry}} <span class="clickable" v-on:click="searchForCountry('')">&#215;</span></span>
                     <div id="actor-map">
                     </div>
                 </div>
@@ -43,7 +44,7 @@
                         <dd>
                             <ul>
                                 <li v-for="(ref, index) in actor.references" :key="index">
-                                    <a :href="ref">{{ref}}</a>
+                                    <a target="_blank" :href="ref">{{ref}}</a>
                                 </li>
                             </ul>
                         </dd>
@@ -134,7 +135,8 @@ export default class ThreatActorMap extends Vue {
     private selectedActor: number = 0;
     private previousCountry!: string;
     private threatActorMap!: any;
-    private searchTerm: string = '';
+    private searchActorName: string = '';
+    private searchActorCountry: string = '';
 
     constructor() {
         super();
@@ -159,6 +161,11 @@ export default class ThreatActorMap extends Vue {
                  [this.actors[this.selectedActor].countryCode || '']: {
                      fillKey: 'Threat Actor',
                  },
+             },
+             done: (datamap: any) => {
+                datamap.svg.selectAll('.datamaps-subunit').on('click', (geography: any) => {
+                    this.searchForCountry(geography.id);
+                });
              },
         });
     }
@@ -198,17 +205,28 @@ export default class ThreatActorMap extends Vue {
         }
     }
 
+    public searchForCountry(cc: string) {
+        if (cc === '') {
+            this.searchActorCountry = '';
+        } else {
+            this.searchActorCountry = cc;
+        }
+        this.filterActors();
+    }
+
     public filterActors() {
         const filteredActors = new Array<Actor>();
-        if (this.searchTerm === '') {
+        if (this.searchActorName === '' && this.searchActorCountry === '') {
             this.filteredActors = this.actors;
         } else {
             for (const actor of this.actors) {
-                if (actor.name.includes(this.searchTerm)) {
+                if (actor.name.includes(this.searchActorName)
+                && (this.searchActorCountry === '' || actor.countryCode === this.searchActorCountry)) {
                     filteredActors.push(actor);
                 } else {
                     for (const synonym of actor.synonyms) {
-                        if (synonym.includes(this.searchTerm)) {
+                        if (synonym.includes(this.searchActorName)
+                        && (this.searchActorCountry === '' || actor.countryCode === this.searchActorCountry)) {
                             filteredActors.push(actor);
                             break;
                         }
@@ -259,5 +277,8 @@ a.list-group-item {
 }
 a.list-group-item.active {
     color: #fff;
+}
+.clickable {
+    cursor: pointer;
 }
 </style>
