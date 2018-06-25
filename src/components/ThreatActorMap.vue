@@ -26,7 +26,11 @@
             </div>
             <div class="col-xl-8">
                 <div class="row">
-                    <span v-if="searchActorCountry !== ''" class="badge badge-secondary">Country: {{searchActorCountry}} <span class="clickable" v-on:click="searchForCountry('')">&#215;</span></span>
+                    <div class="actor-filter">
+                        <span v-if="searchActorName !== ''" class="badge badge-secondary">Name: {{searchActorName}} <span class="clickable" v-on:click="resetNameFilter()">&#215;</span></span>
+                        <span v-if="searchActorCountry !== ''" class="badge badge-secondary">Country: {{searchActorCountry}} <span class="clickable" v-on:click="resetCountryFilter()">&#215;</span></span>
+                        <span v-if="searchActorCountry === '' && searchActorName === ''" class="badge badge-secondary">No filter</span>
+                    </div>
                     <div id="actor-map">
                     </div>
                 </div>
@@ -164,7 +168,7 @@ export default class ThreatActorMap extends Vue {
              },
              done: (datamap: any) => {
                 datamap.svg.selectAll('.datamaps-subunit').on('click', (geography: any) => {
-                    this.searchForCountry(geography.id);
+                    this.searchByCountry(geography.id);
                 });
              },
         });
@@ -205,13 +209,22 @@ export default class ThreatActorMap extends Vue {
         }
     }
 
-    public searchForCountry(cc: string) {
-        if (cc === '') {
-            this.searchActorCountry = '';
-        } else {
-            this.searchActorCountry = cc;
-        }
+    public searchByName(name: string) {
+        this.searchActorName = name;
         this.filterActors();
+    }
+
+    public searchByCountry(cc: string) {
+        this.searchActorCountry = cc;
+        this.filterActors();
+    }
+
+    public resetNameFilter() {
+        this.searchByName('');
+    }
+
+    public resetCountryFilter() {
+        this.searchByCountry('');
     }
 
     public filterActors() {
@@ -280,5 +293,11 @@ a.list-group-item.active {
 }
 .clickable {
     cursor: pointer;
+}
+.actor-filter {
+    min-height: 30px;
+}
+.actor-filter > .badge {
+    margin-right: 5px; 
 }
 </style>
