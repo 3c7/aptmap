@@ -27,8 +27,8 @@
             <div class="col-xl-8">
                 <div class="row">
                     <div class="actor-filter">
-                        <span v-if="searchActorName !== ''" class="badge badge-secondary">Name: {{searchActorName}} <span class="clickable" v-on:click="resetNameFilter()">&#215;</span></span>
-                        <span v-if="searchActorCountry !== ''" class="badge badge-secondary">Country: {{searchActorCountry}} <span class="clickable" v-on:click="resetCountryFilter()">&#215;</span></span>
+                        <span v-if="searchActorName !== ''" class="badge badge-danger">Name: {{searchActorName}} <span class="clickable" v-on:click="resetNameFilter()">&#215;</span></span>
+                        <span v-if="searchActorCountry !== ''" class="badge badge-danger">Country: {{searchActorCountry}} <span class="clickable" v-on:click="resetCountryFilter()">&#215;</span></span>
                         <span v-if="searchActorCountry === '' && searchActorName === ''" class="badge badge-secondary">No filter</span>
                     </div>
                     <div id="actor-map">
@@ -296,8 +296,9 @@ a.list-group-item.active {
 }
 .actor-filter {
     min-height: 30px;
+    padding-top: 5px;
 }
 .actor-filter > .badge {
-    margin-right: 5px; 
+    margin-right: 5px;
 }
 </style>
