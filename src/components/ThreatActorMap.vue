@@ -257,6 +257,7 @@ export default class ThreatActorMap extends Vue {
 <style scoped>
 #actor-map {
     height: 400px;
+    width: 100%;
 }
 #actor-list {
     text-align: left;
