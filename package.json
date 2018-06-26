@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "git submodule update --remote && ./update-actors.py && vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "git submodule update --remote && ./update-actors.py && vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
