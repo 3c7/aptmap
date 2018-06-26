@@ -1,5 +1,5 @@
 <template>
-    <div class="container" v-on:keydown="shortcut">
+    <div class="container-fluid" v-on:keydown="shortcut">
         <div class="row">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <a class="navbar-brand" href="#">Threat Actor Map</a>
@@ -16,7 +16,7 @@
             </nav>
         </div>
         <div class="row">
-            <div id="actor-list" class="col-xl-3 scroll">
+            <div id="actor-list" class="col-xl-2 scroll">
                 <div class="list-group list-group-flush">
                     <input type="text" class="form-control" placeholder="🔍 Search Actor" v-model="searchActorName" v-on:keyup="filterActors">
                     <a class="list-group-item" v-bind:class="{active: index === selectedActor}" v-for="(actor, index) in filteredActors" :key="index" :href="'#' + actor.name" v-on:click="selectActor(index)">
@@ -24,9 +24,9 @@
                     </a>
                 </div>
             </div>
-            <div class="col-xl-8">
+            <div class="col-xl-9">
                 <div class="row">
-                    <div class="actor-filter">
+                    <div class="actor-filter w-100">
                         <span v-if="searchActorName !== ''" class="badge badge-danger">Name: {{searchActorName}} <span class="clickable" v-on:click="resetNameFilter()">&#215;</span></span>
                         <span v-if="searchActorCountry !== ''" class="badge badge-danger">Country: {{searchActorCountry}} <span class="clickable" v-on:click="resetCountryFilter()">&#215;</span></span>
                         <span v-if="searchActorCountry === '' && searchActorName === ''" class="badge badge-secondary">No filter</span>
@@ -172,6 +172,7 @@ export default class ThreatActorMap extends Vue {
                     this.searchByCountry(geography.id);
                 });
              },
+             geographyConfig: false,
         });
     }
 
@@ -256,8 +257,9 @@ export default class ThreatActorMap extends Vue {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #actor-map {
-    height: 400px;
-    width: 100%;
+    min-height: 500px;
+    width: 900px;
+    margin: auto;
 }
 #actor-list {
     text-align: left;
