@@ -1,3 +1,3 @@
 # Threat Actor Map
 
-![Screenshot](public/screenshot.png)
+![Screenshot](./screenshot.png)

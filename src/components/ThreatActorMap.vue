@@ -125,7 +125,6 @@
 </template>
 
 <script lang="ts">
-import Datamap from 'datamaps';
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import { Actor } from '../models/actor';
 import actors from '../utils/actors';
@@ -141,6 +140,7 @@ export default class ThreatActorMap extends Vue {
     private threatActorMap!: any;
     private searchActorName: string = '';
     private searchActorCountry: string = '';
+    private DataMap: any;
 
     constructor() {
         super();
@@ -150,11 +150,12 @@ export default class ThreatActorMap extends Vue {
         }
         this.filteredActors = this.actors;
         this.actor = this.actors[0];
+        this.DataMap = require('datamaps');
     }
 
     public mounted() {
         this.filterActors();
-        this.threatActorMap = new Datamap({
+        this.threatActorMap = new this.DataMap({
              element: document.getElementById('actor-map'),
              fills: {
                 'defaultFill': '#ccc',
