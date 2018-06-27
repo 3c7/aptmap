@@ -14,6 +14,8 @@ if __name__ == '__main__':
         pass
     with io.open('resources/misp-galaxy/clusters/threat-actor.json', 'r') as handle:
         data = json.loads(handle.read())
+        if not os.path.isdir('src/utils'):
+            os.mkdir('src/utils')
         with io.open('src/utils/actors.ts', 'w') as output:
             output.write('let actors = ')
             output.write(json.dumps(data, indent=4))
