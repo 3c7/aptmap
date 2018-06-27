@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+"""
+Creates a new utils/actors.ts from the misp-galaxy threat actor cluster.
+"""
 import json
 import io
 import os
@@ -14,3 +17,6 @@ if __name__ == '__main__':
             output.write(';\n\nexport default actors;')
     if os.path.isfile('src/utils/actors.ts'):
         print('New threat actor file was written.')
+    else:
+        print('Could not update threat actors.')
+        exit(1)
