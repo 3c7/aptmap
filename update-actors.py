@@ -8,7 +8,10 @@ import os
 
 
 if __name__ == '__main__':
-    os.remove('src/utils/actors.ts')
+    try:
+        os.remove('src/utils/actors.ts')
+    except FileNotFoundError:
+        pass
     with io.open('resources/misp-galaxy/clusters/threat-actor.json', 'r') as handle:
         data = json.loads(handle.read())
         with io.open('src/utils/actors.ts', 'w') as output:
