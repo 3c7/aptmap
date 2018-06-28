@@ -19,8 +19,8 @@
             <div id="actor-list" class="col-xl-2 scroll">
                 <div class="list-group list-group-flush">
                     <input type="text" class="form-control" placeholder="🔍 Search Actor" v-model="searchActorName" v-on:keyup="filterActors">
-                    <a class="list-group-item" v-bind:class="{active: index === selectedActor}" v-for="(actor, index) in filteredActors" :key="index" :href="'#' + actor.name" v-on:click="selectActor(index)">
-                        {{actor.name}}
+                    <a class="list-group-item" v-bind:class="{active: a.name === actor.name}" v-for="(a, i) in filteredActors" :key="i" :href="'#' + a.name" v-on:click="selectActor(i)">
+                        {{a.name}}
                     </a>
                 </div>
             </div>
@@ -140,6 +140,7 @@ export default class ThreatActorMap extends Vue {
     private threatActorMap!: any;
     private searchActorName: string = '';
     private searchActorCountry: string = '';
+    private previousSearchActorCountry: string = '';
     private DataMap: any;
 
     constructor() {
@@ -154,6 +155,8 @@ export default class ThreatActorMap extends Vue {
     }
 
     public mounted() {
+        const country = this.actor.countryCode || '';
+
         this.filterActors();
         this.threatActorMap = new this.DataMap({
              element: document.getElementById('actor-map'),
@@ -161,15 +164,17 @@ export default class ThreatActorMap extends Vue {
                 'defaultFill': '#ccc',
                 'Threat Actor': '#c00',
                 'Clean': '#ccc',
+                'Selected Country': '#ddd',
              },
              data: {
-                 [this.actors[this.selectedActor].countryCode || '']: {
+                 [country]: {
                      fillKey: 'Threat Actor',
                  },
              },
              done: (datamap: any) => {
                 datamap.svg.selectAll('.datamaps-subunit').on('click', (geography: any) => {
                     this.searchByCountry(geography.id);
+                    this.setMapColors();
                 });
              },
              geographyConfig: false,
@@ -185,14 +190,7 @@ export default class ThreatActorMap extends Vue {
 
         this.selectedActor = actorIndex;
         this.actor = this.filteredActors[actorIndex];
-        this.threatActorMap.updateChoropleth({
-            [this.actor.countryCode]: {
-                fillKey: 'Threat Actor',
-            },
-            [this.previousCountry]: {
-                fillKey: 'Clean',
-            },
-        });
+        this.setMapColors();
     }
 
     public shortcut(event: KeyboardEvent) {
@@ -217,6 +215,7 @@ export default class ThreatActorMap extends Vue {
     }
 
     public searchByCountry(cc: string) {
+        this.previousSearchActorCountry = this.searchActorCountry;
         this.searchActorCountry = cc;
         this.filterActors();
     }
@@ -250,6 +249,29 @@ export default class ThreatActorMap extends Vue {
             }
             this.filteredActors = filteredActors;
         }
+    }
+
+    // Sets the colors using the given state (selected actor, selected country)
+    public setMapColors() {
+        let selected = '';
+        if (this.searchActorCountry !== this.actor.countryCode) {
+            selected = this.searchActorCountry || '';
+        }
+
+        this.threatActorMap.updateChoropleth({
+            [this.actor.countryCode]: {
+                fillKey: 'Threat Actor',
+            },
+            [this.previousCountry]: {
+                fillKey: 'Clean',
+            },
+            [this.previousSearchActorCountry]: {
+                fillKey: 'Clean',
+            },
+            [selected]: {
+                fillKey: 'Selected Country',
+            },
+        });
     }
 }
 </script>
