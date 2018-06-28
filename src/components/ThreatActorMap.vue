@@ -155,8 +155,6 @@ export default class ThreatActorMap extends Vue {
     }
 
     public mounted() {
-        const country = this.actor.countryCode || '';
-
         this.filterActors();
         this.threatActorMap = new this.DataMap({
              element: document.getElementById('actor-map'),
@@ -164,21 +162,16 @@ export default class ThreatActorMap extends Vue {
                 'defaultFill': '#ccc',
                 'Threat Actor': '#c00',
                 'Clean': '#ccc',
-                'Selected Country': '#ddd',
-             },
-             data: {
-                 [country]: {
-                     fillKey: 'Threat Actor',
-                 },
+                'Selected Country': '#aaa',
              },
              done: (datamap: any) => {
                 datamap.svg.selectAll('.datamaps-subunit').on('click', (geography: any) => {
                     this.searchByCountry(geography.id);
-                    this.setMapColors();
                 });
              },
              geographyConfig: false,
         });
+        this.setMapColors();
     }
 
     public selectActor(actorIndex: number) {
@@ -218,6 +211,7 @@ export default class ThreatActorMap extends Vue {
         this.previousSearchActorCountry = this.searchActorCountry;
         this.searchActorCountry = cc;
         this.filterActors();
+        this.setMapColors();
     }
 
     public resetNameFilter() {
@@ -258,6 +252,11 @@ export default class ThreatActorMap extends Vue {
             selected = this.searchActorCountry || '';
         }
 
+        let previous = '';
+        if (this.previousSearchActorCountry !== this.actor.countryCode) {
+            previous = this.previousSearchActorCountry || '';
+        }
+
         this.threatActorMap.updateChoropleth({
             [this.actor.countryCode]: {
                 fillKey: 'Threat Actor',
@@ -265,7 +264,7 @@ export default class ThreatActorMap extends Vue {
             [this.previousCountry]: {
                 fillKey: 'Clean',
             },
-            [this.previousSearchActorCountry]: {
+            [previous]: {
                 fillKey: 'Clean',
             },
             [selected]: {
