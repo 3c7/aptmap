@@ -223,17 +223,19 @@ export default class ThreatActorMap extends Vue {
     }
 
     public filterActors() {
+        const searchActorName = this.searchActorName.toLowerCase();
         const filteredActors = new Array<Actor>();
-        if (this.searchActorName === '' && this.searchActorCountry === '') {
+
+        if (searchActorName === '' && this.searchActorCountry === '') {
             this.filteredActors = this.actors;
         } else {
             for (const actor of this.actors) {
-                if (actor.name.includes(this.searchActorName)
+                if (actor.name.toLowerCase().includes(searchActorName)
                 && (this.searchActorCountry === '' || actor.countryCode === this.searchActorCountry)) {
                     filteredActors.push(actor);
                 } else {
                     for (const synonym of actor.synonyms) {
-                        if (synonym.includes(this.searchActorName)
+                        if (synonym.toLowerCase().includes(searchActorName)
                         && (this.searchActorCountry === '' || actor.countryCode === this.searchActorCountry)) {
                             filteredActors.push(actor);
                             break;
