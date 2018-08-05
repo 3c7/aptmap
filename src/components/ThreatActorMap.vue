@@ -33,7 +33,7 @@
                         <span v-if="searchActorName !== ''" class="badge badge-danger">Name: {{searchActorName}} <span class="clickable" v-on:click="resetNameFilter()">&#215;</span></span>
                         <span v-if="searchActorCountry !== ''" class="badge badge-danger">Country: {{searchActorCountry}} <span class="clickable" v-on:click="resetCountryFilter()">&#215;</span></span>
                         <span v-if="searchActorCountry === '' && searchActorName === ''" class="badge badge-secondary">No filter</span>
-                        <span v-if="actor.cfrInformationAvailable" class="badge badge-primary">CFR informatoin available</span>
+                        <span v-if="actor.cfrInformationAvailable" class="badge badge-warning">CFR information available</span>
                     </div>
                     <div id="actor-map">
                     </div>
@@ -169,8 +169,6 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import { Actor } from '../models/actor';
 import actors from '../utils/actors';
-import { constants, connect } from 'http2';
-import { prependListener } from 'cluster';
 
 @Component
 export default class ThreatActorMap extends Vue {
