@@ -4,11 +4,14 @@
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <a class="navbar-brand" href="#">Threat Actor Map</a>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!--
+                    Later: include oder info, like MITRE ATT&CK etc.
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
                             <a class="nav-link disabled" href="#">Disabled item as reminder</a>
                         </li>
                     </ul>
+                    -->
                     <button class="btn btn-danger" data-toggle="modal" data-target="#modal-sources">Sources</button>&nbsp;
                     <!-- Here goes the keyboard shortcuts modal -->
                     <button class="btn btn-warning" data-toggle="modal" data-target="#modal-help">?</button>
@@ -30,6 +33,7 @@
                         <span v-if="searchActorName !== ''" class="badge badge-danger">Name: {{searchActorName}} <span class="clickable" v-on:click="resetNameFilter()">&#215;</span></span>
                         <span v-if="searchActorCountry !== ''" class="badge badge-danger">Country: {{searchActorCountry}} <span class="clickable" v-on:click="resetCountryFilter()">&#215;</span></span>
                         <span v-if="searchActorCountry === '' && searchActorName === ''" class="badge badge-secondary">No filter</span>
+                        <span v-if="actor.cfrInformationAvailable" class="badge badge-primary">CFR informatoin available</span>
                     </div>
                     <div id="actor-map">
                     </div>
@@ -40,8 +44,37 @@
                         <dd>{{actor.name}}</dd>
                         <dt>Synonyms: </dt>
                         <dd>{{actor.synonymsString() || 'None'}}</dd>
-                        <dt>Operating from: </dt>
+                        <dt>Probably operating from: </dt>
                         <dd>{{actor.countryCode || 'Unknown'}}</dd>
+
+                        <div v-if="actor.cfrSuspectedState">
+                            <dt>(CFR) Suspected state sponsor: </dt>
+                            <dd>{{actor.cfrSuspectedState}}</dd>
+                        </div>
+                        <div v-if="actor.cfrSuspectedVictims">
+                            <dt>(CFR) Suspected victim countries: </dt>
+                            <dd>
+                                <ul>
+                                    <li v-for="(victim, index) in actor.cfrSuspectedVictims" :key="index">
+                                        {{victim}}
+                                    </li>
+                                </ul>
+                            </dd>
+                        </div>
+                        <div v-if="actor.cfrTypeOfIncident">
+                            <dt>(CFR) Type of incident: </dt>
+                            <dd>{{actor.cfrTypeOfIncident}}</dd>
+                        </div>
+                        <div v-if="actor.cfrTargetSectors">
+                            <dt>(CFR) Target sectors: </dt>
+                            <dd>
+                                <ul>
+                                    <li v-for="(sector, index) in actor.cfrTargetSectors" :key="index">
+                                        {{sector}}
+                                    </li>
+                                </ul>
+                            </dd>
+                        </div>
                         <dt>Description: </dt>
                         <dd>{{actor.description || 'None'}}</dd>
                         <dt>References: </dt>
@@ -114,6 +147,7 @@
                         <li>Timo Steffens</li>
                     </ul>
                     <p>and the other various contributors for sharing their knowledge and researches.</p>
+                    <p>Since v.0.1.6 the updated MISP-galaxy includes information provided by the <a href="https://www.cfr.org/" target="_blank">Council of Foreign Relations</a>.</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -223,17 +257,19 @@ export default class ThreatActorMap extends Vue {
     }
 
     public filterActors() {
+        const searchActorName = this.searchActorName.toLowerCase();
         const filteredActors = new Array<Actor>();
-        if (this.searchActorName === '' && this.searchActorCountry === '') {
+
+        if (searchActorName === '' && this.searchActorCountry === '') {
             this.filteredActors = this.actors;
         } else {
             for (const actor of this.actors) {
-                if (actor.name.includes(this.searchActorName)
+                if (actor.name.toLowerCase().includes(searchActorName)
                 && (this.searchActorCountry === '' || actor.countryCode === this.searchActorCountry)) {
                     filteredActors.push(actor);
                 } else {
                     for (const synonym of actor.synonyms) {
-                        if (synonym.includes(this.searchActorName)
+                        if (synonym.toLowerCase().includes(searchActorName)
                         && (this.searchActorCountry === '' || actor.countryCode === this.searchActorCountry)) {
                             filteredActors.push(actor);
                             break;
@@ -325,5 +361,8 @@ a.list-group-item.active {
 }
 .actor-filter > .badge {
     margin-right: 5px;
+}
+.dl-cfr {
+    margin-left: 2em;
 }
 </style>
