@@ -4,11 +4,14 @@
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <a class="navbar-brand" href="#">Threat Actor Map</a>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!--
+                    Later: include oder info, like MITRE ATT&CK etc.
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
                             <a class="nav-link disabled" href="#">Disabled item as reminder</a>
                         </li>
                     </ul>
+                    -->
                     <button class="btn btn-danger" data-toggle="modal" data-target="#modal-sources">Sources</button>&nbsp;
                     <!-- Here goes the keyboard shortcuts modal -->
                     <button class="btn btn-warning" data-toggle="modal" data-target="#modal-help">?</button>
