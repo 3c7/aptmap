@@ -42,17 +42,20 @@
                     <dl class="dl-horizontal left">
                         <dt>Name:</dt>
                         <dd>{{actor.name}}</dd>
-                        <dt>Synonyms: </dt>
-                        <dd>{{actor.synonymsString() || 'None'}}</dd>
-                        <dt>Probably operating from: </dt>
-                        <dd>{{actor.countryCode || 'Unknown'}}</dd>
-
+                        <div v-if="actor.synonymsString()">
+                            <dt>Synonyms: </dt>
+                            <dd>{{actor.synonymsString() || 'None'}}</dd>
+                        </div>
+                        <div v-if="actor.operatingFrom">
+                            <dt>Probably operating from: </dt>
+                            <dd>{{actor.operatingFrom || 'Unknown'}}</dd>
+                        </div>
                         <div v-if="actor.cfrSuspectedState">
-                            <dt>(CFR) Suspected state sponsor: </dt>
+                            <dt data-toggle="tooltip" data-placement="left" title="Information provided by Council of Foreign Relations">(CFR) Suspected state sponsor: </dt>
                             <dd>{{actor.cfrSuspectedState}}</dd>
                         </div>
                         <div v-if="actor.cfrSuspectedVictims">
-                            <dt>(CFR) Suspected victim countries: </dt>
+                            <dt data-toggle="tooltip" data-placement="left" title="Information provided by Council of Foreign Relations">(CFR) Suspected victims: </dt>
                             <dd>
                                 <ul>
                                     <li v-for="(victim, index) in actor.cfrSuspectedVictims" :key="index">
@@ -62,11 +65,11 @@
                             </dd>
                         </div>
                         <div v-if="actor.cfrTypeOfIncident">
-                            <dt>(CFR) Type of incident: </dt>
+                            <dt data-toggle="tooltip" data-placement="left" title="Information provided by Council of Foreign Relations">(CFR) Type of incident: </dt>
                             <dd>{{actor.cfrTypeOfIncident}}</dd>
                         </div>
                         <div v-if="actor.cfrTargetSectors">
-                            <dt>(CFR) Target sectors: </dt>
+                            <dt data-toggle="tooltip" data-placement="left" title="Information provided by Council of Foreign Relations">(CFR) Target sectors: </dt>
                             <dd>
                                 <ul>
                                     <li v-for="(sector, index) in actor.cfrTargetSectors" :key="index">
@@ -75,8 +78,11 @@
                                 </ul>
                             </dd>
                         </div>
-                        <dt>Description: </dt>
-                        <dd>{{actor.description || 'None'}}</dd>
+                        <div v-if="actor.description">
+                            <dt>Description: </dt>
+                            <dd>{{actor.description || 'None'}}</dd>
+                        </div>
+                        <div v-if="actor.references">
                         <dt>References: </dt>
                         <dd>
                             <ul>
@@ -85,6 +91,7 @@
                                 </li>
                             </ul>
                         </dd>
+                        </div>
                     </dl>
                 </div>
             </div>
@@ -162,13 +169,15 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import { Actor } from '../models/actor';
 import actors from '../utils/actors';
-import { constants } from 'http2';
+import { constants, connect } from 'http2';
+import { prependListener } from 'cluster';
 
 @Component
 export default class ThreatActorMap extends Vue {
     private actors: Actor[];
     private filteredActors: Actor[];
     private actor: Actor;
+    private previousActor: Actor;
     private selectedActor: number = 0;
     private previousCountry!: string;
     private threatActorMap!: any;
@@ -185,6 +194,7 @@ export default class ThreatActorMap extends Vue {
         }
         this.filteredActors = this.actors;
         this.actor = this.actors[0];
+        this.previousActor = this.actor;
         this.DataMap = require('datamaps');
     }
 
@@ -194,9 +204,10 @@ export default class ThreatActorMap extends Vue {
              element: document.getElementById('actor-map'),
              fills: {
                 'defaultFill': '#ccc',
-                'Threat Actor': '#c00',
+                'Threat Actor': '#c82333',
                 'Clean': '#ccc',
                 'Selected Country': '#aaa',
+                'Victim': '#ffc107',
              },
              done: (datamap: any) => {
                 datamap.svg.selectAll('.datamaps-subunit').on('click', (geography: any) => {
@@ -209,14 +220,9 @@ export default class ThreatActorMap extends Vue {
     }
 
     public selectActor(actorIndex: number) {
-        if (this.actor.countryCode !== this.filteredActors[actorIndex].countryCode) {
-            this.previousCountry = this.actor.countryCode;
-        } else {
-            this.previousCountry = '';
-        }
-
-        this.selectedActor = actorIndex;
+        this.previousActor = this.actor;
         this.actor = this.filteredActors[actorIndex];
+        this.selectedActor = actorIndex;
         this.setMapColors();
     }
 
@@ -265,12 +271,12 @@ export default class ThreatActorMap extends Vue {
         } else {
             for (const actor of this.actors) {
                 if (actor.name.toLowerCase().includes(searchActorName)
-                && (this.searchActorCountry === '' || actor.countryCode === this.searchActorCountry)) {
+                && (this.searchActorCountry === '' || actor.ccOperatingFrom === this.searchActorCountry)) {
                     filteredActors.push(actor);
                 } else {
                     for (const synonym of actor.synonyms) {
                         if (synonym.toLowerCase().includes(searchActorName)
-                        && (this.searchActorCountry === '' || actor.countryCode === this.searchActorCountry)) {
+                        && (this.searchActorCountry === '' || actor.ccOperatingFrom === this.searchActorCountry)) {
                             filteredActors.push(actor);
                             break;
                         }
@@ -283,30 +289,16 @@ export default class ThreatActorMap extends Vue {
 
     // Sets the colors using the given state (selected actor, selected country)
     public setMapColors() {
-        let selected = '';
-        if (this.searchActorCountry !== this.actor.countryCode) {
-            selected = this.searchActorCountry || '';
-        }
+        const colors = this.actor.getColorMapping();
 
-        let previous = '';
-        if (this.previousSearchActorCountry !== this.actor.countryCode) {
-            previous = this.previousSearchActorCountry || '';
-        }
-
-        this.threatActorMap.updateChoropleth({
-            [this.actor.countryCode]: {
-                fillKey: 'Threat Actor',
-            },
-            [this.previousCountry]: {
-                fillKey: 'Clean',
-            },
-            [previous]: {
-                fillKey: 'Clean',
-            },
-            [selected]: {
+        if (this.searchActorCountry !== this.actor.ccOperatingFrom) {
+            colors[this.searchActorCountry] = {
                 fillKey: 'Selected Country',
-            },
-        });
+            };
+        }
+
+        colors.reset = true;
+        this.threatActorMap.updateChoropleth(colors, {reset: true});
     }
 }
 </script>
