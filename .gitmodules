@@ -1,3 +1,6 @@
 [submodule "resources/misp-galaxy"]
 	path = resources/misp-galaxy
 	url = https://github.com/misp/misp-galaxy
+[submodule "resources/region-flags"]
+	path = resources/region-flags
+	url = https://github.com/googlei18n/region-flags
