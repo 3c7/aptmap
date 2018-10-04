@@ -28,12 +28,12 @@ if __name__ == "__main__":
         for actor in data["values"]:
             actor.update({"aptmap": {"operatingFrom": None, "victims": []}})
 
-            if actor["meta"].get("country", None):
+            if actor.get('meta', {}).get("country", None):
                 c = actor["meta"]["country"]
                 actor["meta"]["country"] = iso3166.countries.get(c)[0]
                 actor["aptmap"]["operatingFrom"] = iso3166.countries.get(c)[2]
 
-            for v in actor["meta"].get("cfr-suspected-victims", []):
+            for v in actor.get('meta', {}).get("cfr-suspected-victims", []):
                 try:
                     actor["aptmap"]["victims"].append(iso3166.countries.get(v)[2])
                 except:
@@ -141,6 +141,10 @@ if __name__ == "__main__":
                     elif "Brunei" in v:
                         actor["aptmap"]["victims"].append(
                             iso3166.countries.get("BRN")[2]
+                        )
+                    elif "Czech Republic" in v:
+                        actor["aptmap"]["victims"].append(
+                            iso3166.countries.get("CZE")[2]
                         )
                     else:
                         print("Could not get iso3166 code for {}.".format(v))
