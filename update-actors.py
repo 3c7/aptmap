@@ -28,6 +28,10 @@ if __name__ == "__main__":
         for actor in data["values"]:
             actor.update({"aptmap": {"operatingFrom": None, "victims": []}})
 
+            if not actor.get('meta', None):
+                print("Actor {} has no meta data, insert empty key.".format(actor['value']))
+                actor.update({"meta": {}})
+
             if actor.get('meta', {}).get("country", None):
                 c = actor["meta"]["country"]
                 actor["meta"]["country"] = iso3166.countries.get(c)[0]
