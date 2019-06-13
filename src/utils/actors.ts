@@ -8,7 +8,7 @@ let actors = {
     ],
     "category": "actor",
     "description": "Known or estimated adversary groups targeting organizations and employees. Adversary groups are regularly confused with their initial operation or campaign.",
-    "name": "Threat actor",
+    "name": "Threat Actor",
     "source": "MISP Project",
     "type": "threat-actor",
     "uuid": "7cdff317-a673-4474-84ec-4f1754947823",
@@ -16,6 +16,7 @@ let actors = {
         {
             "description": "PLA Unit 61398 (Chinese: 61398\u90e8\u961f, Pinyin: 61398 b\u00f9du\u00ec) is the Military Unit Cover Designator (MUCD)[1] of a People's Liberation Army advanced persistent threat unit that has been alleged to be a source of Chinese computer hacking attacks",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "China",
                 "cfr-suspected-victims": [
                     "United States",
@@ -44,7 +45,14 @@ let actors = {
                     "https://en.wikipedia.org/wiki/PLA_Unit_61398",
                     "http://intelreport.mandiant.com/Mandiant_APT1_Report.pdf",
                     "https://www.cfr.org/interactive/cyber-operations/pla-unit-61398",
-                    "https://www.fireeye.com/content/dam/fireeye-www/services/pdfs/mandiant-apt1-report.pdf"
+                    "https://www.fireeye.com/content/dam/fireeye-www/services/pdfs/mandiant-apt1-report.pdf",
+                    "https://blog.trendmicro.com/trendlabs-security-intelligence/the-siesta-campaign-a-new-targeted-attack-awakens/",
+                    "https://www.fireeye.com/blog/threat-research/2014/03/a-detailed-examination-of-the-siesta-campaign.html",
+                    "https://securingtomorrow.mcafee.com/other-blogs/mcafee-labs/operation-oceansalt-delivers-wave-after-wave/",
+                    "https://www.mcafee.com/enterprise/en-us/assets/reports/rp-operation-oceansalt.pdf",
+                    "https://www.symantec.com/connect/blogs/apt1-qa-attacks-comment-crew",
+                    "https://attack.mitre.org/groups/G0006/",
+                    "https://www.nytimes.com/2014/05/20/us/us-to-charge-chinese-workers-with-cyberspying.html"
                 ],
                 "synonyms": [
                     "Comment Panda",
@@ -57,7 +65,9 @@ let actors = {
                     "TG-8223",
                     "Comment Group",
                     "Brown Fox",
-                    "GIF89a"
+                    "GIF89a",
+                    "ShadyRAT",
+                    "Shanghai Group"
                 ]
             },
             "related": [
@@ -95,6 +105,7 @@ let actors = {
         {
             "description": "The group appears to have close ties to the Chinese National University of Defense and Technology, which is possibly linked to the PLA. Stalker Panda has been observed conducting targeted attacks against Japan, Taiwan, Hong Kong, and the United States. The attacks appear to be centered on political, media, and engineering sectors. The group appears to have been active since around 2010 and they maintain and upgrade their tools regularly.",
             "meta": {
+                "attribution-confidence": "50",
                 "country": "China",
                 "refs": [
                     "https://wikileaks.org/vault7/document/2015-08-20150814-256-CSIR-15005-Stalker-Panda/2015-08-20150814-256-CSIR-15005-Stalker-Panda.pdf"
@@ -110,6 +121,7 @@ let actors = {
         {
             "description": "These attackers were the subject of an extensive report by Symantec in 2011, which termed the attackers Nitro and stated: 'The goal of the attackers appears to be to collect intellectual property such as design documents, formulas, and manufacturing processes. In addition, the same attackers appear to have a lengthy operation history including attacks on other industries and organizations. Attacks on the chemical industry are merely their latest attack wave. As part of our investigations, we were also able to identify and contact one of the attackers to try and gain insights into the motivations behind these attacks.' Palo Alto Networks reported on continued activity by the attackers in 2014. ",
             "meta": {
+                "attribution-confidence": "50",
                 "country": "China",
                 "refs": [
                     "http://www.symantec.com/content/en/us/enterprise/media/security_response/whitepapers/the_nitro_attacks.pdf"
@@ -128,12 +140,14 @@ let actors = {
         {
             "description": "The New York Times described Codoso as: 'A collection of hackers for hire that the security industry has been tracking for years. Over the years, the group has breached banks, law firms and tech companies, and once hijacked the Forbes website to try to infect visitors\u2019 computers with malware.'",
             "meta": {
+                "attribution-confidence": "50",
                 "country": "China",
                 "refs": [
                     "https://www.proofpoint.com/us/exploring-bergard-old-malware-new-tricks",
                     "http://www.isightpartners.com/2015/02/codoso/#sthash.VJMDVPQB.dpuf",
                     "http://researchcenter.paloaltonetworks.com/2016/01/new-attacks-linked-to-c0d0s0-group/",
-                    "https://www.nytimes.com/2016/06/12/technology/the-chinese-hackers-in-the-back-office.html"
+                    "https://www.nytimes.com/2016/06/12/technology/the-chinese-hackers-in-the-back-office.html",
+                    "https://www.ncsc.gov.uk/content/files/protected_files/article_files/Joint%20report%20on%20publicly%20available%20hacking%20tools%20%28NCSC%29.pdf"
                 ],
                 "synonyms": [
                     "C0d0so",
@@ -175,7 +189,9 @@ let actors = {
         {
             "meta": {
                 "refs": [
-                    "https://www.cylance.com/hubfs/2015_cylance_website/assets/operation-dust-storm/Op_Dust_Storm_Report.pdf"
+                    "https://www.cylance.com/content/dam/cylance/pdfs/reports/Op_Dust_Storm_Report.pdf",
+                    "https://www.symantec.com/connect/blogs/inside-back-door-attack",
+                    "https://attack.mitre.org/groups/G0031/"
                 ]
             },
             "related": [
@@ -197,6 +213,7 @@ let actors = {
         {
             "description": "Adversary targeting dissident groups in China and its surroundings.",
             "meta": {
+                "attribution-confidence": "50",
                 "country": "China",
                 "refs": [
                     "http://www.rsaconference.com/writable/presentations/file_upload/anf-t07b-the-art-of-attribution-identifying-and-pursuing-your-cyber-adversaries_final.pdf"
@@ -211,6 +228,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "country": "China",
                 "synonyms": [
                     "temp.bottle"
@@ -225,6 +243,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "country": "China",
                 "refs": [
                     "http://go.crowdstrike.com/rs/281-OBQ-266/images/ReportGlobalThreatIntelligence.pdf"
@@ -240,6 +259,7 @@ let actors = {
         {
             "description": "Adversary group targeting telecommunication and technology organizations.",
             "meta": {
+                "attribution-confidence": "50",
                 "country": "China",
                 "refs": [
                     "https://files.sans.org/summit/Threat_Hunting_Incident_Response_Summit_2016/PDFs/Detecting-and-Responding-to-Pandas-and-Bears-Christopher-Scott-CrowdStrike-and-Wendi-Whitmore-IBM.pdf"
@@ -254,6 +274,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "country": "China",
                 "refs": [
                     "http://go.crowdstrike.com/rs/281-OBQ-266/images/ReportGlobalThreatIntelligence.pdf"
@@ -268,6 +289,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "country": "China",
                 "refs": [
                     "http://files.sans.org/summit/Threat_Hunting_Incident_Response_Summit_2016/PDFs/Detecting-and-Responding-to-Pandas-and-Bears-Christopher-Scott-CrowdStrike-and-Wendi-Whitmore-IBM.pdf"
@@ -282,6 +304,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "country": "China",
                 "refs": [
                     "http://go.crowdstrike.com/rs/281-OBQ-266/images/ReportGlobalThreatIntelligence.pdf"
@@ -296,6 +319,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "country": "China",
                 "refs": [
                     "http://files.sans.org/summit/Threat_Hunting_Incident_Response_Summit_2016/PDFs/Detecting-and-Responding-to-Pandas-and-Bears-Christopher-Scott-CrowdStrike-and-Wendi-Whitmore-IBM.pdf"
@@ -324,6 +348,7 @@ let actors = {
         {
             "description": "Putter Panda were the subject of an extensive report by CrowdStrike, which stated: 'The CrowdStrike Intelligence team has been tracking this particular unit since2012, under the codename PUTTER PANDA, and has documented activity dating back to 2007. The report identifies Chen Ping, aka cpyy, and the primary location of Unit 61486.'",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "China",
                 "cfr-suspected-victims": [
                     "U.S. satellite and aerospace sector"
@@ -370,6 +395,7 @@ let actors = {
         {
             "description": "Symantec described UPS in  2016 report as: 'Buckeye (also known as APT3, Gothic Panda, UPS Team, and TG-0110) is a cyberespionage group that is believed to have been operating for well over half a decade. Traditionally, the group attacked organizations in the US as well as other targets. However, Buckeyes focus appears to have changed as of June 2015, when the group began compromising political entities in Hong Kong.'",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "China",
                 "cfr-suspected-victims": [
                     "United States",
@@ -420,6 +446,7 @@ let actors = {
         {
             "description": "Kaspersky described DarkHotel in a 2014 report as: '... DarkHotel drives its campaigns by spear-phishing targets with highly advanced Flash zero-day exploits that effectively evade the latest Windows and Adobe defenses, and yet they also imprecisely spread among large numbers of vague targets with peer-to-peer spreading tactics. Moreover, this crews most unusual characteristic is that for several years the Darkhotel APT has maintained a capability to use hotel networks to follow and hit selected targets as they travel around the world.'",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "Korea (Republic of)",
                 "cfr-suspected-victims": [
                     "Japan",
@@ -432,14 +459,17 @@ let actors = {
                     "Private sector"
                 ],
                 "cfr-type-of-incident": "Espionage",
-                "country": "Korea, Democratic People's Republic of",
+                "country": "Korea, Republic of",
                 "refs": [
                     "https://securelist.com/blog/research/71713/darkhotels-attacks-in-2015/",
                     "https://blogs.technet.microsoft.com/mmpc/2016/06/09/reverse-engineering-dubnium-2",
                     "https://securelist.com/blog/research/66779/the-darkhotel-apt/",
+                    "https://securelist.com/the-darkhotel-apt/66779/",
                     "http://drops.wooyun.org/tips/11726",
                     "https://labs.bitdefender.com/wp-content/uploads/downloads/inexsmar-an-unusual-darkhotel-campaign/",
-                    "https://www.cfr.org/interactive/cyber-operations/darkhotel"
+                    "https://www.cfr.org/interactive/cyber-operations/darkhotel",
+                    "https://www.securityweek.com/darkhotel-apt-uses-new-methods-target-politicians",
+                    "https://attack.mitre.org/groups/G0012/"
                 ],
                 "synonyms": [
                     "DUBNIUM",
@@ -447,8 +477,12 @@ let actors = {
                     "Karba",
                     "Luder",
                     "Nemim",
+                    "Nemin",
                     "Tapaoux",
-                    "Pioneer"
+                    "Pioneer",
+                    "Shadow Crane",
+                    "APT-C-06",
+                    "SIG25"
                 ]
             },
             "related": [
@@ -463,7 +497,7 @@ let actors = {
             "uuid": "b8c8b96d-61e6-47b1-8e38-fd8ad5d9854d",
             "value": "DarkHotel",
             "aptmap": {
-                "operatingFrom": "PRK",
+                "operatingFrom": "KOR",
                 "victims": [
                     "JPN",
                     "RUS",
@@ -476,6 +510,7 @@ let actors = {
         {
             "description": "A group of China-based attackers, who conducted a number of spear phishing attacks in 2013.",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "China",
                 "cfr-suspected-victims": [
                     "Taiwan",
@@ -489,7 +524,8 @@ let actors = {
                 "country": "China",
                 "refs": [
                     "http://www.crowdstrike.com/blog/whois-numbered-panda/",
-                    "https://www.cfr.org/interactive/cyber-operations/apt-12"
+                    "https://www.cfr.org/interactive/cyber-operations/apt-12",
+                    "https://www.fireeye.com/blog/threat-research/2014/09/darwins-favorite-apt-group-2.html"
                 ],
                 "synonyms": [
                     "Numbered Panda",
@@ -524,7 +560,9 @@ let actors = {
             }
         },
         {
+            "description": "Between November 26, 2015, and December 1, 2015, known and suspected China-based APT groups launched several spear-phishing attacks targeting Japanese and Taiwanese organizations in the high-tech, government services, media and financial services industries. Each campaign delivered a malicious Microsoft Word document exploiting the aforementioned EPS dict copy use-after-free vulnerability, and the local Windows privilege escalation vulnerability CVE-2015-1701. The successful exploitation of both vulnerabilities led to the delivery of either a downloader that we refer to as IRONHALO, or a backdoor that we refer to as ELMER.",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "China",
                 "cfr-suspected-victims": [
                     "Japan",
@@ -538,6 +576,10 @@ let actors = {
                 "refs": [
                     "https://www.fireeye.com/blog/threat-research/2015/12/the_eps_awakens.html",
                     "https://www.cfr.org/interactive/cyber-operations/apt-16"
+                ],
+                "synonyms": [
+                    "APT16",
+                    "SVCMONDR"
                 ]
             },
             "uuid": "1f73e14f-b882-4032-a565-26dc653b0daf",
@@ -553,6 +595,7 @@ let actors = {
         {
             "description": "FireEye described APT17 in a 2015 report as: 'APT17, also known as DeputyDog, is a China based threat group that FireEye Intelligence has observed conducting network intrusions against U.S. government entities, the defense industry, law firms, information technology companies, mining companies, and non-government organizations.'",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "China",
                 "cfr-suspected-victims": [
                     "United States"
@@ -567,7 +610,11 @@ let actors = {
                 "refs": [
                     "http://www.fireeye.com/blog/technical/cyber-exploits/2013/09/operation-deputydog-zero-day-cve-2013-3893-attack-against-japanese-targets.html",
                     "http://www.symantec.com/content/en/us/enterprise/media/security_response/whitepapers/hidden_lynx.pdf",
-                    "https://www.cfr.org/interactive/cyber-operations/apt-17"
+                    "https://www.cfr.org/interactive/cyber-operations/apt-17",
+                    "https://blog.bit9.com/2013/02/08/bit9-and-our-customers-security/",
+                    "https://www.symantec.com/connect/blogs/security-vendors-take-action-against-hidden-lynx-malware",
+                    "https://www.symantec.com/connect/blogs/hidden-lynx-professional-hackers-hire",
+                    "https://www.recordedfuture.com/hidden-lynx-analysis/"
                 ],
                 "synonyms": [
                     "APT 17",
@@ -575,7 +622,8 @@ let actors = {
                     "Group 8",
                     "APT17",
                     "Hidden Lynx",
-                    "Tailgater Team"
+                    "Tailgater Team",
+                    "Dogfish"
                 ]
             },
             "related": [
@@ -620,6 +668,7 @@ let actors = {
         {
             "description": "Wekby was described by Palo Alto Networks in a 2015 report as: 'Wekby is a group that has been active for a number of years, targeting various industries such as healthcare, telecommunications, aerospace, defense, and high tech. The group is known to leverage recently released exploits very shortly after those exploits are available, such as in the case of HackingTeams Flash zero - day exploit.'",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "China",
                 "cfr-suspected-victims": [
                     "United States"
@@ -684,7 +733,9 @@ let actors = {
                     "http://www.trendmicro.com/cloud-content/us/pdfs/security-intelligence/white-papers/wp-operation-tropic-trooper.pdf"
                 ],
                 "synonyms": [
-                    "Operation Tropic Trooper"
+                    "Operation Tropic Trooper",
+                    "Operation TropicTrooper",
+                    "TropicTrooper"
                 ]
             },
             "uuid": "4fd409a9-db86-46a5-bdf2-b6c8ee397a89",
@@ -697,6 +748,7 @@ let actors = {
         {
             "description": "The Winnti grouping of activity is large and may actually be a number of linked groups rather than a single discrete entity. Kaspersky describe Winnti as: 'The Winnti group has been attacking companies in the online video game industry since 2009 and is currently still active. The groups objectives are stealing digital certificates signed by legitimate software vendors in addition to intellectual property theft, including the source code of online game projects. The majority of the victims are from South East Asia.'",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "China",
                 "cfr-suspected-victims": [
                     "United States",
@@ -793,6 +845,7 @@ let actors = {
         {
             "description": "Adversary group targeting financial, technology, non-profit organisations.",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "China",
                 "cfr-suspected-victims": [
                     "United States"
@@ -806,7 +859,25 @@ let actors = {
                 "refs": [
                     "http://cybercampaigns.net/wp-content/uploads/2013/06/Deep-Panda.pdf",
                     "http://www.rsaconference.com/writable/presentations/file_upload/anf-t07b-the-art-of-attribution-identifying-and-pursuing-your-cyber-adversaries_final.pdf",
-                    "https://www.cfr.org/interactive/cyber-operations/deep-panda"
+                    "https://www.cfr.org/interactive/cyber-operations/deep-panda",
+                    "https://eromang.zataz.com/2012/12/29/attack-and-ie-0day-informations-used-against-council-on-foreign-relations/",
+                    "https://eromang.zataz.com/2013/01/02/capstone-turbine-corporation-also-targeted-in-the-cfr-watering-hole-attack-and-more/",
+                    "https://www.crowdstrike.com/blog/department-labor-strategic-web-compromise/",
+                    "https://www.crowdstrike.com/blog/deep-thought-chinese-targeting-national-security-think-tanks/",
+                    "https://krebsonsecurity.com/2015/06/catching-up-on-the-opm-breach/",
+                    "https://krebsonsecurity.com/2015/02/anthem-breach-may-have-started-in-april-2014/",
+                    "https://www.nextgov.com/cybersecurity/2015/05/third-party-software-was-entry-point-background-check-system-hack/112354/",
+                    "https://www.crowdstrike.com/blog/ironman-deep-panda-uses-sakula-malware-target-organizations-multiple-sectors/",
+                    "https://www.abc.net.au/news/2014-11-13/g20-china-affliliated-hackers-breaches-australian-media/5889442",
+                    "https://www.washingtonpost.com/business/economy/keypoint-suffers-network-breach-thousands-of-fed-workers-could-be-affected/2014/12/18/e6c7146c-86e1-11e4-a702-fa31ff4ae98e_story.html",
+                    "https://www.seattletimes.com/business/local-business/feds-warned-premera-about-security-flaws-before-breach/",
+                    "https://krebsonsecurity.com/2015/05/carefirst-blue-cross-breach-hits-1-1m/",
+                    "https://threatvector.cylance.com/en_us/home/shell-crew-variants-continue-to-fly-under-big-avs-radar.html",
+                    "https://www.bleepingcomputer.com/news/security/us-arrests-chinese-man-involved-with-sakula-malware-used-in-opm-and-anthem-hacks/",
+                    "https://gizmodo.com/u-s-indicts-chinese-hacker-spies-in-conspiracy-to-stea-1830111695",
+                    "https://www.cyberscoop.com/anthem-breach-indictment-chinese-national/",
+                    "https://www.symantec.com/content/en/us/enterprise/media/security_response/whitepapers/the-black-vine-cyberespionage-group.pdf",
+                    "https://attack.mitre.org/groups/G0009/"
                 ],
                 "synonyms": [
                     "Deep Panda",
@@ -854,6 +925,7 @@ let actors = {
         {
             "description": "Kaspersky described Naikon in a 2015 report as: 'The Naikon group is mostly active in countries such as the Philippines, Malaysia, Cambodia, Indonesia, Vietnam, Myanmar, Singapore, and Nepal, hitting a variety of targets in a very opportunistic way.'",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "China",
                 "cfr-suspected-victims": [
                     "India",
@@ -879,7 +951,7 @@ let actors = {
                 "country": "China",
                 "refs": [
                     "https://securelist.com/analysis/publications/69953/the-naikon-apt/",
-                    "http://www.fireeye.com/blog/technical/malware-research/2014/03/spear-phishing-the-news-cycle-apt-actors-leverage-interest-in-the-disappearance-of-malaysian-flight-mh-370.html",
+                    "https://www.fireeye.com/blog/threat-research/2014/03/spear-phishing-the-news-cycle-apt-actors-leverage-interest-in-the-disappearance-of-malaysian-flight-mh-370.html",
                     "https://www.cfr.org/interactive/cyber-operations/apt-30"
                 ],
                 "synonyms": [
@@ -946,6 +1018,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "China",
                 "cfr-suspected-victims": [
                     "Japan",
@@ -964,12 +1037,15 @@ let actors = {
                 "refs": [
                     "https://securelist.com/blog/research/70726/the-spring-dragon-apt/",
                     "https://securelist.com/spring-dragon-updated-activity/79067/",
-                    "https://www.cfr.org/interactive/cyber-operations/lotus-blossom"
+                    "https://www.cfr.org/interactive/cyber-operations/lotus-blossom",
+                    "https://unit42.paloaltonetworks.com/operation-lotus-blossom/",
+                    "https://www.accenture.com/t00010101T000000Z__w__/gb-en/_acnmedia/PDF-46/Accenture-Security-Elise-Threat-Analysis.pdf"
                 ],
                 "synonyms": [
                     "Spring Dragon",
                     "ST Group",
-                    "Eslie"
+                    "Esile",
+                    "DRAGONFISH"
                 ]
             },
             "related": [
@@ -997,6 +1073,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "country": "China",
                 "refs": [
                     "http://www.crowdstrike.com/blog/rhetoric-foreshadows-cyber-activity-in-the-south-china-sea/"
@@ -1044,6 +1121,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "country": "China",
                 "refs": [
                     "http://www.crowdstrike.com/blog/cyber-deterrence-in-action-a-story-of-one-long-hurricane-panda-campaign/"
@@ -1086,6 +1164,7 @@ let actors = {
         {
             "description": "A China-based actor that targets foreign embassies to collect data on government, defence, and technology sectors.",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "Unknown",
                 "cfr-suspected-victims": [
                     "United States",
@@ -1124,7 +1203,8 @@ let actors = {
                     "HIPPOTeam",
                     "APT27",
                     "Operation Iron Tiger",
-                    "Iron Tiger APT"
+                    "Iron Tiger APT",
+                    "BRONZE UNION"
                 ]
             },
             "related": [
@@ -1172,6 +1252,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "China",
                 "cfr-suspected-victims": [
                     "Japan",
@@ -1198,12 +1279,15 @@ let actors = {
                 "country": "China",
                 "refs": [
                     "http://researchcenter.paloaltonetworks.com/2017/02/unit42-menupass-returns-new-malware-new-attacks-japanese-academics-organizations/",
-                    "https://www.cfr.org/interactive/cyber-operations/apt-10"
+                    "https://www.cfr.org/interactive/cyber-operations/apt-10",
+                    "https://www.ncsc.gov.uk/content/files/protected_files/article_files/Joint%20report%20on%20publicly%20available%20hacking%20tools%20%28NCSC%29.pdf",
+                    "https://www.pwc.co.uk/cyber-security/pdf/cloud-hopper-report-final-v4.pdf"
                 ],
                 "synonyms": [
                     "APT10",
                     "APT 10",
                     "MenuPass",
+                    "Menupass Team",
                     "happyyongzi",
                     "POTASSIUM",
                     "DustStorm",
@@ -1248,6 +1332,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "country": "China",
                 "refs": [
                     "https://otx.alienvault.com/pulse/55bbc68e67db8c2d547ae393/"
@@ -1269,6 +1354,7 @@ let actors = {
         {
             "description": "This threat actor uses spear-phishing techniques to compromise diplomatic targets in Southeast Asia, India, and the United States. It also seems to have targeted the APT 30. Possibly uses the same infrastructure as Mirage",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "China",
                 "cfr-suspected-victims": [
                     "Malaysia",
@@ -1284,7 +1370,9 @@ let actors = {
                 "country": "China",
                 "refs": [
                     "https://securelist.com/analysis/publications/69567/the-chronicles-of-the-hellsing-apt-the-empire-strikes-back/",
-                    "https://www.cfr.org/interactive/cyber-operations/hellsing"
+                    "https://www.cfr.org/interactive/cyber-operations/hellsing",
+                    "https://www.crowdstrike.com/blog/meet-crowdstrikes-adversary-of-the-month-for-august-goblin-panda/",
+                    "https://www.fortinet.com/blog/threat-research/cta-security-playbook--goblin-panda.html"
                 ],
                 "synonyms": [
                     "Goblin Panda",
@@ -1306,6 +1394,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "country": "China",
                 "refs": [
                     "https://kc.mcafee.com/corporate/index?page=content&id=KB71150"
@@ -1330,6 +1419,7 @@ let actors = {
         {
             "description": "This threat actor uses phishing techniques to compromise the networks of foreign ministries of European countries for espionage purposes.",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "China",
                 "cfr-suspected-victims": [
                     "European Union",
@@ -1371,8 +1461,9 @@ let actors = {
             }
         },
         {
-            "description": "PLA Navy",
+            "description": "PLA Navy\nAnchor Panda is an adversary that CrowdStrike has tracked extensively over the last year targeting both civilian and military maritime operations in the green/brown water regions primarily in the area of operations of the South Sea Fleet of the PLA Navy. In addition to maritime operations in this region, Anchor Panda also heavily targeted western companies in the US, Germany, Sweden, the UK, and Australia, and other countries involved in maritime satellite systems, aerospace companies, and defense contractors. \nNot surprisingly, embassies and diplomatic missions in the region, foreign intelligence services, and foreign governments with space programs were also targeted.",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "China",
                 "cfr-suspected-victims": [
                     "United States",
@@ -1399,6 +1490,43 @@ let actors = {
                     "ALUMINUM"
                 ]
             },
+            "related": [
+                {
+                    "dest-uuid": "255a59a7-db2d-44fc-9ca9-5859b65817c3",
+                    "tags": [
+                        "estimative-language:likelihood-probability=\"likely\""
+                    ],
+                    "type": "uses"
+                },
+                {
+                    "dest-uuid": "cb8c8253-4024-4cc9-8989-b4a5f95f6c2f",
+                    "tags": [
+                        "estimative-language:likelihood-probability=\"likely\""
+                    ],
+                    "type": "uses"
+                },
+                {
+                    "dest-uuid": "4e104fef-8a2c-4679-b497-6e86d7d47db0",
+                    "tags": [
+                        "estimative-language:likelihood-probability=\"likely\""
+                    ],
+                    "type": "uses"
+                },
+                {
+                    "dest-uuid": "2abe89de-46dd-4dae-ae22-b49a593aff54",
+                    "tags": [
+                        "estimative-language:likelihood-probability=\"likely\""
+                    ],
+                    "type": "uses"
+                },
+                {
+                    "dest-uuid": "32a67552-3b31-47bb-8098-078099bbc813",
+                    "tags": [
+                        "estimative-language:likelihood-probability=\"likely\""
+                    ],
+                    "type": "uses"
+                }
+            ],
             "uuid": "c82c904f-b3b4-40a2-bf0d-008912953104",
             "value": "Anchor Panda",
             "aptmap": {
@@ -1414,6 +1542,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "China",
                 "cfr-suspected-victims": [
                     "Mongolia",
@@ -1472,6 +1601,7 @@ let actors = {
         {
             "description": "Operate since at least 2011, from several locations in China, with  members in Korea and Japan as well. Possibly linked to Onion Dog. This threat actor targets government institutions, military contractors, maritime and shipbuilding groups, telecommunications operators, and others, primarily in Japan and South Korea.",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "China",
                 "cfr-suspected-victims": [
                     "South Korea",
@@ -1512,6 +1642,7 @@ let actors = {
         {
             "description": "The Pitty Tiger group has been active since at least 2011. They have been seen using HeartBleed vulnerability in order to directly get valid credentials",
             "meta": {
+                "attribution-confidence": "50",
                 "country": "China",
                 "refs": [
                     "http://blog.airbuscybersecurity.com/post/2014/07/The-Eye-of-the-Tiger2"
@@ -1552,6 +1683,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "China",
                 "cfr-suspected-victims": [
                     "United States",
@@ -1572,10 +1704,15 @@ let actors = {
                 "cfr-type-of-incident": "Espionage",
                 "country": "China",
                 "refs": [
-                    "https://www.cfr.org/interactive/cyber-operations/sneaky-panda"
+                    "https://www.cfr.org/interactive/cyber-operations/sneaky-panda",
+                    "https://www.symantec.com/content/en/us/enterprise/media/security_response/whitepapers/the-elderwood-project.pdf",
+                    "https://attack.mitre.org/groups/G0066/"
                 ],
                 "synonyms": [
-                    "Sneaky Panda"
+                    "Sneaky Panda",
+                    "Elderwood",
+                    "Elderwood Gang",
+                    "SIG22"
                 ]
             },
             "related": [
@@ -1607,6 +1744,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "country": "China",
                 "synonyms": [
                     "Shrouded Crossbow"
@@ -1621,6 +1759,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "country": "China",
                 "refs": [
                     "http://researchcenter.paloaltonetworks.com/2015/09/chinese-actors-use-3102-malware-in-attacks-on-us-government-and-eu-media/"
@@ -1635,6 +1774,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "China",
                 "cfr-suspected-victims": [
                     "United States",
@@ -1697,6 +1837,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "country": "China"
             },
             "uuid": "b56ecbda-6b2a-4aa9-b592-d9a0bc810ec1",
@@ -1707,7 +1848,9 @@ let actors = {
             }
         },
         {
+            "description": "We\u2019ve uncovered some new data and likely attribution regarding a series of APT watering hole attacks this past summer. Watering hole attacks are an increasingly popular component of APT campaigns, as many people are more aware of spear phishing and are less likely to open documents or click on links in unsolicited emails. Watering hole attacks offer a much better chance of success because they involve compromising legitimate websites and installing malware intended to compromise website visitors. These are often popular websites frequented by people who work in specific industries or have political sympathies to which the actors want to gain access.\nIn contrast to many other APT campaigns, which tend to rely heavily on spear phishing to gain victims, \u201cth3bug\u201d is known for compromising legitimate websites their intended visitors are likely to frequent. Over the summer they compromised several sites, including a well-known Uyghur website written in that native language.",
             "meta": {
+                "attribution-confidence": "50",
                 "country": "China",
                 "refs": [
                     "http://researchcenter.paloaltonetworks.com/2014/09/recent-watering-hole-attacks-attributed-apt-group-th3bug-using-poison-ivy/"
@@ -1730,6 +1873,7 @@ let actors = {
         {
             "description": "A group targeting dissident groups in China and at the boundaries.",
             "meta": {
+                "attribution-confidence": "50",
                 "country": "China",
                 "refs": [
                     "http://www.rsaconference.com/writable/presentations/file_upload/anf-t07b-the-art-of-attribution-identifying-and-pursuing-your-cyber-adversaries_final.pdf"
@@ -1745,6 +1889,7 @@ let actors = {
         {
             "description": "China-based cyber threat group. It has previously used newsworthy events as lures to deliver malware and has primarily targeted organizations involved in financial, economic, and trade policy, typically using publicly available RATs such as PoisonIvy, as well as some non-public backdoors. This threat actor targets prodemocratic activists and organizations in Hong Kong, European and international financial institutions, and a U.S.-based think tank.",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "China",
                 "cfr-suspected-victims": [
                     "Hong Kong",
@@ -1790,6 +1935,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "country": "China",
                 "refs": [
                     "https://community.rapid7.com/community/infosec/blog/2013/06/07/keyboy-targeted-attacks-against-vietnam-and-india",
@@ -1810,6 +1956,7 @@ let actors = {
         {
             "description": "Activity: defense and aerospace sectors, also interested in targeting entities in the oil/gas industry.",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "Iran (Islamic Republic of)",
                 "cfr-suspected-victims": [
                     "United States",
@@ -1913,7 +2060,8 @@ let actors = {
         {
             "description": "While tracking a suspected Iran-based threat group known as Threat Group-2889[1] (TG-2889), Dell SecureWorks Counter Threat Unit\u2122 (CTU) researchers uncovered a network of fake LinkedIn profiles. These convincing profiles form a self-referenced network of seemingly established LinkedIn users. CTU researchers assess with high confidence the purpose of this network is to target potential victims through social engineering. Most of the legitimate LinkedIn accounts associated with the fake accounts belong to individuals in the Middle East, and CTU researchers assess with medium confidence that these individuals are likely targets of TG-2889. One of the threat actors responsible for the denial of service attacks against U.S in 2012\u20132013. Three individuals associated with the group\u2014believed to be have been working on behalf of Iran\u2019s Islamic Revolutionary Guard Corps\u2014were indicted by the Justice Department in 2016. ",
             "meta": {
-                "cfr-suspected-state-sponsor": " Iran (Islamic Republic of)",
+                "attribution-confidence": "50",
+                "cfr-suspected-state-sponsor": "Iran (Islamic Republic of)",
                 "cfr-suspected-victims": [
                     "Bank of America",
                     "US Bancorp",
@@ -2005,6 +2153,7 @@ let actors = {
         {
             "description": "Charming Kitten (aka Parastoo, aka Newscaster) is an group with a suspected nexus to Iran that targets organizations involved in government, defense technology, military, and diplomacy sectors.",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "Iran (Islamic Republic of)",
                 "cfr-suspected-victims": [
                     "U.S. government/defense sector websites",
@@ -2022,21 +2171,31 @@ let actors = {
                 "refs": [
                     "https://en.wikipedia.org/wiki/Operation_Newscaster",
                     "https://iranthreats.github.io/resources/macdownloader-macos-malware/",
-                    "https://www.isightpartners.com/2014/05/newscaster-iranian-threat-inside-social-media/",
+                    "https://paper.seebug.org/papers/APT/APT_CyberCriminal_Campagin/2014/2014.05.28.NewsCaster_An_Iranian_Threat_Within_Social_Networks/file-2581720763-pdf.pdf",
                     "https://www.forbes.com/sites/thomasbrewster/2017/07/27/iran-hackers-oilrig-use-fake-personas-on-facebook-linkedin-for-cyberespionage/",
                     "https://cryptome.org/2012/11/parastoo-hacks-iaea.htm",
                     "https://securelist.com/files/2017/03/Report_Shamoon_StoneDrill_final.pdf",
                     "https://securelist.com/blog/software/74503/freezer-paper-around-free-meat/",
                     "https://www.verfassungsschutz.de/download/broschuere-2016-10-bfv-cyber-brief-2016-04.pdf",
-                    "https://github.com/gasgas4/APT_CyberCriminal_Campagin/tree/master/2014/2014.05.28.NewsCaster_An_Iranian_Threat_Within_Social_Networks",
-                    "https://www.cfr.org/interactive/cyber-operations/newscaster"
+                    "https://www.cfr.org/interactive/cyber-operations/newscaster",
+                    "https://www.washingtontimes.com/news/2014/may/29/iranian-hackers-sucker-punch-us-defense-heads-crea/",
+                    "https://securelist.com/freezer-paper-around-free-meat/74503/",
+                    "https://www.scmagazine.com/home/security-news/cybercrime/hbo-breach-accomplished-with-hard-work-by-hacker-poor-security-practices-by-victim/",
+                    "http://www.arabnews.com/node/1195681/media",
+                    "https://cyware.com/news/iranian-apt-charming-kitten-impersonates-clearsky-the-security-firm-that-uncovered-its-campaigns-7fea0b4f",
+                    "https://blog.certfa.com/posts/the-return-of-the-charming-kitten/",
+                    "https://www.justice.gov/opa/pr/former-us-counterintelligence-agent-charged-espionage-behalf-iran-four-iranians-charged-cyber",
+                    "https://blogs.microsoft.com/on-the-issues/2019/03/27/new-steps-to-protect-customers-from-hacking/",
+                    "https://www.clearskysec.com/wp-content/uploads/2017/12/Charming_Kitten_2017.pdf",
+                    "https://attack.mitre.org/groups/G0058/"
                 ],
                 "synonyms": [
                     "Newscaster",
                     "Parastoo",
                     "iKittens",
                     "Group 83",
-                    "Newsbeef"
+                    "Newsbeef",
+                    "NewsBeef"
                 ]
             },
             "related": [
@@ -2127,11 +2286,16 @@ let actors = {
         {
             "description": "Our analysis reveals that APT33 is a capable group that has carried out cyber espionage operations since at least 2013. We assess APT33 works at the behest of the Iranian government.",
             "meta": {
+                "attribution-confidence": "50",
                 "country": "Iran, Islamic Republic of",
                 "refs": [
                     "https://www.fireeye.com/blog/threat-research/2017/09/apt33-insights-into-iranian-cyber-espionage.html"
                 ],
-                "synonyms": []
+                "synonyms": [
+                    "APT 33",
+                    "Elfin",
+                    "MAGNALLIUM"
+                ]
             },
             "related": [
                 {
@@ -2159,6 +2323,7 @@ let actors = {
         {
             "description": "Earliest activity back to November 2008. An established group of cyber attackers based in Iran, who carried on several campaigns in 2013, including a series of attacks targeting political dissidents and those supporting Iranian political opposition.",
             "meta": {
+                "attribution-confidence": "50",
                 "country": "Iran, Islamic Republic of",
                 "refs": [
                     "http://www.scmagazineuk.com/iran-and-russia-blamed-for-state-sponsored-espionage/article/330401/"
@@ -2177,6 +2342,7 @@ let actors = {
         {
             "description": "Targets Saudi Arabia, Israel, US, Iran, high ranking defense officials, embassies of various target countries, notable Iran researchers, human rights activists, media and journalists, academic institutions and various scholars, including scientists in the fields of physics and nuclear sciences.",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "Iran (Islamic Republic of)",
                 "cfr-suspected-victims": [
                     "Saudi Arabia",
@@ -2311,6 +2477,7 @@ let actors = {
         {
             "description": "A group of cyber actors utilizing infrastructure located in Iran have been conducting computer network exploitation activity against public and private U.S. organizations, including Cleared Defense Contractors (CDCs), academic institutions, and energy sector companies. This threat actor targets entities in the government, energy, and technology sectors that are located in or do business with Saudi Arabia.",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "Iran (Islamic Republic of)",
                 "cfr-suspected-victims": [
                     "Canada",
@@ -2452,6 +2619,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "country": "Iran, Islamic Republic of"
             },
             "uuid": "1de1a64e-ea14-4e79-9e41-6958bdb6c0ff",
@@ -2464,6 +2632,7 @@ let actors = {
         {
             "description": "This is a pro-Islamist organization that generally conducts attacks motivated by real world events in which its members believe that members of the Muslim faith were wronged. Its attacks generally involve website defacements; however, the group did develop a RAT that it refers to as Fallaga RAT, but which appears to simply be a fork of the njRAT malware popular amongst hackers in the Middle East/North Africa region.",
             "meta": {
+                "attribution-confidence": "50",
                 "country": "Tunisia",
                 "motive": "Hacktivism-Nationalist",
                 "synonyms": [
@@ -2479,6 +2648,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "country": "United Arab Emirates",
                 "synonyms": [
                     "Vikingdom"
@@ -2494,6 +2664,7 @@ let actors = {
         {
             "description": "The Sofacy Group (also known as APT28, Pawn Storm, Fancy Bear and Sednit) is a cyber espionage group believed to have ties to the Russian government. Likely operating since 2007, the group is known to target government, military, and security organizations. It has been characterized as an advanced persistent threat.",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "Russian Federation",
                 "cfr-suspected-victims": [
                     "Georgia",
@@ -2538,7 +2709,8 @@ let actors = {
                     "https://www.cfr.org/interactive/cyber-operations/apt-28",
                     "https://blogs.microsoft.com/on-the-issues/2018/08/20/we-are-taking-new-steps-against-broadening-threats-to-democracy/",
                     "https://www.bleepingcomputer.com/news/security/microsoft-disrupts-apt28-hacking-campaign-aimed-at-us-midterm-elections/",
-                    "https://www.bleepingcomputer.com/news/security/apt28-uses-lojax-first-uefi-rootkit-seen-in-the-wild/"
+                    "https://www.bleepingcomputer.com/news/security/apt28-uses-lojax-first-uefi-rootkit-seen-in-the-wild/",
+                    "https://www.accenture.com/us-en/blogs/blogs-snakemackerel-delivers-zekapab-malware"
                 ],
                 "synonyms": [
                     "APT 28",
@@ -2547,6 +2719,7 @@ let actors = {
                     "PawnStorm",
                     "Fancy Bear",
                     "Sednit",
+                    "SNAKEMACKEREL",
                     "TsarTeam",
                     "Tsar Team",
                     "TG-4127",
@@ -2608,6 +2781,7 @@ let actors = {
         {
             "description": "A 2015 report by F-Secure describe APT29 as: 'The Dukes are a well-resourced, highly dedicated and organized cyberespionage group that we believe has been working for the Russian Federation since at least 2008 to collect intelligence in support of foreign and security policy decision-making. The Dukes show unusual confidence in their ability to continue successfully compromising their targets, as well as in their ability to operate with impunity. The Dukes primarily target Western governments and related organizations, such as government ministries and agencies, political think tanks, and governmental subcontractors. Their targets have also included the governments of members of the Commonwealth of Independent States;Asian, African, and Middle Eastern governments;organizations associated with Chechen extremism;and Russian speakers engaged in the illicit trade of controlled substances and drugs. The Dukes are known to employ a vast arsenal of malware toolsets, which we identify as MiniDuke, CosmicDuke, OnionDuke, CozyDuke, CloudDuke, SeaDuke, HammerDuke, PinchDuke, and GeminiDuke. In recent years, the Dukes have engaged in apparently biannual large - scale spear - phishing campaigns against hundreds or even thousands of recipients associated with governmental institutions and affiliated organizations. These campaigns utilize a smash - and - grab approach involving a fast but noisy breakin followed by the rapid collection and exfiltration of as much data as possible.If the compromised target is discovered to be of value, the Dukes will quickly switch the toolset used and move to using stealthier tactics focused on persistent compromise and long - term intelligence gathering. This threat actor targets government ministries and agencies in the West, Central Asia, East Africa, and the Middle East; Chechen extremist groups; Russian organized crime; and think tanks. It is suspected to be behind the 2015 compromise of unclassified networks at the White House, Department of State, Pentagon, and the Joint Chiefs of Staff. The threat actor includes all of the Dukes tool sets, including MiniDuke, CosmicDuke, OnionDuke, CozyDuke, SeaDuke, CloudDuke (aka MiniDionis), and HammerDuke (aka Hammertoss). '",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "Russian Federation",
                 "cfr-suspected-victims": [
                     "United States",
@@ -2637,7 +2811,9 @@ let actors = {
                     "https://www2.fireeye.com/rs/848-DID-242/images/rpt-apt29-hammertoss.pdf",
                     "https://www.us-cert.gov/sites/default/files/publications/AR-17-20045_Enhanced_Analysis_of_GRIZZLY_STEPPE_Activity.pdf",
                     "https://www.fireeye.com/blog/threat-research/2017/03/dissecting_one_ofap.html",
-                    "https://www.cfr.org/interactive/cyber-operations/dukes"
+                    "https://www.cfr.org/interactive/cyber-operations/dukes",
+                    "https://pylos.co/2018/11/18/cozybear-in-from-the-cold/",
+                    "https://cloudblogs.microsoft.com/microsoftsecure/2018/12/03/analysis-of-cyberattack-on-u-s-think-tanks-non-profits-public-sector-by-unidentified-attackers/"
                 ],
                 "synonyms": [
                     "Dukes",
@@ -2655,7 +2831,10 @@ let actors = {
                     "The Dukes",
                     "Minidionis",
                     "SeaDuke",
-                    "Hammer Toss"
+                    "Hammer Toss",
+                    "YTTRIUM",
+                    "Iron Hemlock",
+                    "Grizzly Steppe"
                 ]
             },
             "related": [
@@ -2693,6 +2872,7 @@ let actors = {
         {
             "description": "A 2014 Guardian article described Turla as: 'Dubbed the Turla hackers, initial intelligence had indicated western powers were key targets, but it was later determined embassies for Eastern Bloc nations were of more interest. Embassies in Belgium, Ukraine, China, Jordan, Greece, Kazakhstan, Armenia, Poland, and Germany were all attacked, though researchers from Kaspersky Lab and Symantec could not confirm which countries were the true targets. In one case from May 2012, the office of the prime minister of a former Soviet Union member country was infected, leading to 60 further computers being affected, Symantec researchers said. There were some other victims, including the ministry for health of a Western European country, the ministry for education of a Central American country, a state electricity provider in the Middle East and a medical organisation in the US, according to Symantec. It is believed the group was also responsible for a much - documented 2008 attack on the US Central Command. The attackers - who continue to operate - have ostensibly sought to carry out surveillance on targets and pilfer data, though their use of encryption across their networks has made it difficult to ascertain exactly what the hackers took.Kaspersky Lab, however, picked up a number of the attackers searches through their victims emails, which included terms such as Nato and EU energy dialogue Though attribution is difficult to substantiate, Russia has previously been suspected of carrying out the attacks and Symantecs Gavin O\u2019 Gorman told the Guardian a number of the hackers appeared to be using Russian names and language in their notes for their malicious code. Cyrillic was also seen in use.'",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "Russian Federation",
                 "cfr-suspected-victims": [
                     "France",
@@ -2728,7 +2908,9 @@ let actors = {
                     "https://www2.fireeye.com/rs/848-DID-242/images/rpt-witchcoven.pdf",
                     "https://www.welivesecurity.com/2017/03/30/carbon-paper-peering-turlas-second-stage-backdoor/",
                     "https://www.cfr.org/interactive/cyber-operations/turla",
-                    "https://www.bleepingcomputer.com/news/security/turla-outlook-backdoor-uses-clever-tactics-for-stealth-and-persistence/"
+                    "https://www.bleepingcomputer.com/news/security/turla-outlook-backdoor-uses-clever-tactics-for-stealth-and-persistence/",
+                    "https://www.nccgroup.trust/uk/about-us/newsroom-and-events/blogs/2018/november/turla-png-dropper-is-back/",
+                    "http://download.bitdefender.com/resources/files/News/CaseStudies/study/115/Bitdefender-Whitepaper-PAC-A4-en-EN1.pdf"
                 ],
                 "synonyms": [
                     "Turla",
@@ -2742,7 +2924,9 @@ let actors = {
                     "Pfinet",
                     "TAG_0530",
                     "KRYPTON",
-                    "Hippo Team"
+                    "Hippo Team",
+                    "Pacifier APT",
+                    "Popeye"
                 ]
             },
             "related": [
@@ -2787,6 +2971,7 @@ let actors = {
         {
             "description": "A Russian group that collects intelligence on the energy industry.",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "Russian Federation",
                 "cfr-suspected-victims": [
                     "United States",
@@ -2811,7 +2996,16 @@ let actors = {
                     "http://www.symantec.com/content/en/us/enterprise/media/security_response/whitepapers/Dragonfly_Threat_Against_Western_Energy_Suppliers.pdf",
                     "http://www.netresec.com/?page=Blog&month=2014-10&post=Full-Disclosure-of-Havex-Trojans",
                     "https://threatpost.com/energy-watering-hole-attack-used-lightsout-exploit-kit/104772/",
-                    "https://www.cfr.org/interactive/cyber-operations/crouching-yeti"
+                    "https://www.cfr.org/interactive/cyber-operations/crouching-yeti",
+                    "https://ssu.gov.ua/sbu/control/uk/publish/article?art_id=170951&cat_i=39574",
+                    "https://www.reuters.com/article/us-ukraine-cyber-attack-energy-idUSKBN1521BA",
+                    "https://dragos.com/wp-content/uploads/CrashOverride-01.pdf",
+                    "https://www.independent.ie/irish-news/statesponsored-hackers-targeted-eirgrid-electricity-network-in-devious-attack-36005921.html",
+                    "https://www.riskiq.com/blog/labs/energetic-bear/",
+                    "https://www.symantec.com/blogs/threat-intelligence/dragonfly-energy-sector-cyber-attacks",
+                    "https://www.kaspersky.com/resource-center/threats/crouching-yeti-energetic-bear-malware-threat",
+                    "https://www.sans.org/reading-room/whitepapers/ICS/impact-dragonfly-malware-industrial-control-systems-36672",
+                    "https://attack.mitre.org/groups/G0035/"
                 ],
                 "synonyms": [
                     "Dragonfly",
@@ -2852,6 +3046,7 @@ let actors = {
         {
             "description": "This threat actor targets industrial control systems, using a tool called Black Energy, associated with electricity and power generation for espionage, denial of service, and data destruction purposes. Some believe that the threat actor is linked to the 2015 compromise of the Ukrainian electrical grid and a distributed denial of service prior to the Russian invasion of Georgia. Believed to be responsible for the 2008 DDoS attacks in Georgia and the 2015 Ukraine power grid outage",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "Russian Federation",
                 "cfr-suspected-victims": [
                     "Russia",
@@ -2941,6 +3136,7 @@ let actors = {
         {
             "description": "We will refer to the gang behind the malware as TeleBots. However it\u2019s important to say that these attackers, and the toolset used, share a number of similarities with the BlackEnergy group, which conducted attacks against the energy industry in Ukraine in December 2015 and January 2016. In fact, we think that the BlackEnergy group has evolved into the TeleBots group.",
             "meta": {
+                "attribution-confidence": "50",
                 "country": "Russian Federation",
                 "refs": [
                     "http://www.welivesecurity.com/2016/12/13/rise-telebots-analyzing-disruptive-killdisk-attacks/"
@@ -2982,6 +3178,7 @@ let actors = {
         {
             "description": "Groups targeting financial organizations or people with significant financial assets.",
             "meta": {
+                "attribution-confidence": "50",
                 "country": "Russian Federation",
                 "motive": "Cybercrime",
                 "refs": [
@@ -2992,7 +3189,23 @@ let actors = {
                     "https://blog.cyber4sight.com/2017/04/similarities-between-carbanak-and-fin7-malware-suggest-actors-are-closely-related/",
                     "https://www.proofpoint.com/us/threat-insight/post/fin7carbanak-threat-actor-unleashes-bateleur-jscript-backdoor",
                     "https://www.icebrg.io/blog/footprints-of-fin7-tracking-actor-patterns",
-                    "https://www.crowdstrike.com/blog/arrests-put-new-focus-on-carbon-spider-adversary-group/"
+                    "https://www.crowdstrike.com/blog/arrests-put-new-focus-on-carbon-spider-adversary-group/",
+                    "https://www.europol.europa.eu/newsroom/news/mastermind-behind-eur-1-billion-cyber-bank-robbery-arrested-in-spain",
+                    "https://www.computerweekly.com/news/252446153/Three-Carbanak-cyber-heist-gang-members-arrested",
+                    "https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08064518/Carbanak_APT_eng.pdf",
+                    "https://www.group-ib.com/resources/threat-research/Anunak_APT_against_financial_institutions.pdf",
+                    "https://attack.mitre.org/groups/G0008/",
+                    "https://www.fireeye.com/blog/threat-research/2017/03/fin7_spear_phishing.html",
+                    "https://threatpost.com/fileless-malware-campaigns-tied-to-same-attacker/124369/",
+                    "https://www.fireeye.com/blog/threat-research/2017/04/fin7-phishing-lnk.html",
+                    "https://www.fireeye.com/blog/threat-research/2017/05/fin7-shim-databases-persistence.html",
+                    "http://blog.morphisec.com/fin7-attacks-restaurant-industry",
+                    "https://www.flashpoint-intel.com/blog/fin7-revisited-inside-astra-panel-and-sqlrat-malware/",
+                    "http://blog.morphisec.com/fin7-attack-modifications-revealed",
+                    "http://blog.morphisec.com/fin7-not-finished-morphisec-spots-new-campaign",
+                    "https://securelist.com/fin7-5-the-infamous-cybercrime-rig-fin7-continues-its-activities/90703/",
+                    "https://www.fireeye.com/blog/threat-research/2018/08/fin7-pursuing-an-enigmatic-and-evasive-global-criminal-operation.html",
+                    "https://attack.mitre.org/groups/G0046/"
                 ],
                 "synonyms": [
                     "Carbanak",
@@ -3025,6 +3238,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "Russian Federation",
                 "cfr-suspected-victims": [
                     "Hungary",
@@ -3067,10 +3281,17 @@ let actors = {
             }
         },
         {
+            "description": "Buhtrap has been active since 2014, however their first attacks against financial institutions were only detected in August 2015. Earlier, the group had only focused on targeting banking clients. At the moment, the group is known to target Russian and Ukrainian banks.\nFrom August 2015 to February 2016 Buhtrap managed to conduct 13 successful attacks against Russian banks for a total amount of 1.8 billion rubles ($25.7 mln). The number of successful attacks against Ukrainian banks has not been identified.\nBuhtrap is the first hacker group using a network worm to infect the overall bank infrastructure that significantly increases the difficulty of removing all malicious functions from the network. As a result, banks have to shut down the whole infrastructure which provokes delay in servicing customers and additional losses.\nMalicious programs intentionally scan for machines with an automated Bank-Customer system of the Central Bank of Russia (further referred to as BCS CBR). We have not identified incidents of attacks involving online money transfer systems, ATM machines or payment gates which are known to be of interest for other criminal groups.",
             "meta": {
+                "attribution-confidence": "50",
                 "country": "Russian Federation",
                 "refs": [
-                    "http://www.welivesecurity.com/2015/11/11/operathion-buhtrap-malware-distributed-via-ammyy-com/"
+                    "https://www.welivesecurity.com/2015/11/11/operation-buhtrap-malware-distributed-via-ammyy-com/",
+                    "https://www.group-ib.com/brochures/gib-buhtrap-report.pdf",
+                    "https://www.symantec.com/connect/blogs/russian-bank-employees-received-fake-job-offers-targeted-email-attack",
+                    "https://www.forcepoint.com/blog/security-labs/highly-evasive-code-injection-awaits-user-interaction-delivering-malware",
+                    "https://www.kaspersky.com/blog/financial-trojans-2019/25690/",
+                    "https://www.welivesecurity.com/2015/04/09/operation-buhtrap/"
                 ]
             },
             "uuid": "b737c51f-b579-49d5-a907-743b2e6d03cb",
@@ -3082,6 +3303,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "country": "Russian Federation"
             },
             "related": [
@@ -3101,8 +3323,17 @@ let actors = {
             }
         },
         {
+            "description": "FIN4 is a financially-motivated threat group that has targeted confidential information related to the public financial market, particularly regarding healthcare and pharmaceutical companies, since at least 2013. FIN4 is unique in that they do not infect victims with typical persistent malware, but rather they focus on capturing credentials authorized to access email and other non-public correspondence.",
             "meta": {
+                "attribution-confidence": "50",
                 "country": "Romania",
+                "refs": [
+                    "https://www.reuters.com/article/2015/06/23/us-hackers-insidertrading-idUSKBN0P31M720150623",
+                    "https://www.fireeye.com/blog/threat-research/2014/11/fin4_stealing_insid.html",
+                    "https://www2.fireeye.com/rs/fireye/images/rpt-fin4.pdf",
+                    "https://pwc.blogs.com/cyber_security_updates/2015/06/unfin4ished-business.html",
+                    "https://attack.mitre.org/groups/G0085/"
+                ],
                 "synonyms": [
                     "FIN4"
                 ]
@@ -3117,6 +3348,7 @@ let actors = {
         {
             "description": "First observed activity in December 2013.",
             "meta": {
+                "attribution-confidence": "50",
                 "country": "Russian Federation"
             },
             "uuid": "85b40169-3d1c-491b-9fbf-877ed57f32e0",
@@ -3129,6 +3361,7 @@ let actors = {
         {
             "description": "This group's activity was first observed in November 2013. It leverages a banking Trojan more commonly known as Shylock which aims to compromise online banking credentials and credentials related to Bitcoin wallets.",
             "meta": {
+                "attribution-confidence": "50",
                 "country": "Russian Federation"
             },
             "uuid": "7dd7a8df-9012-4d14-977f-b3f9f71266b4",
@@ -3141,6 +3374,7 @@ let actors = {
         {
             "description": "Adversary targeting manufacturing and industrial organizations.",
             "meta": {
+                "attribution-confidence": "50",
                 "country": "Russian Federation",
                 "refs": [
                     "http://www.rsaconference.com/writable/presentations/file_upload/anf-t07b-the-art-of-attribution-identifying-and-pursuing-your-cyber-adversaries_final.pdf"
@@ -3155,6 +3389,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "country": "Korea, Democratic People's Republic of",
                 "refs": [
                     "http://www.rsaconference.com/writable/presentations/file_upload/anf-t07b-the-art-of-attribution-identifying-and-pursuing-your-cyber-adversaries_final.pdf"
@@ -3176,6 +3411,7 @@ let actors = {
         {
             "description": "Since 2009, HIDDEN COBRA actors have leveraged their capabilities to target and compromise a range of victims; some intrusions have resulted in the exfiltration of data while others have been disruptive in nature. Commercial reporting has referred to this activity as Lazarus Group and Guardians of Peace. Tools and capabilities used by HIDDEN COBRA actors include DDoS botnets, keyloggers, remote access tools (RATs), and wiper malware. Variants of malware and tools used by HIDDEN COBRA actors include Destover, Duuzer, and Hangman.",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "Korea (Democratic People's Republic of)",
                 "cfr-suspected-victims": [
                     "South Korea",
@@ -3220,7 +3456,8 @@ let actors = {
                     "https://www.cfr.org/interactive/cyber-operations/operation-ghostsecret",
                     "https://securelist.com/operation-applejeus/87553/",
                     "https://www.cfr.org/interactive/cyber-operations/compromise-cryptocurrency-exchanges-south-korea",
-                    "https://www.bleepingcomputer.com/news/security/lazarus-group-deploys-its-first-mac-malware-in-cryptocurrency-exchange-hack/"
+                    "https://www.bleepingcomputer.com/news/security/lazarus-group-deploys-its-first-mac-malware-in-cryptocurrency-exchange-hack/",
+                    "https://content.fireeye.com/apt/rpt-apt38"
                 ],
                 "synonyms": [
                     "Operation DarkSeoul",
@@ -3236,7 +3473,9 @@ let actors = {
                     "Labyrinth Chollima",
                     "Operation Troy",
                     "Operation GhostSecret",
-                    "Operation AppleJeus"
+                    "Operation AppleJeus",
+                    "APT38",
+                    "Stardust Chollima"
                 ]
             },
             "related": [
@@ -3249,6 +3488,13 @@ let actors = {
                 },
                 {
                     "dest-uuid": "027a1428-6e79-4a4b-82b9-e698e8525c2b",
+                    "tags": [
+                        "estimative-language:likelihood-probability=\"likely\""
+                    ],
+                    "type": "similar"
+                },
+                {
+                    "dest-uuid": "b06c3af1-0243-4428-88da-b3451c345e1e",
                     "tags": [
                         "estimative-language:likelihood-probability=\"likely\""
                     ],
@@ -3284,6 +3530,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "country": "India",
                 "refs": [
                     "http://enterprise-manage.norman.c.bitbit.net/resources/files/Unveiling_an_Indian_Cyberattack_Infrastructure.pdf"
@@ -3302,7 +3549,8 @@ let actors = {
         },
         {
             "meta": {
-                "country": "United States",
+                "attribution-confidence": "50",
+                "country": "United States of America",
                 "synonyms": [
                     "DD4BC",
                     "Ambiorx"
@@ -3317,6 +3565,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "country": "Tunisia",
                 "refs": [
                     "https://www.crowdstrike.com/blog/regional-conflict-and-cyber-blowback/"
@@ -3335,6 +3584,7 @@ let actors = {
         {
             "description": "In 2014, researchers at Kaspersky Lab discovered and reported on three zero-days that were being used in cyberattacks in the wild. Two of these zero-day vulnerabilities are associated with an advanced threat actor we call Animal Farm. Over the past few years, Animal Farm has targeted a wide range of global organizations. The group has been active since at least 2009 and there are signs that earlier malware versions  were developed as far back as 2007.",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "France",
                 "cfr-suspected-victims": [
                     "Syria",
@@ -3397,6 +3647,7 @@ let actors = {
         {
             "description": "The Syrian Electronic Army (SEA) is a group of computer hackers which first surfaced online in 2011 to support the government of Syrian President Bashar al-Assad. Using spamming, website defacement, malware, phishing, and denial of service attacks, it has targeted political opposition groups, western news organizations, human rights groups and websites that are seemingly neutral to the Syrian conflict. It has also hacked government websites in the Middle East and Europe, as well as US defense contractors. As of 2011 the SEA has been *the first Arab country to have a public Internet Army hosted on its national networks to openly launch cyber attacks on its enemies*. The precise nature of SEA's relationship with the Syrian government has changed over time and is unclear",
             "meta": {
+                "attribution-confidence": "50",
                 "country": "Syrian Arab Republic",
                 "refs": [
                     "https://en.wikipedia.org/wiki/Syrian_Electronic_Army"
@@ -3416,6 +3667,7 @@ let actors = {
         {
             "description": "Group targeting Indian Army or related assets in India, as well as activists and civil society in Pakistan. Attribution to a Pakistani connection has been made by TrendMicro and others.",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "Pakistan",
                 "cfr-target-category": [
                     "Civil society",
@@ -3427,12 +3679,22 @@ let actors = {
                     "http://documents.trendmicro.com/assets/pdf/Indian-military-personnel-targeted-by-information-theft-campaign-cmajor.pdf",
                     "https://www.proofpoint.com/sites/default/files/proofpoint-operation-transparent-tribe-threat-insight-en.pdf",
                     "https://www.amnesty.org/en/documents/asa33/8366/2018/en/",
-                    "https://www.crowdstrike.com/blog/adversary-of-the-month-for-may/"
+                    "https://www.crowdstrike.com/blog/adversary-of-the-month-for-may/",
+                    "https://unit42.paloaltonetworks.com/unit42-projectm-link-found-between-pakistani-actor-and-operation-transparent-tribe",
+                    "https://mkd-cirt.mk/wp-content/uploads/2018/08/20181009_3_1_M-Trends2018-May-2018-compressed.pdf",
+                    "https://nciipc.gov.in/documents/NCIIPC_Newsletter_July18.pdf",
+                    "https://aisa.org.au//PDF/AISA%20Sydney%20-%20Dec2016.pdf",
+                    "https://cysinfo.com/cyber-attack-targeting-cbi-and-possibly-indian-army-officials",
+                    "https://s.tencent.com/research/report/669.html"
                 ],
                 "synonyms": [
                     "C-Major",
                     "Transparent Tribe",
-                    "Mythic Leopard"
+                    "Mythic Leopard",
+                    "ProjectM",
+                    "APT36",
+                    "APT 36",
+                    "TMP.Lapis"
                 ]
             },
             "related": [
@@ -3454,6 +3716,7 @@ let actors = {
         {
             "description": "This threat actor targets civil society groups and Emirati journalists, activists, and dissidents. ",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "United Arab Emirates",
                 "cfr-suspected-victims": [
                     "United Arab Emirates",
@@ -3466,7 +3729,8 @@ let actors = {
                 "country": "United Arab Emirates",
                 "refs": [
                     "https://citizenlab.org/2016/05/stealth-falcon/",
-                    "https://www.cfr.org/interactive/cyber-operations/stealth-falcon"
+                    "https://www.cfr.org/interactive/cyber-operations/stealth-falcon",
+                    "https://securelist.com/cve-2019-0797-zero-day-vulnerability/89885/"
                 ],
                 "synonyms": [
                     "FruityArmor"
@@ -3526,27 +3790,9 @@ let actors = {
             }
         },
         {
-            "description": "Bitdefender detected and blocked an ongoing cyber-espionage campaign against Romanian institutions and other foreign targets. The attacks started in 2014, with the latest reported occurrences in May of 2016. The APT, dubbed Pacifier by Bitdefender researchers, makes use of malicious .doc documents and .zip files distributed via spear phishing e-mail.",
-            "meta": {
-                "country": "Russian Federation",
-                "refs": [
-                    "http://download.bitdefender.com/resources/files/News/CaseStudies/study/115/Bitdefender-Whitepaper-PAC-A4-en-EN1.pdf"
-                ],
-                "synonyms": [
-                    "Skipper",
-                    "Popeye"
-                ]
-            },
-            "uuid": "32db3cc1-bb79-4b08-a7a4-747a37221afa",
-            "value": "Pacifier APT",
-            "aptmap": {
-                "operatingFrom": "RUS",
-                "victims": []
-            }
-        },
-        {
             "description": "This group created a malware that takes over Android devices and generates $300,000 per month in fraudulent ad revenue.  The group effectively controls an arsenal of over 85 million mobile devices around the world. With the potential to sell access to these devices to the highest bidder",
             "meta": {
+                "attribution-confidence": "50",
                 "country": "China",
                 "refs": [
                     "http://blog.checkpoint.com/wp-content/uploads/2016/07/HummingBad-Research-report_FINAL-62916.pdf"
@@ -3562,6 +3808,7 @@ let actors = {
         {
             "description": "Dropping Elephant (also known as \u201cChinastrats\u201d and \u201cPatchwork\u201c) is a relatively new threat actor that is targeting a variety of high profile diplomatic and economic targets using a custom set of attack tools. Its victims are all involved with China\u2019s foreign relations in some way, and are generally caught through spear-phishing or watering hole attacks.",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "India",
                 "cfr-suspected-victims": [
                     "Bangladesh",
@@ -3584,7 +3831,8 @@ let actors = {
                     "Chinastrats",
                     "Patchwork",
                     "Monsoon",
-                    "Sarit"
+                    "Sarit",
+                    "Quilted Tiger"
                 ]
             },
             "related": [
@@ -3617,6 +3865,7 @@ let actors = {
         {
             "description": "Scarlet Mimic is a threat group that has targeted minority rights activists. This group has not been directly linked to a government source, but the group's motivations appear to overlap with those of the Chinese government. While there is some overlap between IP addresses used by Scarlet Mimic and Putter Panda, it has not been concluded that the groups are the same.",
             "meta": {
+                "attribution-confidence": "50",
                 "country": "China",
                 "refs": [
                     "https://attack.mitre.org/wiki/Groups",
@@ -3642,6 +3891,7 @@ let actors = {
         {
             "description": "Poseidon Group is a Portuguese-speaking threat group that has been active since at least 2005. The group has a history of using information exfiltrated from victims to blackmail victim companies into contracting the Poseidon Group as a security firm.",
             "meta": {
+                "attribution-confidence": "50",
                 "country": "Brazil",
                 "refs": [
                     "https://securelist.com/blog/research/73673/poseidon-group-a-targeted-attack-boutique-specializing-in-global-cyber-espionage/",
@@ -3667,6 +3917,7 @@ let actors = {
         {
             "description": "Threat group that has targeted Japanese organizations with phishing emails. Due to overlapping TTPs, including similar custom tools, DragonOK is thought to have a direct or indirect relationship with the threat group Moafee. 2223 It is known to use a variety of malware, including Sysget/HelloBridge, PlugX, PoisonIvy, FormerFirstRat, NFlog, and NewCT.",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "China",
                 "cfr-suspected-victims": [
                     "United States"
@@ -3679,11 +3930,13 @@ let actors = {
                 "refs": [
                     "https://www.fireeye.com/content/dam/fireeye-www/global/en/current-threats/pdfs/wp-operation-quantum-entanglement.pdf",
                     "https://attack.mitre.org/wiki/Groups",
-                    "http://researchcenter.paloaltonetworks.com/2015/04/unit-42-identifies-new-dragonok-backdoor-malware-deployed-against-japanese-targets/",
-                    "http://researchcenter.paloaltonetworks.com/2017/01/unit42-dragonok-updates-toolset-targets-multiple-geographic-regions/",
                     "https://blogs.forcepoint.com/security-labs/trojanized-adobe-installer-used-install-dragonok%E2%80%99s-new-custom-backdoor",
                     "http://www.morphick.com/resources/news/deep-dive-dragonok-rambo-backdoor",
-                    "https://www.cfr.org/interactive/cyber-operations/moafee"
+                    "https://www.cfr.org/interactive/cyber-operations/moafee",
+                    "https://unit42.paloaltonetworks.com/unit-42-identifies-new-dragonok-backdoor-malware-deployed-against-japanese-targets/",
+                    "https://unit42.paloaltonetworks.com/unit42-dragonok-updates-toolset-targets-multiple-geographic-regions/",
+                    "https://www.phnompenhpost.com/national/kingdom-targeted-new-malware",
+                    "https://attack.mitre.org/groups/G0017/"
                 ],
                 "synonyms": [
                     "Moafee"
@@ -3717,6 +3970,7 @@ let actors = {
         {
             "description": "Chinese threat group that has extensively used strategic Web compromises to target victims.",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": " China",
                 "cfr-suspected-victims": [
                     "United States",
@@ -3776,6 +4030,7 @@ let actors = {
         {
             "description": "ProjectSauron is the name for a top level modular cyber-espionage platform, designed to enable and manage long-term campaigns through stealthy survival mechanisms coupled with multiple exfiltration methods.  Technical details show how attackers learned from other extremely advanced actors in order to avoid repeating their mistakes. As such, all artifacts are customized per given target, reducing their value as indicators of compromise for any other victim.  Usually APT campaigns have a geographical nexus, aimed at extracting information within a specific region or from a given industry. That usually results in several infections in countries within that region, or in the targeted industry around the world. Interestingly, ProjectSauron seems to be dedicated to just a couple of countries, focused on collecting high value intelligence by compromising almost all key entities it could possibly reach within the target area.  The name, ProjectSauron reflects the fact that the code authors refer to \u2018Sauron\u2019 in the Lua scripts.",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "United States",
                 "cfr-suspected-victims": [
                     "Russia",
@@ -3790,7 +4045,7 @@ let actors = {
                     "Military"
                 ],
                 "cfr-type-of-incident": "Espionage",
-                "country": "United States",
+                "country": "United States of America",
                 "refs": [
                     "https://securelist.com/analysis/publications/75533/faq-the-projectsauron-apt/",
                     "https://www.cfr.org/interactive/cyber-operations/project-sauron"
@@ -3827,6 +4082,7 @@ let actors = {
         {
             "description": "APT 30 is a threat group suspected to be associated with the Chinese government. While Naikon shares some characteristics with APT30, the two groups do not appear to be exact matches.",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "China",
                 "cfr-suspected-victims": [
                     "India",
@@ -3914,6 +4170,7 @@ let actors = {
         {
             "description": "TA530, who we previously examined in relation to large-scale personalized phishing campaigns",
             "meta": {
+                "attribution-confidence": "50",
                 "country": "China",
                 "refs": [
                     "https://www.proofpoint.com/uk/threat-insight/post/august-in-december-new-information-stealer-hits-the-scene"
@@ -3929,9 +4186,11 @@ let actors = {
         {
             "description": "GCMAN is a threat group that focuses on targeting banks for the purpose of transferring money to e-currency services.",
             "meta": {
+                "attribution-confidence": "50",
                 "country": "Russian Federation",
                 "refs": [
-                    "https://securelist.com/blog/research/73638/apt-style-bank-robberies-increase-with-metel-gcman-and-carbanak-2-0-attacks/"
+                    "https://securelist.com/apt-style-bank-robberies-increase-with-metel-gcman-and-carbanak-2-0-attacks/73638/",
+                    "https://attack.mitre.org/groups/G0036/"
                 ]
             },
             "related": [
@@ -3953,6 +4212,7 @@ let actors = {
         {
             "description": "Suckfly is a China-based threat group that has been active since at least 2014",
             "meta": {
+                "attribution-confidence": "50",
                 "country": "China",
                 "refs": [
                     "http://www.symantec.com/connect/blogs/suckfly-revealing-secret-life-your-code-signing-certificates",
@@ -3979,7 +4239,12 @@ let actors = {
             "description": "FIN is a group targeting financial assets including assets able to do financial transaction including PoS.",
             "meta": {
                 "refs": [
-                    "https://www2.fireeye.com/rs/848-DID-242/images/rpt-fin6.pdf"
+                    "https://www2.fireeye.com/rs/848-DID-242/images/rpt-fin6.pdf",
+                    "https://www.fireeye.com/blog/threat-research/2019/04/pick-six-intercepting-a-fin6-intrusion.html",
+                    "https://attack.mitre.org/groups/G0037/"
+                ],
+                "synonyms": [
+                    "Skeleton Spider"
                 ]
             },
             "related": [
@@ -4001,6 +4266,7 @@ let actors = {
         {
             "description": "Libyan Scorpions is a malware operation in use since September 2015 and operated by a politically motivated group whose main objective is intelligence gathering, spying on influentials and political figures and operate an espionage campaign within Libya.",
             "meta": {
+                "attribution-confidence": "50",
                 "country": "Libya"
             },
             "uuid": "815cbe98-e157-4078-9caa-c5a25dd64731",
@@ -4030,6 +4296,7 @@ let actors = {
         {
             "description": "OilRig is an Iranian threat group operating primarily in the Middle East by targeting organizations in this region that are in a variety of different industries; however, this group has occasionally targeted organizations outside of the Middle East as well. It also appears OilRig carries out supply chain attacks, where the threat group leverages the trust relationship between organizations to attack their primary targets. \r\n\r\nOilRig is an active and organized threat group, which is evident based on their systematic targeting of specific organizations that appear to be carefully chosen for strategic purposes. Attacks attributed to this group primarily rely on social engineering to exploit the human rather than software vulnerabilities; however, on occasion this group has used recently patched vulnerabilities in the delivery phase of their attacks. The lack of software vulnerability exploitation does not necessarily suggest a lack of sophistication, as OilRig has shown maturity in other aspects of their operations. Such maturities involve:\r\n\r\n-Organized evasion testing used the during development of their tools.\r\n-Use of custom DNS Tunneling protocols for command and control (C2) and data exfiltration.\r\n-Custom web-shells and backdoors used to persistently access servers.\r\n\r\nOilRig relies on stolen account credentials for lateral movement. After OilRig gains access to a system, they use credential dumping tools, such as Mimikatz, to steal credentials to accounts logged into the compromised system. The group uses these credentials to access and to move laterally to other systems on the network. After obtaining credentials from a system, operators in this group prefer to use tools other than their backdoors to access the compromised systems, such as remote desktop and putty. OilRig also uses phishing sites to harvest credentials to individuals at targeted organizations to gain access to internet accessible resources, such as Outlook Web Access.",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "Iran (Islamic Republic of)",
                 "cfr-suspected-victims": [
                     "Israel",
@@ -4060,12 +4327,16 @@ let actors = {
                     "https://researchcenter.paloaltonetworks.com/2017/12/unit42-introducing-the-adversary-playbook-first-up-oilrig/",
                     "https://pan-unit42.github.io/playbook_viewer/",
                     "https://raw.githubusercontent.com/pan-unit42/playbook_viewer/master/playbook_json/oilrig.json",
-                    "https://www.cfr.org/interactive/cyber-operations/oilrig"
+                    "https://www.cfr.org/interactive/cyber-operations/oilrig",
+                    "https://researchcenter.paloaltonetworks.com/2018/09/unit42-oilrig-uses-updated-bondupdater-target-middle-eastern-government/",
+                    "https://researchcenter.paloaltonetworks.com/2018/11/unit42-analyzing-oilrigs-ops-tempo-testing-weaponization-delivery/",
+                    "https://www.crowdstrike.com/blog/meet-crowdstrikes-adversary-of-the-month-for-november-helix-kitten/"
                 ],
                 "synonyms": [
                     "Twisted Kitten",
                     "Cobalt Gypsy",
-                    "Crambus"
+                    "Crambus",
+                    "Helix Kitten"
                 ]
             },
             "related": [
@@ -4219,7 +4490,8 @@ let actors = {
             "meta": {
                 "refs": [
                     "https://www.fireeye.com/blog/threat-research/2013/08/operation-molerats-middle-east-cyber-attacks-using-poison-ivy.html",
-                    "http://blog.vectranetworks.com/blog/moonlight-middle-east-targeted-attacks"
+                    "http://blog.vectranetworks.com/blog/moonlight-middle-east-targeted-attacks",
+                    "https://ti.360.net/blog/articles/suspected-molerats-new-attack-in-the-middle-east/"
                 ],
                 "synonyms": [
                     "Gaza Hackers Team",
@@ -4248,6 +4520,7 @@ let actors = {
         {
             "description": "PROMETHIUM is an activity group that has been active as early as 2012. The group primarily uses Truvasys, a first-stage malware that has been in circulation for several years. Truvasys has been involved in several attack campaigns, where it has masqueraded as one of server common computer utilities, including WinUtils, TrueCrypt, WinRAR, or SanDisk. In each of the campaigns, Truvasys malware evolved with additional features\u2014this shows a close relationship between the activity groups behind the campaigns and the developers of the malware.",
             "meta": {
+                "attribution-confidence": "50",
                 "country": "Turkey",
                 "refs": [
                     "https://blogs.technet.microsoft.com/mmpc/2016/12/14/twin-zero-day-attacks-promethium-and-neodymium-target-individuals-in-europe/",
@@ -4327,6 +4600,7 @@ let actors = {
         {
             "description": "Symantec telemetry identified Cadelle and Chafer activity dating from as far back as July 2014, however, it\u2019s likely that activity began well before this date. Command-and-control (C&C) registrant information points to activity possibly as early as 2011, while executable compilation times suggest early 2012. Their attacks continue to the present day. Symantec estimates that each team is made up of between 5 and 10 people.",
             "meta": {
+                "attribution-confidence": "50",
                 "country": "Iran, Islamic Republic of",
                 "refs": [
                     "https://www.symantec.com/connect/blogs/iran-based-attackers-use-back-door-threats-spy-middle-eastern-targets"
@@ -4342,9 +4616,11 @@ let actors = {
         {
             "description": "Symantec telemetry identified Cadelle and Chafer activity dating from as far back as July 2014, however, it\u2019s likely that activity began well before this date. Command-and-control (C&C) registrant information points to activity possibly as early as 2011, while executable compilation times suggest early 2012. Their attacks continue to the present day. Symantec estimates that each team is made up of between 5 and 10 people.",
             "meta": {
+                "attribution-confidence": "50",
                 "country": "Iran, Islamic Republic of",
                 "refs": [
-                    "https://www.symantec.com/connect/blogs/iran-based-attackers-use-back-door-threats-spy-middle-eastern-targets"
+                    "https://www.symantec.com/connect/blogs/iran-based-attackers-use-back-door-threats-spy-middle-eastern-targets",
+                    "https://www.symantec.com/blogs/threat-intelligence/chafer-latest-attacks-reveal-heightened-ambitions"
                 ]
             },
             "uuid": "ddd95696-3d9a-4d0c-beec-a34d396182f3",
@@ -4357,6 +4633,7 @@ let actors = {
         {
             "description": "The PassCV group continues to be one of the most successful and active threat groups that leverage a wide array of stolen Authenticode-signing certificates.  Snorre Fagerland of Blue Coat Systems first coined the term PassCV in a blog post. His post provides a good introduction to the group and covers some of the older infrastructure, stolen code-signing certificate reuse, and other connections associated with the PassCV malware. There are several clues alluding to the possibility that multiple groups may be utilizing the same stolen signing certificates, but at this time SPEAR believes the current attacks are more likely being perpetrated by a single group employing multiple publicly available Remote Administration Tools (RATs).  The PassCV group has been operating with continued success and has already started to expand their malware repertoire into different off-the-shelf RATs and custom code. SPEAR identified eighteen previously undisclosed stolen Authenticode certificates. These certificates were originally issued to companies and individuals scattered across China, Taiwan, Korea, Europe, the United States and Russia.  In this post we expand the usage of the term \u2018PassCV\u2019 to encompass the malware mentioned in the Blue Coat Systems report, as well as the APT group behind the larger C2 infrastructure and stolen Authenticode certificates. We\u2019d like to share some of our findings as they pertain to the stolen certificates, command and control infrastructure, and some of the newer custom RATs they\u2019ve begun development on. ",
             "meta": {
+                "attribution-confidence": "50",
                 "country": "China",
                 "refs": [
                     "https://blog.cylance.com/digitally-signed-malware-targeting-gaming-companies"
@@ -4372,6 +4649,7 @@ let actors = {
         {
             "description": "A Turkish hacking group, Sath-\u0131 M\u00fcdafaa, is encouraging individuals to join its DDoS-for-Points platform that features points and prizes for carrying out distributed denial-of-service (DDoS) attacks against a list of predetermined targets. Their DDoS tool also contains a backdoor to hack the hackers. So the overarching motivation and allegiance of the group is not entirely clear.",
             "meta": {
+                "attribution-confidence": "50",
                 "country": "Turkey",
                 "motive": "Hacktivists-Nationalists"
             },
@@ -4385,6 +4663,7 @@ let actors = {
         {
             "description": "Turkish nationalist hacktivist group that has been active for roughly one year. According to Domaintools, the group\u2019s site has been registered since December 2015, with an active Twitter account since January 2016. The group carries out distributed denial-of-service (DDoS) attacks and defacements against the sites of news organizations and governments perceived to be critical of Turkey\u2019s policies or leadership, and purports to act in defense of Islam",
             "meta": {
+                "attribution-confidence": "50",
                 "country": "Turkey",
                 "motive": "Hacktivists-Nationalists",
                 "synonyms": [
@@ -4402,6 +4681,7 @@ let actors = {
         {
             "description": "Ayy\u0131ld\u0131z (Crescent and Star) Tim is a nationalist hacking group founded in 2002. It performs defacements and DDoS attacks against the websites of governments that it considers to be repressing Muslim minorities or engaged in Islamophobic policies.",
             "meta": {
+                "attribution-confidence": "50",
                 "country": "Turkey",
                 "motive": "Hacktivists-Nationalists",
                 "synonyms": [
@@ -4418,6 +4698,7 @@ let actors = {
         {
             "description": "Founded in 2004, Turkhackteam is one of Turkey\u2019s oldest and most high-profile hacking collectives. According to a list compiled on Turkhackteam\u2019s forum, the group has carried out almost 30 highly publicized hacking campaigns targeting foreign government and commercial websites, including websites of international corporations. ",
             "meta": {
+                "attribution-confidence": "50",
                 "country": "Turkey",
                 "motive": "Hacktivists-Nationalists",
                 "synonyms": [
@@ -4434,6 +4715,7 @@ let actors = {
         {
             "description": "The Equation Group is a highly sophisticated threat actor described by its discoverers at Kaspersky Labs as one of the most sophisticated cyber attack groups in the world, operating alongside but always from a position of superiority with the creators of Stuxnet and Flame",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "United States",
                 "cfr-suspected-victims": [
                     "Iran",
@@ -4457,15 +4739,21 @@ let actors = {
                     "Military"
                 ],
                 "cfr-type-of-incident": "Espionage",
-                "country": "United States",
+                "country": "United States of America",
                 "refs": [
                     "https://en.wikipedia.org/wiki/Equation_Group",
-                    "https://www.cfr.org/interactive/cyber-operations/equation-group"
+                    "https://www.cfr.org/interactive/cyber-operations/equation-group",
+                    "https://arstechnica.com/information-technology/2015/02/how-omnipotent-hackers-tied-to-the-nsa-hid-for-14-years-and-were-found-at-last/",
+                    "https://www.dropbox.com/s/buxkfotx1kei0ce/Whitepaper%20Shadow%20Broker%20-%20Equation%20Group%20Hack.pdf?dl=0",
+                    "https://en.wikipedia.org/wiki/Stuxnet",
+                    "https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08064459/Equation_group_questions_and_answers.pdf",
+                    "https://attack.mitre.org/groups/G0020/"
                 ],
                 "synonyms": [
                     "Tilded Team",
                     "Lamberts",
-                    "EQGRP"
+                    "EQGRP",
+                    "Longhorn"
                 ]
             },
             "related": [
@@ -4503,6 +4791,7 @@ let actors = {
         {
             "description": "Greenbug was discovered targeting a range of organizations in the Middle East including companies in the aviation, energy, government, investment, and education sectors.",
             "meta": {
+                "attribution-confidence": "50",
                 "country": "Iran, Islamic Republic of",
                 "refs": [
                     "https://www.symantec.com/connect/blogs/greenbug-cyberespionage-group-targeting-middle-east-possible-links-shamoon",
@@ -4536,7 +4825,10 @@ let actors = {
             "description": "Unit 42 threat researchers have recently observed a threat group distributing new, custom developed malware. We have labelled this threat group the Gamaredon Group and our research shows that the Gamaredon Group has been active since at least 2013.  In the past, the Gamaredon Group has relied heavily on off-the-shelf tools. Our new research shows the Gamaredon Group have made a shift to custom-developed malware. We believe this shift indicates the Gamaredon Group have improved their technical capabilities.",
             "meta": {
                 "refs": [
-                    "http://researchcenter.paloaltonetworks.com/2017/02/unit-42-title-gamaredon-group-toolset-evolution"
+                    "http://researchcenter.paloaltonetworks.com/2017/02/unit-42-title-gamaredon-group-toolset-evolution",
+                    "https://www.lookingglasscyber.com/wp-content/uploads/2015/08/Operation_Armageddon_Final.pdf",
+                    "https://unit42.paloaltonetworks.com/unit-42-title-gamaredon-group-toolset-evolution/",
+                    "https://attack.mitre.org/groups/G0047/"
                 ]
             },
             "related": [
@@ -4558,6 +4850,7 @@ let actors = {
         {
             "description": "Hammer Panda is a group of suspected Chinese origin targeting organisations in Russia.",
             "meta": {
+                "attribution-confidence": "50",
                 "country": "China",
                 "refs": [
                     "http://www.darkreading.com/endpoint/chinese-cyberspies-pivot-to-russia-in-wake-of-obama-xi-pact/d/d-id/1324242"
@@ -4577,6 +4870,7 @@ let actors = {
         {
             "description": "Infy is a group of suspected Iranian origin.",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "Iran (Islamic Republic of)",
                 "cfr-suspected-victims": [
                     "Israel",
@@ -4639,6 +4933,7 @@ let actors = {
         {
             "description": "Sima is a group of suspected Iranian origin targeting Iranians in diaspora.",
             "meta": {
+                "attribution-confidence": "50",
                 "country": "Iran, Islamic Republic of",
                 "refs": [
                     "https://www.blackhat.com/docs/us-16/materials/us-16-Guarnieri-Iran-And-The-Soft-War-For-Internet-Dominance-wp.pdf",
@@ -4655,6 +4950,7 @@ let actors = {
         {
             "description": "Blue Termite is a group of suspected Chinese origin active in Japan.",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "Unknown",
                 "cfr-suspected-victims": [
                     "Japan"
@@ -4687,6 +4983,7 @@ let actors = {
         {
             "description": "Groundbait is a group targeting anti-government separatists in the self-declared Donetsk and Luhansk People\u2019s Republics.",
             "meta": {
+                "attribution-confidence": "50",
                 "country": "Ukraine",
                 "refs": [
                     "http://www.welivesecurity.com/2016/05/18/groundbait"
@@ -4702,6 +4999,7 @@ let actors = {
         {
             "description": "Longhorn has been active since at least 2011. It has used a range of back door Trojans in addition to zero-day vulnerabilities to compromise its targets. Longhorn has infiltrated governments and internationally operating organizations, in addition to targets in the financial, telecoms, energy, aerospace, information technology, education, and natural resources sectors. All of the organizations targeted would be of interest to a nation-state attacker.  Longhorn has infected 40 targets in at least 16 countries across the Middle East, Europe, Asia, and Africa. On one occasion a computer in the United States was compromised but, following infection, an uninstaller was launched within hours, which may indicate this victim was infected unintentionally. According to cfr, this threat actor compromises governments, international organizations, academic institutions, and financial, telecommunications, energy, aerospace, information technology, and natural resource  industries for espionage purposes. Some of the tools used by this threat actor were released by Wikileaks under the name \"Vault 7.\"",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "United States",
                 "cfr-suspected-victims": [
                     "Global"
@@ -4711,7 +5009,7 @@ let actors = {
                     "Government"
                 ],
                 "cfr-type-of-incident": "Espionage",
-                "country": "United States",
+                "country": "United States of America",
                 "refs": [
                     "https://www.symantec.com/connect/blogs/longhorn-tools-used-cyberespionage-group-linked-vault-7",
                     "https://www.bleepingcomputer.com/news/security/longhorn-cyber-espionage-group-is-actually-the-cia/",
@@ -4739,7 +5037,7 @@ let actors = {
             }
         },
         {
-            "description": "The Callisto Group  is an advanced threat actor whose known targets include military personnel, government officials, think tanks, and journalists in Europe and the South Caucasus. Their primary interest appears to be gathering intelligence related to foreign and security policy in the Eastern Europe and South Caucasus regions.",
+            "description": "The Callisto Group is an advanced threat actor whose known targets include military personnel, government officials, think tanks, and journalists in Europe and the South Caucasus. Their primary interest appears to be gathering intelligence related to foreign and security policy in the Eastern Europe and South Caucasus regions.",
             "meta": {
                 "refs": [
                     "https://www.f-secure.com/documents/996508/1030745/callisto-group"
@@ -4755,6 +5053,7 @@ let actors = {
         {
             "description": "Cyber espionage actors, now designated by FireEye as APT32 (OceanLotus Group), are carrying out intrusions into private sector companies across multiple industries and have also targeted foreign governments, dissidents, and journalists. FireEye assesses that APT32 leverages a unique suite of fully-featured malware, in conjunction with commercially-available tools, to conduct targeted operations that are aligned with Vietnamese state interests.",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "Vietnam",
                 "cfr-suspected-victims": [
                     "China",
@@ -4782,11 +5081,14 @@ let actors = {
                 "synonyms": [
                     "OceanLotus Group",
                     "Ocean Lotus",
+                    "OceanLotus",
                     "Cobalt Kitty",
                     "APT-C-00",
                     "SeaLotus",
+                    "Sea Lotus",
                     "APT-32",
-                    "APT 32"
+                    "APT 32",
+                    "Ocean Buffalo"
                 ]
             },
             "related": [
@@ -4822,6 +5124,7 @@ let actors = {
         {
             "description": "As these tools rise and fall in popularity (and more importantly, as detection rates by antivirus vendors improve), SilverTerrier actors have consistently adopted new malware families and shifted to the latest packing tools available. ",
             "meta": {
+                "attribution-confidence": "50",
                 "country": "Nigeria",
                 "refs": [
                     "https://www.paloaltonetworks.com/content/dam/pan/en_US/assets/pdf/reports/Unit_42/silverterrier-next-evolution-in-nigerian-cybercrime.pdf"
@@ -4963,7 +5266,9 @@ let actors = {
                     "https://www.fireeye.com/blog/threat-research/2016/05/windows-zero-day-payment-cards.html",
                     "https://www2.fireeye.com/WBNR-Know-Your-Enemy-UNC622-Spear-Phishing.html",
                     "https://www.root9b.com/sites/default/files/whitepapers/PoS%20Malware%20ShellTea%20PoSlurp.pdf",
-                    "http://files.shareholder.com/downloads/AMDA-254Q5F/0x0x938351/665BA6A3-9573-486C-B96F-80FA35759E8C/FEYE_rpt-mtrends-2017_FINAL2.pdf"
+                    "http://files.shareholder.com/downloads/AMDA-254Q5F/0x0x938351/665BA6A3-9573-486C-B96F-80FA35759E8C/FEYE_rpt-mtrends-2017_FINAL2.pdf",
+                    "https://www.fireeye.com/blog/threat-research/2017/06/obfuscation-in-the-wild.html",
+                    "https://attack.mitre.org/groups/G0061"
                 ]
             },
             "related": [
@@ -4985,6 +5290,7 @@ let actors = {
         {
             "description": "El Machete is one of these threats that was first publicly disclosed and named by Kaspersky here. We\u2019ve found that this group has continued to operate successfully, predominantly in Latin America, since 2014. All attackers simply moved to new C2 infrastructure, based largely around dynamic DNS domains, in addition to making minimal changes to the malware in order to evade signature-based detection.",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "Unknown",
                 "cfr-suspected-victims": [
                     "Venezuela",
@@ -5009,9 +5315,10 @@ let actors = {
                 ],
                 "cfr-type-of-incident": "Espionage",
                 "refs": [
-                    "https://securelist.com/blog/research/66108/el-machete/",
+                    "https://securelist.com/el-machete/66108/",
                     "https://www.cylance.com/en_us/blog/el-machete-malware-attacks-cut-through-latam.html",
-                    "https://www.cfr.org/interactive/cyber-operations/machete"
+                    "https://www.cfr.org/interactive/cyber-operations/machete",
+                    "https://threatvector.cylance.com/en_us/home/el-machete-malware-attacks-cut-through-latam.html"
                 ],
                 "synonyms": [
                     "Machete"
@@ -5045,11 +5352,28 @@ let actors = {
             "meta": {
                 "refs": [
                     "https://www.helpnetsecurity.com/2016/11/22/cobalt-hackers-synchronized-atm-heists/",
-                    "https://www.bleepingcomputer.com/news/security/cobalt-hacking-group-tests-banks-in-russia-and-romania/"
+                    "https://www.bleepingcomputer.com/news/security/cobalt-hacking-group-tests-banks-in-russia-and-romania/",
+                    "https://www.secureworks.com/blog/cybercriminals-increasingly-trying-to-ensnare-the-big-financial-fish",
+                    "https://www.crowdstrike.com/blog/meet-crowdstrikes-adversary-of-the-month-for-september-cobalt-spider/",
+                    "https://www.group-ib.com/blog/cobalt",
+                    "https://www.reuters.com/article/us-taiwan-cyber-atms/taiwan-atm-heist-linked-to-european-hacking-spree-security-firm-idUSKBN14P0CX",
+                    "https://www.proofpoint.com/us/threat-insight/post/microsoft-word-intruder-integrates-cve-2017-0199-utilized-cobalt-group-target",
+                    "https://blog.trendmicro.com/trendlabs-security-intelligence/cobalt-spam-runs-use-macros-cve-2017-8759-exploit/",
+                    "https://www.riskiq.com/blog/labs/cobalt-strike/",
+                    "https://www.riskiq.com/blog/labs/cobalt-group-spear-phishing-russian-banks/",
+                    "https://unit42.paloaltonetworks.com/unit42-new-techniques-uncover-attribute-cobalt-gang-commodity-builders-infrastructure-revealed/",
+                    "https://www.europol.europa.eu/newsroom/news/mastermind-behind-eur-1-billion-cyber-bank-robbery-arrested-in-spain",
+                    "https://www.computerweekly.com/news/252446153/Three-Carbanak-cyber-heist-gang-members-arrested",
+                    "https://www.ptsecurity.com/upload/corporate/ww-en/analytics/Cobalt-2017-eng.pdf",
+                    "https://attack.mitre.org/groups/G0080/"
                 ],
                 "synonyms": [
                     "Cobalt group",
-                    "Cobalt gang"
+                    "Cobalt Group",
+                    "Cobalt gang",
+                    "Cobalt Gang",
+                    "GOLD KINGSWOOD",
+                    "Cobalt Spider"
                 ]
             },
             "uuid": "01967480-c49b-4d4a-a7fa-aef0eaf535fe",
@@ -5061,6 +5385,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "country": "China",
                 "refs": [
                     "https://www.proofpoint.com/us/threat-insight/post/apt-targets-financial-analysts#.WS3IBVFV4no.twitter"
@@ -5084,6 +5409,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "country": "Russian Federation",
                 "refs": [
                     "https://www.threatconnect.com/blog/russia-hacks-bellingcat-mh17-investigation/#.V-wnrubaeEU.twitter"
@@ -5098,6 +5424,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "country": "China",
                 "refs": [
                     "https://www.wsj.com/articles/chinas-secret-weapon-in-south-korea-missile-fight-hackers-1492766403?emailToken=JRrydPtyYnqTg9EyZsw31FwuZ7JNEOKCXF7LaW/HM1DLsjnUp6e6wLgph560pnmiTAN/5ssf7moyADPQj2p2Gc+YkL1yi0zhIiUM9M6aj1HTYQ==",
@@ -5125,9 +5452,11 @@ let actors = {
             }
         },
         {
+            "description": "We have observed one APT group, which we call APT5, particularly focused on telecommunications and technology companies. More than half of the organizations we have observed being targeted or breached by APT5 operate in these sectors. Several times, APT5 has targeted organizations and personnel based in Southeast Asia. APT5 has been active since at least 2007. It appears to be a large threat group that consists of several subgroups, often with distinct tactics and infrastructure. APT5 has targeted or breached organizations across multiple industries, but its focus appears to be on telecommunications and technology companies, especially information about satellite communications. \nAPT5 targeted the network of an electronics firm that sells products for both industrial and military applications. The group subsequently stole communications related to the firm\u2019s business relationship with a national military, including inventories and memoranda about specific products they provided. \nIn one case in late 2014, APT5 breached the network of an international telecommunications company. The group used malware with keylogging capabilities to monitor the computer of an executive who manages the company\u2019s relationships with other telecommunications companies",
             "meta": {
                 "refs": [
-                    "https://www.fireeye.com/current-threats/apt-groups.html"
+                    "https://www.fireeye.com/current-threats/apt-groups.html",
+                    "https://www.fireeye.com/content/dam/fireeye-www/current-threats/pdfs/rpt-southeast-asia-threat-landscape.pdf"
                 ]
             },
             "uuid": "a47b79ae-7a0c-4308-9efc-294af19cc795",
@@ -5139,6 +5468,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "country": "China",
                 "refs": [
                     "http://www.slideshare.net/CTruncer/ever-present-persistence-established-footholds-seen-in-the-wild"
@@ -5157,6 +5487,7 @@ let actors = {
         {
             "description": "This threat actor targets organizations in the critical infrastructure, heavy industry, manufacturing, and international relations sectors for espionage purposes.",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "China",
                 "cfr-suspected-victims": [
                     "Japan",
@@ -5174,7 +5505,10 @@ let actors = {
                     "https://www.secureworks.jp/resources/rp-bronze-butler",
                     "https://researchcenter.paloaltonetworks.com/2017/07/unit42-tick-group-continues-attacks/",
                     "http://blog.jpcert.or.jp/2017/08/detecting-datper-malware-from-proxy-logs.html",
-                    "https://www.cfr.org/interactive/cyber-operations/bronze-butler"
+                    "https://www.cfr.org/interactive/cyber-operations/bronze-butler",
+                    "https://www.secureworks.com/research/bronze-butler-targets-japanese-businesses",
+                    "https://blog.trendmicro.com/trendlabs-security-intelligence/redbaldknight-bronze-butler-daserf-backdoor-now-using-steganography/",
+                    "https://attack.mitre.org/groups/G0060/"
                 ],
                 "synonyms": [
                     "Bronze Butler",
@@ -5204,11 +5538,13 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "country": "China",
                 "synonyms": [
                     "APT26",
                     "Hippo Team",
-                    "JerseyMikes"
+                    "JerseyMikes",
+                    "Turbine Panda"
                 ]
             },
             "related": [
@@ -5236,6 +5572,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "country": "China",
                 "refs": [
                     "http://go.crowdstrike.com/rs/281-OBQ-266/images/ReportGlobalThreatIntelligence.pdf"
@@ -5250,6 +5587,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "country": "China",
                 "refs": [
                     "http://www.darkreading.com/attacks-and-breaches/crowdstrike-falcon-traces-attacks-back-to-hackers/d/d-id/1110402?"
@@ -5264,6 +5602,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "country": "China",
                 "refs": [
                     "http://files.sans.org/summit/Threat_Hunting_Incident_Response_Summit_2016/PDFs/Detecting-and-Responding-to-Pandas-and-Bears-Christopher-Scott-CrowdStrike-and-Wendi-Whitmore-IBM.pdf"
@@ -5291,6 +5630,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "country": "Korea, Democratic People's Republic of",
                 "refs": [
                     "https://www.isightpartners.com/2016/02/threatscape-media-highlights-update-week-of-february-17th/"
@@ -5305,6 +5645,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "China",
                 "cfr-suspected-victims": [
                     "Myanmar",
@@ -5347,6 +5688,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "Iran (Islamic Republic of)",
                 "cfr-suspected-victims": [
                     "Israel",
@@ -5367,7 +5709,9 @@ let actors = {
                     "https://blog.domaintools.com/2017/03/hunt-case-study-hunting-campaign-indicators-on-privacy-protected-attack-infrastructure/",
                     "http://www.clearskysec.com/copykitten-jpost/",
                     "http://www.clearskysec.com/tulip/",
-                    "https://www.cfr.org/interactive/cyber-operations/copykittens"
+                    "https://www.cfr.org/interactive/cyber-operations/copykittens",
+                    "https://www.clearskysec.com/wp-content/uploads/2017/07/Operation_Wilted_Tulip.pdf",
+                    "https://attack.mitre.org/groups/G0052/"
                 ],
                 "synonyms": [
                     "Slayer Kitten"
@@ -5411,6 +5755,7 @@ let actors = {
         {
             "description": "The referenced link links this group to Temper Panda",
             "meta": {
+                "attribution-confidence": "50",
                 "country": "China",
                 "refs": [
                     "https://securelist.com/analysis/publications/74828/cve-2015-2545-overview-of-current-threats/"
@@ -5425,6 +5770,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "country": "China",
                 "refs": [
                     "http://www.slideshare.net/CrowdStrike/crowd-casts-monthly-you-have-an-adversary-problem"
@@ -5439,6 +5785,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "Iran (Islamic Republic of)",
                 "cfr-suspected-victims": [
                     "Iran",
@@ -5472,6 +5819,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "country": "China",
                 "refs": [
                     "http://www.slideshare.net/CrowdStrike/crowd-casts-monthly-you-have-an-adversary-problem"
@@ -5486,6 +5834,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "China",
                 "cfr-suspected-victims": [
                     "United States",
@@ -5546,6 +5895,7 @@ let actors = {
         {
             "description": "This threat actor targets South Korean think tanks, industry, nuclear power operators, and the Ministry of Unification for espionage purposes.",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "Korea (Democratic People's Republic of)",
                 "cfr-suspected-victims": [
                     "Ministry of Unification",
@@ -5563,7 +5913,8 @@ let actors = {
                     "https://www.cfr.org/interactive/cyber-operations/kimsuky"
                 ],
                 "synonyms": [
-                    "Kimsuky"
+                    "Kimsuky",
+                    "Velvet Chollima"
                 ]
             },
             "uuid": "bcaaad6f-0597-4b89-b69b-84a6be2b7bc3",
@@ -5591,8 +5942,9 @@ let actors = {
             }
         },
         {
-            "description": "This threat actor targets governments, diplomatic missions, private companies in the energy sector, and academics for espionage purposes.",
+            "description": "This threat actor targets governments, diplomatic missions, private companies in the energy sector, and academics for espionage purposes.\nThe Mask is an advanced threat actor that has been involved in cyber-espionage operations since at least 2007. The name \"Mask\" comes from the Spanish slang word \"Careto\" (\"Ugly Face\" or \u201cMask\u201d) which the authors included in some of the malware modules.\n More than 380 unique victims in 31 countries have been observed to date.What makes \u201cThe Mask\u201d special is the complexity of the toolset used by the attackers. This includes an extremely sophisticated malware, a rootkit, a bootkit, 32-and 64-bit Windows versions, Mac OS X and Linux versions and possibly versions for Android and iPad/iPhone (Apple iOS).",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "Spain",
                 "cfr-suspected-victims": [
                     "Morocco",
@@ -5617,8 +5969,9 @@ let actors = {
                 "cfr-type-of-incident": "Espionage",
                 "country": "Spain",
                 "refs": [
-                    "https://securelist.com/blog/research/58254/the-caretomask-apt-frequently-asked-questions/",
-                    "https://www.cfr.org/interactive/cyber-operations/careto"
+                    "https://securelist.com/the-caretomask-apt-frequently-asked-questions/58254/",
+                    "https://www.cfr.org/interactive/cyber-operations/careto",
+                    "https://d2538mqrb7brka.cloudfront.net/wp-content/uploads/sites/43/2018/03/20133638/unveilingthemask_v1.0.pdf"
                 ],
                 "synonyms": [
                     "The Mask",
@@ -5650,6 +6003,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "country": "China",
                 "refs": [
                     "http://www.slideshare.net/CrowdStrike/crowd-casts-monthly-you-have-an-adversary-problem"
@@ -5665,6 +6019,7 @@ let actors = {
         {
             "description": "This threat actor targets the South Korean government, transportation, and energy sectors.",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "Unknown",
                 "cfr-suspected-victims": [
                     "South Korea"
@@ -5691,6 +6046,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "country": "Iran, Islamic Republic of",
                 "refs": [
                     "http://www.crowdstrike.com/blog/whois-clever-kitten/"
@@ -5814,6 +6170,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "country": "Russian Federation",
                 "refs": [
                     "http://go.crowdstrike.com/rs/281-OBQ-266/images/ReportGlobalThreatIntelligence.pdf"
@@ -5827,10 +6184,14 @@ let actors = {
             }
         },
         {
+            "description": "Arbor\u2019s ASERT team is now reporting that, after looking deeper at that particular campaign, and by exposing a new trail in the group\u2019s activities, they managed to identify a new RAT that was undetectable at that time by most antivirus vendors.\nNamed Trochilus, this new RAT was part of Group 27\u2019s malware portfolio that included six other malware strains, all served together or in different combinations, based on the data that needed to be stolen from each victim.\nThis collection of malware, dubbed the Seven Pointed Dagger by ASERT experts, included two different PlugX versions, two different Trochilus RAT versions, one version of the 3012 variant of the 9002 RAT, one EvilGrab RAT version, and one unknown piece of malware, which the team has not entirely decloaked just yet.",
             "meta": {
+                "attribution-confidence": "50",
                 "country": "China",
                 "refs": [
-                    "https://www.arbornetworks.com/blog/asert/wp-content/uploads/2016/01/ASERT-Threat-Intelligence-Brief-2015-08-Uncovering-the-Seven-Pointed-Dagger.pdf"
+                    "https://www.arbornetworks.com/blog/asert/wp-content/uploads/2016/01/ASERT-Threat-Intelligence-Brief-2015-08-Uncovering-the-Seven-Pointed-Dagger.pdf",
+                    "https://news.softpedia.com/news/trochilus-rat-evades-antivirus-detection-used-for-cyber-espionage-in-south-east-asia-498776.shtml",
+                    "https://unit42.paloaltonetworks.com/unit42-trochilus-rat-new-moonwind-rat-used-attack-thai-utility-organizations/"
                 ]
             },
             "uuid": "73e4728a-955e-426a-b144-8cb95131f2ca",
@@ -5855,6 +6216,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "country": "Iran, Islamic Republic of",
                 "refs": [
                     "http://pastebin.com/u/QassamCyberFighters",
@@ -5872,8 +6234,13 @@ let actors = {
             }
         },
         {
+            "description": "The FBI issued a rare bulletin admitting that a group named Advanced Persistent Threat 6 (APT6) hacked into US government computer systems as far back as 2011 and for years stole sensitive data.\nThe FBI alert was issued in February and went largely unnoticed. Nearly a month later, security experts are now shining a bright light on the alert and the mysterious group behind the attack.\n\u201cThis is a rare alert and a little late, but one that is welcomed by all security vendors as it offers a chance to mitigate their customers and also collaborate further in what appears to be an ongoing FBI investigation,\u201d said Deepen Desai, director of security research at the security firm Zscaler in an email to Threatpost.\nDetails regarding the actual attack and what government systems were infected are scant. Government officials said they knew the initial attack occurred in 2011, but are unaware of who specifically is behind the attacks.\n\u201cGiven the nature of malware payload involved and the duration of this compromise being unnoticed \u2013 the scope of lateral movement inside the compromised network is very high possibly exposing all the critical systems,\u201dDeepen said.",
             "meta": {
+                "attribution-confidence": "50",
                 "country": "China",
+                "refs": [
+                    "https://threatpost.com/fbi-quietly-admits-to-multi-year-apt-attack-sensitive-data-stolen/117267/"
+                ],
                 "synonyms": [
                     "1.php Group",
                     "APT6"
@@ -5898,7 +6265,9 @@ let actors = {
                     "https://www.proofpoint.com/us/threat-insight/post/Operation-Arid-Viper-Slithers-Back-Into-View",
                     "https://www.ci-project.org/blog/2017/3/4/arid-viper",
                     "http://blog.talosintelligence.com/2017/06/palestine-delphi.html",
-                    "https://www.threatconnect.com/blog/kasperagent-malware-campaign/"
+                    "https://www.threatconnect.com/blog/kasperagent-malware-campaign/",
+                    "https://www.trendmicro.com/vinfo/us/security/news/cyber-attacks/sexually-explicit-material-used-as-lures-in-cyber-attacks?linkId=12425812",
+                    "<https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08064309/The-Desert-Falcons-targeted-attacks.pdf"
                 ],
                 "synonyms": [
                     "Desert Falcon",
@@ -5928,6 +6297,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "Israel",
                 "cfr-suspected-victims": [
                     "Iran",
@@ -5962,6 +6332,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "Russian Federation",
                 "cfr-suspected-victims": [
                     "United States",
@@ -5997,6 +6368,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "country": "China",
                 "refs": [
                     "http://go.crowdstrike.com/rs/281-OBQ-266/images/ReportGlobalThreatIntelligence.pdf"
@@ -6011,6 +6383,7 @@ let actors = {
         },
         {
             "meta": {
+                "attribution-confidence": "50",
                 "country": "China",
                 "refs": [
                     "https://www.isightpartners.com/2016/02/threatscape-media-highlights-update-week-of-february-17th/"
@@ -6026,6 +6399,7 @@ let actors = {
         {
             "description": "Sowbug has been conducting highly targeted cyber attacks against organizations in South America and Southeast Asia and appears to be heavily focused on foreign policy institutions and diplomatic targets. Sowbug has been seen mounting classic espionage attacks by stealing documents from the organizations it infiltrates. ",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "Unknown",
                 "cfr-suspected-victims": [
                     "Argentina",
@@ -6070,6 +6444,7 @@ let actors = {
         {
             "description": "The MuddyWater attacks are primarily against Middle Eastern nations. However, we have also observed attacks against surrounding nations and beyond, including targets in India and the USA. MuddyWater attacks are characterized by the use of a slowly evolving PowerShell-based first stage backdoor we call \u201cPOWERSTATS\u201d. Despite broad scrutiny and reports on MuddyWater attacks, the activity continues with only incremental changes to the tools and techniques.",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "Iran (Islamic Republic of)",
                 "cfr-suspected-victims": [
                     "Saudi Arabia",
@@ -6092,7 +6467,8 @@ let actors = {
                     "https://www.cfr.org/interactive/cyber-operations/muddywater"
                 ],
                 "synonyms": [
-                    "TEMP.Zagros"
+                    "TEMP.Zagros",
+                    "Static Kitten"
                 ]
             },
             "related": [
@@ -6155,9 +6531,11 @@ let actors = {
         {
             "description": "Lookout and Electronic Frontier Foundation (EFF) have discovered Dark Caracal, a persistent and prolific actor, who at the time of writing is believed to be administered out of a building belonging to the Lebanese General Security Directorate in Beirut. At present, we have knowledge of hundreds of gigabytes of exfiltrated data, in 21+ countries, across thousands of victims. Stolen data includes enterprise intellectual property and personally identifiable information.",
             "meta": {
+                "attribution-confidence": "50",
                 "country": "Lebanon",
                 "refs": [
-                    "https://info.lookout.com/rs/051-ESQ-475/images/Lookout_Dark-Caracal_srr_20180118_us_v.1.0.pdf"
+                    "https://info.lookout.com/rs/051-ESQ-475/images/Lookout_Dark-Caracal_srr_20180118_us_v.1.0.pdf",
+                    "https://attack.mitre.org/groups/G0070/"
                 ]
             },
             "uuid": "3d449c83-4426-431a-b06a-cb4f8a0fca94",
@@ -6184,6 +6562,7 @@ let actors = {
         {
             "description": "APT37 has likely been active since at least 2012 and focuses on targeting the public and private sectors primarily in South Korea. In 2017, APT37 expanded its targeting beyond the Korean peninsula to include Japan, Vietnam and the Middle East, and to a wider range of industry verticals, including chemicals, electronics, manufacturing, aerospace, automotive and healthcare entities",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "Korea (Democratic People's Republic of)",
                 "cfr-suspected-victims": [
                     "Republic of Korea",
@@ -6247,6 +6626,7 @@ let actors = {
         {
             "description": "Leviathan is an espionage actor targeting organizations and high-value targets in defense and government. Active since at least 2014, this actor has long-standing interest in maritime industries, naval defense contractors, and associated research institutions in the United States and Western Europe.",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "China",
                 "cfr-suspected-victims": [
                     "United States",
@@ -6263,10 +6643,15 @@ let actors = {
                 "refs": [
                     "https://www.proofpoint.com/us/threat-insight/post/leviathan-espionage-actor-spearphishes-maritime-and-defense-targets",
                     "https://www.fireeye.com/blog/threat-research/2018/03/suspected-chinese-espionage-group-targeting-maritime-and-engineering-industries.html",
-                    "https://www.cfr.org/interactive/cyber-operations/leviathan"
+                    "https://www.cfr.org/interactive/cyber-operations/leviathan",
+                    "https://www.fireeye.com/blog/threat-research/2019/03/apt40-examining-a-china-nexus-espionage-actor.html"
                 ],
                 "synonyms": [
-                    "TEMP.Periscope"
+                    "TEMP.Periscope",
+                    "TEMP.Jumper",
+                    "APT 40",
+                    "APT40",
+                    "BRONZE MOHAWK"
                 ]
             },
             "related": [
@@ -6293,6 +6678,7 @@ let actors = {
         {
             "description": "Since at least 2014, an Iranian threat group tracked by FireEye as APT34 has conducted reconnaissance aligned with the strategic interests of Iran. The group conducts operations primarily in the Middle East, targeting financial, government, energy, chemical, telecommunications and other industries. Repeated targeting of Middle Eastern financial, energy and government organizations leads FireEye to assess that those sectors are a primary concern of APT34. The use of infrastructure tied to Iranian operations, timing and alignment with the national interests of Iran also lead FireEye to assess that APT34 acts on behalf of the Iranian government.",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "Iran (Islamic Republic of)",
                 "cfr-suspected-victims": [
                     "Middle East"
@@ -6332,6 +6718,7 @@ let actors = {
         {
             "description": "FireEye has identified APT35 operations dating back to 2014. APT35, also known as the Newscaster Team, is a threat group sponsored by the Iranian government that conducts long term, resource-intensive operations to collect strategic intelligence. APT35 typically targets U.S. and the Middle Eastern military, diplomatic and government personnel, organizations in the media, energy and defense industrial base (DIB), and engineering, business services and telecommunications sectors.",
             "meta": {
+                "attribution-confidence": "50",
                 "country": "Iran, Islamic Republic of",
                 "refs": [
                     "https://www.fireeye.com/content/dam/collateral/en/mtrends-2018.pdf"
@@ -6363,7 +6750,7 @@ let actors = {
             }
         },
         {
-            "description": "Adversaries abusing ICS (based on Dragos Inc adversary list).",
+            "description": "Adversaries abusing ICS (based on Dragos Inc adversary list).\nALLANITE accesses business and industrial control (ICS) networks, conducts reconnaissance, and gathers intelligence in United States and United Kingdom electric utility sectors. Dragos assesses with moderate confidence that ALLANITE operators continue to maintain ICS network access to: (1) understand the operational environment necessary to develop disruptive capabilities, (2) have ready access from which to disrupt electric utilities.\nALLANITE uses email phishing campaigns and compromised websites called watering holes to steal credentials and gain access to target networks, including collecting and distributing screenshots of industrial control systems. ALLANITE operations limit themselves to information gathering and have not demonstrated any disruptive or damaging capabilities.\nALLANITE conducts malware-less operations primarily leveraging legitimate and available tools in the Windows operating system.",
             "meta": {
                 "capabilities": "Powershell scripts, THC Hydra, SecretsDump, Inveigh, PSExec",
                 "mode-of-operation": "Watering-hole and phishing leading to ICS recon and screenshot collection",
@@ -6373,7 +6760,8 @@ let actors = {
                 ],
                 "since": "2017",
                 "synonyms": [
-                    "Palmetto Fusion"
+                    "Palmetto Fusion",
+                    "Allanite"
                 ],
                 "victimology": "Electric utilities, US and UK"
             },
@@ -6387,6 +6775,7 @@ let actors = {
         {
             "description": "Adversaries abusing ICS (based on Dragos Inc adversary list).\nThis threat actor targets organizations involved in oil, gas, and electricity production, primarily in the Gulf region, for espionage purposes. According to one cybersecurity company, the threat actor \u201ccompromises a target machine and passes it off to another threat actor for further exploitation.\u201d",
             "meta": {
+                "attribution-confidence": "50",
                 "capabilities": "Watering holes, 64-bit malware, covert C2 via IPv6 DNS, ISMDOOR",
                 "cfr-suspected-state-sponsor": "Unknown",
                 "cfr-suspected-victims": [
@@ -6513,6 +6902,7 @@ let actors = {
         {
             "description": "Adversaries abusing ICS (based on Dragos Inc adversary list).\nThis threat actor compromises the networks of companies involved in electric power, specifically looking for intellectual property and information about the companies\u2019 operations.",
             "meta": {
+                "attribution-confidence": "50",
                 "capabilities": "Encoded binaries in documents, evasion techniques",
                 "cfr-suspected-state-sponsor": "Unknown",
                 "cfr-suspected-victims": [
@@ -6563,6 +6953,7 @@ let actors = {
         {
             "description": "Adversaries abusing ICS (based on Dragos Inc adversary list).\nThis threat actor targets industrial control systems in Turkey, Europe, and North America.\n    Believed to be linked to Crouching Yeti",
             "meta": {
+                "attribution-confidence": "50",
                 "capabilities": "GOODOR, DORSHEL, KARAGANY, Mimikatz",
                 "cfr-suspected-state-sponsor": "Unknown",
                 "cfr-suspected-victims": [
@@ -6580,6 +6971,7 @@ let actors = {
                 ],
                 "since": "2016",
                 "synonyms": [
+                    "Dragonfly 2.0",
                     "Dragonfly2",
                     "Berserker Bear"
                 ],
@@ -6597,6 +6989,7 @@ let actors = {
         {
             "description": "Adversaries abusing ICS (based on Dragos Inc adversary list).",
             "meta": {
+                "attribution-confidence": "50",
                 "capabilities": "STONEDRILL wiper, variants of TURNEDUP malware",
                 "cfr-suspected-state-sponsor": "Iran (Islamic Republic of)",
                 "cfr-suspected-victims": [
@@ -6684,6 +7077,7 @@ let actors = {
         {
             "description": "Experts assigned the codename of LuckyMouse to the group behind this hack, but they later realized the attackers were an older Chinese threat actor known under various names in the reports of other cyber-security firms, such as Emissary Panda, APT27, Threat Group 3390, Bronze Union, ZipToken, and Iron Tiger",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "Unknown",
                 "cfr-suspected-victims": [
                     "United States",
@@ -6710,15 +7104,26 @@ let actors = {
                     "http://newsroom.trendmicro.com/blog/operation-iron-tiger-attackers-shift-east-asia-united-states",
                     "https://www.secureworks.com/research/threat-group-3390-targets-organizations-for-cyberespionage",
                     "https://www.threatconnect.com/blog/threatconnect-discovers-chinese-apt-activity-in-europe/",
-                    "https://www.nccgroup.trust/uk/about-us/newsroom-and-events/blogs/2018/april/decoding-network-data-from-a-gh0st-rat-variant/"
+                    "https://www.nccgroup.trust/uk/about-us/newsroom-and-events/blogs/2018/april/decoding-network-data-from-a-gh0st-rat-variant/",
+                    "https://securelist.com/luckymouse-ndisproxy-driver/87914/",
+                    "https://paper.seebug.org/papers/APT/APT_CyberCriminal_Campagin/2015/2015.09.17.Operation_Iron_Tiger/Operation%20Iron%20Tiger%20Appendix.pdf",
+                    "https://www.cfr.org/interactive/cyber-operations/iron-tiger",
+                    "https://arstechnica.com/information-technology/2015/08/newly-discovered-chinese-hacking-group-hacked-100-websites-to-use-as-watering-holes/",
+                    "https://labs.bitdefender.com/2018/02/operation-pzchao-a-possible-return-of-the-iron-tiger-apt/",
+                    "https://securelist.com/luckymouse-hits-national-data-center/86083/",
+                    "https://attack.mitre.org/groups/G0027/"
                 ],
                 "synonyms": [
                     "Emissary Panda",
                     "APT27",
+                    "APT 27",
                     "Threat Group 3390",
                     "Bronze Union",
-                    "ZipToken",
-                    "Iron Tiger"
+                    "Iron Tiger",
+                    "TG-3390",
+                    "TEMP.Hippo",
+                    "Group 35",
+                    "ZipToken"
                 ]
             },
             "related": [
@@ -6767,6 +7172,7 @@ let actors = {
         {
             "description": "The Rancor group\u2019s attacks use two primary malware families which are naming DDKONG and PLAINTEE. DDKONG is used throughout the campaign and PLAINTEE appears to be new addition to these attackers\u2019 toolkit.  Countries Unit 42 has identified as targeted by Rancor with these malware families include, but are not limited to Singapore and Cambodia.",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "China",
                 "cfr-suspected-victims": [
                     "Singapore",
@@ -6829,7 +7235,14 @@ let actors = {
             "description": "Unit 42 researchers have been tracking Subaat, an attacker, since 2017. Recently Subaat drew our attention due to renewed targeted attack activity. Part of monitoring Subaat included realizing the actor was possibly part of a larger crew of individuals responsible for carrying out targeted attacks against worldwide governmental organizations. Technical analysis on some of the attacks as well as attribution links with Pakistan actors have been already depicted by 360 and Tuisec, in which they found interesting connections to a larger group of attackers Unit 42 researchers have been tracking, which we are calling Gorgon Group.",
             "meta": {
                 "refs": [
-                    "https://researchcenter.paloaltonetworks.com/2018/08/unit42-gorgon-group-slithering-nation-state-cybercrime/"
+                    "https://unit42.paloaltonetworks.com/unit42-gorgon-group-slithering-nation-state-cybercrime/",
+                    "https://unit42.paloaltonetworks.com/unit42-tracking-subaat-targeted-phishing-attacks-point-leader-threat-actors-repository/",
+                    "https://unit42.paloaltonetworks.com/aggah-campaign-bit-ly-blogspot-and-pastebin-used-for-c2-in-large-scale-campaign/",
+                    "https://attack.mitre.org/groups/G0078/"
+                ],
+                "synonyms": [
+                    "Gorgon Group",
+                    "Subaat"
                 ]
             },
             "uuid": "e47c2c4d-706b-4098-92a2-b93e7103e131",
@@ -6843,7 +7256,15 @@ let actors = {
             "description": "In July 2018, Unit 42 analyzed a targeted attack using a novel file type against at least one government agency in the Middle East. It was carried out by a previously unpublished threat group we track as DarkHydrus. Based on our telemetry, we were able to uncover additional artifacts leading us to believe this adversary group has been in operation with their current playbook since early 2016. This attack diverged from previous attacks we observed from this group as it involved spear-phishing emails sent to targeted organizations with password protected RAR archive attachments that contained malicious Excel Web Query files (.iqy).",
             "meta": {
                 "refs": [
-                    "https://researchcenter.paloaltonetworks.com/2018/07/unit42-new-threat-actor-group-darkhydrus-targets-middle-east-government/"
+                    "https://researchcenter.paloaltonetworks.com/2018/07/unit42-new-threat-actor-group-darkhydrus-targets-middle-east-government/",
+                    "https://mobile.twitter.com/360TIC/status/1083289987339042817",
+                    "https://ti.360.net/blog/articles/latest-target-attack-of-darkhydruns-group-against-middle-east-en/",
+                    "https://unit42.paloaltonetworks.com/unit42-darkhydrus-uses-phishery-harvest-credentials-middle-east/",
+                    "https://unit42.paloaltonetworks.com/darkhydrus-delivers-new-trojan-that-can-use-google-drive-for-c2-communications/",
+                    "https://attack.mitre.org/groups/G0079/"
+                ],
+                "synonyms": [
+                    "LazyMeerkat"
                 ]
             },
             "uuid": "ce2c2dfd-2445-4fbc-a747-9e7092e383f9",
@@ -6872,10 +7293,14 @@ let actors = {
             "description": "In March 2017, the 360 Chasing Team found a sample of targeted attacks that confirmed the previously unknown sample of APT's attack actions, which the organization can now trace back at least in April 2016. The chasing team named the attack organization APT-C-35. In June 2017, the 360 Threat Intelligence Center discovered the organization\u2019s new attack activity, confirmed and exposed the gang\u2019s targeted attacks against Pakistan, and analyzed in detail. The unique EHDevel malicious code framework used by the organization",
             "meta": {
                 "refs": [
-                    "https://ti.360.net/blog/articles/latest-activity-of-apt-c-35/"
+                    "https://ti.360.net/blog/articles/latest-activity-of-apt-c-35/",
+                    "https://www.netscout.com/blog/asert/donot-team-leverages-new-modular-malware-framework-south-asia",
+                    "https://ti.360.net/blog/articles/donot-group-is-targeting-pakistani-businessman-working-in-china-en/"
                 ],
                 "synonyms": [
-                    "DoNot Team"
+                    "DoNot Team",
+                    "Donot Team",
+                    "APT-C-35"
                 ]
             },
             "uuid": "b9dc4e81-909f-4324-8b25-a0f359cd88e0",
@@ -6888,6 +7313,7 @@ let actors = {
         {
             "description": "This threat actor targets organizations in the finance, defense, aerospace, technology, health-care, and automotive sectors and media organizations in East Asia for the purpose of espionage. Believed to be responsible for the targeting of South Korean actors prior to the meeting of Donald J. Trump and Kim Jong-un",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "China",
                 "cfr-suspected-victims": [
                     "South Korea",
@@ -6915,6 +7341,7 @@ let actors = {
         {
             "description": "This threat actor uses spear-phishing techniques to target parliaments, government ministries, academics, and media organizations, primarily in the Middle East, for the purpose of espionage.",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "Unknown",
                 "cfr-suspected-victims": [
                     "Palestine",
@@ -6992,6 +7419,7 @@ let actors = {
         {
             "description": "This threat actor uses spear-phishing techniques to target private-sector energy, defense, aerospace, research, and media organizations and embassies in Africa, Europe, and the Middle East, for the purpose of espionage.",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "Unknown",
                 "cfr-suspected-victims": [
                     "South Africa",
@@ -7025,6 +7453,7 @@ let actors = {
         {
             "description": "This threat actor targets software companies and political organizations in the United States, China, Japan, and South Korea. It primarily acts to support cyber operations conducted by other threat actors affiliated with Chinese intelligence services.\nBelieved to be associated with the Axiom, APT 17, and Mirage threat actors. Believed to share the same tools and infrastructure as the threat actors that carried out Operation Aurora, the 2015 targeting of video game companies, the 2015 targeting of the Thai government, and the 2017 targeting of Chinese-language news websites",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "China",
                 "cfr-suspected-victims": [
                     "United States",
@@ -7058,6 +7487,7 @@ let actors = {
         {
             "description": "This threat actor targets Uighurs\u2014a minority ethnic group located primarily in northwestern China\u2014and devices from Chinese mobile phone manufacturer Xiaomi, for espionage purposes.",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "China",
                 "cfr-suspected-victims": [
                     "Uighurs"
@@ -7081,6 +7511,7 @@ let actors = {
         {
             "description": "This threat actor targets nongovernmental organizations using Mongolian-themed lures for espionage purposes.",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "China",
                 "cfr-suspected-victims": [
                     "United States"
@@ -7106,6 +7537,7 @@ let actors = {
         {
             "description": "This threat actor targets organizations in the satellite communications, telecommunications, geospatial-imaging, and defense sectors in the United States and Southeast Asia for espionage purposes.",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "Unknown",
                 "cfr-suspected-victims": [
                     "United States"
@@ -7131,6 +7563,7 @@ let actors = {
         {
             "description": "This threat actor targets organizations in the satellite communications, telecommunications, geospatial-imaging, and defense sectors in the United States and Southeast Asia for espionage purposes.",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "Pakistan",
                 "cfr-suspected-victims": [
                     "Pakistan",
@@ -7217,6 +7650,7 @@ let actors = {
         {
             "description": "This threat actor targets critical infrastructure entities in the oil and gas sector, primarily in Ukraine. The threat actors deploy the BugDrop malware to remotely access the microphones in their targets' computers to eavesdrop on conversations.",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "Russian Federation",
                 "cfr-suspected-victims": [
                     "Ukraine",
@@ -7248,6 +7682,7 @@ let actors = {
         {
             "description": "This threat actor targets governments, diplomatic missions, academics, and energy and aerospace organizations for the purpose of espionage. Also known as the Rocra and believed to be the same threat actor as Cloud Atlas",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "Russian Federation",
                 "cfr-suspected-victims": [
                     "Russia",
@@ -7305,6 +7740,7 @@ let actors = {
         {
             "description": "This threat actor targets governments and diplomatic organizations for espionage purposes.",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "Russian Federation",
                 "cfr-suspected-victims": [
                     "Russia",
@@ -7338,6 +7774,7 @@ let actors = {
         {
             "description": "This threat actor compromises civil society groups the Chinese Communist Party views as hostile to its interests, such as Tibetan, Uyghur, Hong Kong, and Taiwanese activist. The threat actor also targeted the Myanmar electoral commission. ",
             "meta": {
+                "attribution-confidence": "50",
                 "cfr-suspected-state-sponsor": "China",
                 "cfr-suspected-victims": [
                     "China",
@@ -7391,7 +7828,9 @@ let actors = {
                 "refs": [
                     "https://www.bleepingcomputer.com/news/security/british-airways-fell-victim-to-card-scraping-attack/",
                     "https://www.bleepingcomputer.com/news/security/feedify-hacked-with-magecart-information-stealing-script/",
-                    "https://www.bleepingcomputer.com/news/security/magecart-group-compromises-plugin-used-in-thousands-of-stores-makes-rookie-mistake/"
+                    "https://www.bleepingcomputer.com/news/security/magecart-group-compromises-plugin-used-in-thousands-of-stores-makes-rookie-mistake/",
+                    "https://www.bleepingcomputer.com/news/security/visiondirect-data-breach-caused-by-magecart-attack/",
+                    "https://www.bleepingcomputer.com/news/security/magecart-group-sabotages-rival-to-ruin-data-and-reputation/"
                 ]
             },
             "uuid": "0768fd50-c547-11e8-9aa5-776183769eab",
@@ -7486,9 +7925,847 @@ let actors = {
                 "operatingFrom": null,
                 "victims": []
             }
+        },
+        {
+            "description": "Malware experts at CSE Cybsec uncovered a massive malvertising campaign dubbed EvilTraffic leveraging tens of thousands compromised websites. Crooks exploited some CMS vulnerabilities to upload and execute arbitrary PHP pages used to generate revenues via advertising.",
+            "meta": {
+                "refs": [
+                    "http://securityaffairs.co/wordpress/68059/cyber-crime/eviltraffic-malvertising-campaign.html",
+                    "http://csecybsec.com/download/zlab/20180121_CSE_Massive_Malvertising_Report.pdf"
+                ],
+                "synonyms": [
+                    "Operation EvilTraffic"
+                ]
+            },
+            "uuid": "c2d5a052-dc30-11e8-9643-d76f3b9c94fa",
+            "value": "EvilTraffic",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "HookAds is a malvertising campaign that purchases cheap ad space on low quality ad networks commonly used by adult web sites, online games, or blackhat seo sites. These ads will include JavaScript that redirects a visitor through a serious of decoy sites that look like pages filled with native advertisements, online games, or other low quality pages. Under the right circumstances, a visitor will silently load the Fallout exploit kit, which will try and install its malware payload.",
+            "meta": {
+                "refs": [
+                    "https://www.bleepingcomputer.com/news/security/hookads-malvertising-installing-malware-via-the-fallout-exploit-kit/"
+                ]
+            },
+            "uuid": "dce617eb-a3b6-4a9a-bd76-575c424f9761",
+            "value": "HookAds",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "INDRIK SPIDER is a sophisticated eCrime group that has been operating Dridex since June 2014. In 2015 and 2016, Dridex was one of the most prolific eCrime banking trojans on the market and, since 2014, those efforts are thought to have netted INDRIK SPIDER millions of dollars in criminal profits. Throughout its years of operation, Dridex has received multiple updates with new modules developed and new anti-analysis features added to the malware.",
+            "meta": {
+                "refs": [
+                    "https://www.crowdstrike.com/blog/big-game-hunting-the-evolution-of-indrik-spider-from-dridex-wire-fraud-to-bitpaymer-targeted-ransomware/"
+                ]
+            },
+            "uuid": "658314bc-3bb8-48d2-913a-c528607b75c8",
+            "value": "INDRIK SPIDER",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "Cisco Talos recently discovered a new campaign targeting Lebanon and the United Arab Emirates (UAE) affecting .gov domains, as well as a private Lebanese airline company. Based on our research, it's clear that this adversary spent time understanding the victims' network infrastructure in order to remain under the radar and act as inconspicuous as possible during their attacks.\nBased on this actor's infrastructure and TTPs, we haven't been able to connect them with any other campaign or actor that's been observed recently. This particular campaign utilizes two fake, malicious websites containing job postings that are used to compromise targets via malicious Microsoft Office documents with embedded macros. The malware utilized by this actor, which we are calling \"DNSpionage,\" supports HTTP and DNS communication with the attackers.\nIn a separate campaign, the attackers used the same IP to redirect the DNS of legitimate .gov and private company domains. During each DNS compromise, the actor carefully generated Let's Encrypt certificates for the redirected domains. These certificates provide X.509 certificates for TLS free of charge to the user. We don't know at this time if the DNS redirections were successful.\nIn this post, we will break down the attackers' methods and show how they used malicious documents to attempt to trick users into opening malicious websites that are disguised as \"help wanted\" sites for job seekers. Additionally, we will describe the malicious DNS redirection and the timeline of the events.",
+            "meta": {
+                "refs": [
+                    "https://blog.talosintelligence.com/2018/11/dnspionage-campaign-targets-middle-east.html",
+                    "https://blog.talosintelligence.com/2019/04/dnspionage-brings-out-karkoff.html",
+                    "https://www.fireeye.com/blog/threat-research/2019/01/global-dns-hijacking-campaign-dns-record-manipulation-at-scale.html",
+                    "https://www.crowdstrike.com/blog/widespread-dns-hijacking-activity-targets-multiple-sectors/",
+                    "https://krebsonsecurity.com/tag/dnspionage/"
+                ]
+            },
+            "uuid": "608a903a-8145-4fd1-84bc-235e278480bf",
+            "value": "DNSpionage",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "Dubbed DarkVishnya, the attacks targeted at least eight banks using readily-available gear such as netbooks or inexpensive laptops, Raspberry Pi mini-computers, or a Bash Bunny - a USB-sized piece hardware for penetration testing purposes that can pose as a keyboard, flash storage, network adapter, or as any serial device.",
+            "meta": {
+                "refs": [
+                    "https://www.bleepingcomputer.com/news/security/netbooks-rpis-and-bash-bunny-gear-attacking-banks-from-the-inside/"
+                ]
+            },
+            "uuid": "db7fd7dd-28f7-4e8d-a807-8405e4b0f4e2",
+            "value": "DarkVishnya",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "What\u2019s noteworthy is that according to the introduction on the compromised website of the polyclinic (http://www.p2f.ru), the institution was established in 1965 and it was founded by the Presidential Administration of Russia. The multidisciplinary outpatient institution mainly serves the civil servants of the highest executive, legislative, judicial authorities of the Russian Federation, as well as famous figures of science and art.\nSince it is the first detection of this APT attack by 360 Security on a global scale, we code-named it as \u201cOperation Poison Needles\u201d, considering that the target was a medical institution. Currently, the attribution of the attacker is still under investigation. However, the special background of the polyclinic and the sensitiveness of the group it served both indicate the attack is highly targeted. Simultaneously, the attack occurred at a very sensitive timing of the Kerch Strait Incident, so it also aroused the assumption on the political attribution of the attack.",
+            "meta": {
+                "refs": [
+                    "http://blogs.360.cn/post/PoisonNeedles_CVE-2018-15982_EN"
+                ]
+            },
+            "uuid": "08ff3cb6-c292-4360-a978-6f05775881ed",
+            "value": "Operation Poison Needles",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "From November 2017 to October 2018, we attributed 14 campaigns to the GC threat actors that used a specific MaaS provider (hereinafter \u201cthe Provider\u201d) offered by a known individual (hereinafter \u201cthe Provider Operator\u201d).",
+            "meta": {
+                "refs": [
+                    "https://medium.com/@quoscient/golden-chickens-uncovering-a-malware-as-a-service-maas-provider-and-two-new-threat-actors-using-61cf0cb87648"
+                ],
+                "synonyms": [
+                    "Golden Chickens",
+                    "Golden Chickens01",
+                    "Golden Chickens 01"
+                ]
+            },
+            "related": [
+                {
+                    "dest-uuid": "6d50a8a2-fdf5-11e8-9db3-833f231caac8",
+                    "tags": [
+                        "estimative-language:likelihood-probability=\"likely\""
+                    ],
+                    "type": "similar"
+                }
+            ],
+            "uuid": "6bd7c91a-fdf5-11e8-95a8-e712ad4b0a9d",
+            "value": "GC01",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "From November 2017 to October 2018, we attributed 14 campaigns to the GC threat actors that used a specific MaaS provider (hereinafter \u201cthe Provider\u201d) offered by a known individual (hereinafter \u201cthe Provider Operator\u201d).",
+            "meta": {
+                "refs": [
+                    "https://medium.com/@quoscient/golden-chickens-uncovering-a-malware-as-a-service-maas-provider-and-two-new-threat-actors-using-61cf0cb87648"
+                ],
+                "synonyms": [
+                    "Golden Chickens",
+                    "Golden Chickens02",
+                    "Golden Chickens 02"
+                ]
+            },
+            "related": [
+                {
+                    "dest-uuid": "6bd7c91a-fdf5-11e8-95a8-e712ad4b0a9d",
+                    "tags": [
+                        "estimative-language:likelihood-probability=\"likely\""
+                    ],
+                    "type": "similar"
+                }
+            ],
+            "uuid": "6d50a8a2-fdf5-11e8-9db3-833f231caac8",
+            "value": "GC02",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "The McAfee Advanced Threat Research team and McAfee Labs Malware Operations Group have discovered a new global campaign targeting nuclear, defense, energy, and financial companies, based on McAfee\u00ae Global Threat Intelligence. This campaign, Operation Sharpshooter, leverages an in-memory implant to download and retrieve a second-stage implant\u2014which we call Rising Sun\u2014for further exploitation. According to our analysis, the Rising Sun implant uses source code from the Lazarus Group\u2019s 2015 backdoor Trojan Duuzer in a new framework to infiltrate these key industries.\nOperation Sharpshooter\u2019s numerous technical links to the Lazarus Group seem too obvious to immediately draw the conclusion that they are responsible for the attacks, and instead indicate a potential for false flags. Our research focuses on how this actor operates, the global impact, and how to detect the attack. We shall leave attribution to the broader security community.",
+            "meta": {
+                "refs": [
+                    "https://securingtomorrow.mcafee.com/other-blogs/mcafee-labs/operation-sharpshooter-targets-global-defense-critical-infrastructure/",
+                    "https://www.bleepingcomputer.com/news/security/op-sharpshooter-connected-to-north-koreas-lazarus-group/"
+                ]
+            },
+            "related": [
+                {
+                    "dest-uuid": "68391641-859f-4a9a-9a1e-3e5cf71ec376",
+                    "tags": [
+                        "estimative-language:likelihood-probability=\"likely\""
+                    ],
+                    "type": "similar"
+                }
+            ],
+            "uuid": "b06c3af1-0243-4428-88da-b3451c345e1e",
+            "value": "Operation Sharpshooter",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "TA505, the name given by Proofpoint, has been in the cybercrime business for at least four years. This is the group behind the infamous Dridex banking trojan and Locky ransomware, delivered through malicious email campaigns via Necurs botnet. Other malware associated with TA505 include Philadelphia and GlobeImposter ransomware families.",
+            "meta": {
+                "refs": [
+                    "https://www.bleepingcomputer.com/news/security/ta505-group-adopts-new-servhelper-backdoor-and-flawedgrace-rat/",
+                    "https://www.proofpoint.com/sites/default/files/ta505_timeline_final4_0.png"
+                ]
+            },
+            "uuid": "03c80674-35f8-4fe0-be2b-226ed0fcd69f",
+            "value": "TA505",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "GRIM SPIDER is a sophisticated eCrime group that has been operating the Ryuk ransomware since August 2018, targeting large organizations for a high-ransom return.",
+            "meta": {
+                "refs": [
+                    "https://www.crowdstrike.com/blog/big-game-hunting-with-ryuk-another-lucrative-targeted-ransomware/"
+                ]
+            },
+            "uuid": "3cf6dbb5-bf9e-47d4-a8d5-b6d76f5a791f",
+            "value": "GRIM SPIDER",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "GRIM SPIDER is a sophisticated eCrime group that has been operating the Ryuk ransomware since August 2018, targeting large organizations for a high-ransom return. This methodology, known as \u201cbig game hunting,\u201d signals a shift in operations for WIZARD SPIDER, a criminal enterprise of which GRIM SPIDER appears to be a cell. The WIZARD SPIDER threat group, known as the Russia-based operator of the TrickBot banking malware, had focused primarily on wire fraud in the past.",
+            "meta": {
+                "refs": [
+                    "https://www.crowdstrike.com/blog/big-game-hunting-with-ryuk-another-lucrative-targeted-ransomware/"
+                ]
+            },
+            "uuid": "bdf4fe4f-af8a-495f-a719-cf175cecda1f",
+            "value": "WIZARD SPIDER",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "MUMMY SPIDER is a criminal entity linked to the core development of the malware most commonly known as Emotet or Geodo. First observed in mid-2014, this malware shared code with the Bugat (aka Feodo) banking Trojan. However, MUMMY SPIDER swiftly developed the malware\u2019s capabilities to include an RSA key exchange for command and control (C2) communication and a modular architecture.",
+            "meta": {
+                "refs": [
+                    "https://www.crowdstrike.com/blog/big-game-hunting-with-ryuk-another-lucrative-targeted-ransomware/",
+                    "https://www.crowdstrike.com/blog/meet-crowdstrikes-adversary-of-the-month-for-february-mummy-spider/",
+                    "https://www.proofpoint.com/us/threat-insight/post/threat-actor-profile-ta542-banker-malware-distribution-service"
+                ],
+                "synonyms": [
+                    "TA542"
+                ]
+            },
+            "uuid": "c93281be-f6cd-4cd0-a5a3-defde9d77d8b",
+            "value": "MUMMY SPIDER",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "Open-source reporting has claimed that the Hermes ransomware was developed by the North Korean group STARDUST CHOLLIMA (activities of which have been public reported as part of the \u201cLazarus Group\u201d), because Hermes was executed on a host during the SWIFT compromise of FEIB in October 2017. ",
+            "meta": {
+                "refs": [
+                    "https://www.crowdstrike.com/blog/big-game-hunting-with-ryuk-another-lucrative-targeted-ransomware/"
+                ]
+            },
+            "uuid": "d8e1762a-0063-48c2-9ea1-8d176d14b70f",
+            "value": "STARDUST CHOLLIMA",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "In short, \u201cCold River\u201d is a sophisticated threat (actor) that utilizes DNS subdomain hijacking, certificate spoofing, and covert tunneled command and control traffic in combination with complex and convincing lure documents and custom implants.",
+            "meta": {
+                "refs": [
+                    "https://www.lastline.com/labsblog/threat-actor-cold-river-network-traffic-analysis-and-a-deep-dive-on-agent-drable/"
+                ],
+                "synonyms": [
+                    "Nahr Elbard",
+                    "Nahr el bared"
+                ]
+            },
+            "uuid": "7d99d2f7-adf0-44e4-9044-d18ff6842a16",
+            "value": "Cold River",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "a relatively new threat actor that\u2019s been operating since mid-2016",
+            "meta": {
+                "refs": [
+                    "https://reaqta.com/2019/01/silence-group-targeting-russian-banks/"
+                ]
+            },
+            "uuid": "0d5e17fd-7a71-47fd-b4bc-867cdb833726",
+            "value": "Silence group",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "APT39 was created to bring together previous activities and methods used by this actor, and its activities largely align with a group publicly referred to as \"Chafer.\" However, there are differences in what has been publicly reported due to the variances in how organizations track activity. APT39 primarily leverages the SEAWEED and CACHEMONEY backdoors along with a specific variant of the POWBAT backdoor. While APT39's targeting scope is global, its activities are concentrated in the Middle East. APT39 has prioritized the telecommunications sector, with additional targeting of the travel industry and IT firms that support it and the high-tech industry.",
+            "meta": {
+                "refs": [
+                    "https://www.fireeye.com/blog/threat-research/2019/01/apt39-iranian-cyber-espionage-group-focused-on-personal-information.html",
+                    "https://www.symantec.com/blogs/threat-intelligence/chafer-latest-attacks-reveal-heightened-ambitions",
+                    "https://unit42.paloaltonetworks.com/new-python-based-payload-mechaflounder-used-by-chafer/",
+                    "https://securelist.com/chafer-used-remexi-malware/89538/",
+                    "https://www.symantec.com/connect/blogs/iran-based-attackers-use-back-door-threats-spy-middle-eastern-targets",
+                    "https://attack.mitre.org/groups/G0087/"
+                ],
+                "synonyms": [
+                    "APT 39",
+                    "Chafer"
+                ]
+            },
+            "uuid": "c2c64bd3-a325-446f-91a8-b4c0f173a30b",
+            "value": "APT39",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "FireEye recently looked deeper into the activity discussed in TrendMicro\u2019s blog and dubbed the \u201cSiesta\u201d campaign. The tools, modus operandi, and infrastructure used in the campaign present two possibilities: either the Chinese cyber-espionage unit APT1 is perpetrating this activity, or another group is using the same tactics and tools as the legacy APT1.\nThe Siesta campaign reinforces the fact that analysts and network defenders should remain on the lookout for known, public indicators and for shared attributes that allow security experts to detect multiple actors with one signature.",
+            "meta": {
+                "refs": [
+                    "https://www.fireeye.com/blog/threat-research/2014/03/a-detailed-examination-of-the-siesta-campaign.html"
+                ]
+            },
+            "uuid": "27c97181-b8e9-43e1-93c0-f953cac45326",
+            "value": "Siesta",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "Symantec researchers have uncovered a previously unknown attack group that is targeting government and military targets, including several overseas embassies of an Eastern European country, and military and defense targets in the Middle East. This group eschews custom malware and uses living off the land (LotL) tactics and publicly available hack tools to carry out activities that bear all the hallmarks of a cyber espionage campaign.\nThe group, which we have given the name Gallmaker, has been operating since at least December 2017, with its most recent activity observed in June 2018.",
+            "meta": {
+                "refs": [
+                    "https://www.symantec.com/blogs/threat-intelligence/gallmaker-attack-group"
+                ]
+            },
+            "uuid": "c79dab01-3f9f-491e-8a5f-6423339c9f76",
+            "value": "Gallmaker",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "Throughout 2018, CrowdStrike Intelligence tracked BOSS SPIDER as it regularly updated Samas ransomware and received payments to known Bitcoin (BTC) addresses. This consistent pace of activity came to an abrupt halt at the end of November 2018 when the U.S. DoJ released an indictment for Iran-based individuals Faramarz Shahi Savandi and Mohammad Mehdi Shah Mansouri, alleged members of the group.",
+            "meta": {
+                "refs": [
+                    "https://www.crowdstrike.com/resources/reports/2019-crowdstrike-global-threat-report/"
+                ]
+            },
+            "uuid": "d6a13387-4c98-4a0c-a516-6c36c081b64c",
+            "value": "Boss Spider",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "First observed in January 2018, GandCrab ransomware quickly began to proliferate and receive regular updates from its developer, PINCHY SPIDER, which over the course of the year established a RaaS operation with a dedicated set of affiliates.",
+            "meta": {
+                "refs": [
+                    "https://www.crowdstrike.com/resources/reports/2019-crowdstrike-global-threat-report/"
+                ]
+            },
+            "uuid": "80f07c15-cad3-44a2-a8a4-dd14490b5117",
+            "value": "Pinchy Spider",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "Early in 2018, CrowdStrike Intelligence observed GURU SPIDER supporting the distribution of multiple crimeware families through its flagship malware loader, Quant Loader.",
+            "meta": {
+                "refs": [
+                    "https://www.crowdstrike.com/resources/reports/2019-crowdstrike-global-threat-report/"
+                ]
+            },
+            "uuid": "0a667713-bc31-4a72-9ea3-34fc094a9dde",
+            "value": "Guru Spider",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "Beginning in January 2018 and persisting through the first half of the year, CrowdStrike Intelligence observed SALTY SPIDER, developer and operator of the long-running Sality botnet, distribute malware designed to target cryptocurrency users.",
+            "meta": {
+                "refs": [
+                    "https://www.crowdstrike.com/resources/reports/2019-crowdstrike-global-threat-report/"
+                ]
+            },
+            "uuid": "7e37be6b-5a94-45f3-bdeb-f494c520eee3",
+            "value": "Salty Spider",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "This adversary is suspected of continuing to target upstream providers (e.g., law firms and managed service providers) to support additional intrusions against high-profile assets. In 2018, CrowdStrike observed this adversary using spear-phishing, URL 'web bugs' and scheduled tasks to automate credential harvesting.",
+            "meta": {
+                "refs": [
+                    "https://www.crowdstrike.com/resources/reports/2019-crowdstrike-global-threat-report/"
+                ]
+            },
+            "uuid": "d7a41ada-6687-4a6b-8b5c-396808cdd758",
+            "value": "Judgment Panda",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "One of the first observed adopters of the 8.t exploit document builder in late 2017, further KRYPTONITE PANDA activity was limited in 2018. Last known activity for this adversary occurred in June 2018 and involved suspected targeting of Cambodia.",
+            "meta": {
+                "refs": [
+                    "https://www.crowdstrike.com/resources/reports/2019-crowdstrike-global-threat-report/"
+                ]
+            },
+            "uuid": "393ebaad-4f05-4b35-bd31-45ac4ae7472d",
+            "value": "Kryptonite Panda",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "In the first quarter of 2018, CrowdStrike Intelligence identified NOMAD PANDA activity targeting Central Asian nations with exploit documents built with the 8.t tool.",
+            "meta": {
+                "refs": [
+                    "https://www.crowdstrike.com/resources/reports/2019-crowdstrike-global-threat-report/"
+                ]
+            },
+            "uuid": "4b7df353-fbcc-4f00-a54f-5121c5edb9be",
+            "value": "Nomad Panda",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "This suspected Iran-based adversary conducted long-running SWC campaigns from December 2016 until public disclosure in July 2018. Like other Iran-based actors, the target scope for FLASH KITTEN appears to be focused on the MENA region.",
+            "meta": {
+                "refs": [
+                    "https://www.crowdstrike.com/resources/reports/2019-crowdstrike-global-threat-report/"
+                ]
+            },
+            "uuid": "6e899dd4-f95e-42a0-a5a3-e57249f017cf",
+            "value": "Flash Kitten",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "According to CrowdStrike, this actor is using FrameworkPOS, potentially buying access through Dridex infections.",
+            "meta": {
+                "refs": [
+                    "https://www.crowdstrike.com/resources/reports/2019-crowdstrike-global-threat-report/"
+                ]
+            },
+            "uuid": "998b0a78-ff3e-4928-802f-b42e3f5cf491",
+            "value": "Skeleton Spider",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "According to CrowdStrike, this actor is using TinyLoader and TinyPOS, potentially buying access through Dridex infections.",
+            "meta": {
+                "refs": [
+                    "https://www.crowdstrike.com/resources/reports/2019-crowdstrike-global-threat-report/"
+                ]
+            },
+            "uuid": "89a05f9f-a6dc-4426-8c15-a8d5ef6d8524",
+            "value": "Tiny Spider",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "According to CrowdStrike, this actor is using BokBok/IcedID, potentially buying distribution through Emotet infections.",
+            "meta": {
+                "refs": [
+                    "https://www.crowdstrike.com/resources/reports/2019-crowdstrike-global-threat-report/"
+                ]
+            },
+            "uuid": "0db4c708-f33d-4d46-906d-12fdf7415f62",
+            "value": "Lunar Spider",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "In July 2018, the source code of Pegasus, RATPAK SPIDER\u2019s malware framework, was anonymously leaked. This malware has been linked to the targeting of Russia\u2019s financial sector. Associated malware, Buhtrap, which has been leaked previously, was observed this year in connection with SWC campaigns that also targeted Russian users.",
+            "meta": {
+                "refs": [
+                    "https://www.crowdstrike.com/resources/reports/2019-crowdstrike-global-threat-report/"
+                ]
+            },
+            "uuid": "ec3fda76-8c1c-4019-8109-3f92e6b15633",
+            "value": "Ratpak Spider",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "ASERT has learned of an APT campaign, possibly originating from DPRK, we are calling STOLEN PENCIL that is targeting academic institutions since at least May 2018.",
+            "meta": {
+                "refs": [
+                    "https://asert.arbornetworks.com/stolen-pencil-campaign-targets-academia/",
+                    "https://unit42.paloaltonetworks.com/new-babyshark-malware-targets-u-s-national-security-think-tanks/"
+                ]
+            },
+            "uuid": "769aeaa6-d193-4e90-a818-d74c6ff7b845",
+            "value": "STOLEN PENCIL",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "meta": {
+                "refs": [
+                    "http://download.ahnlab.com/kr/site/library/%5bAnalysis_Report%5dOperation_Kabar_Cobra.pdf",
+                    "https://www.ahnlab.com/kr/site/securityinfo/secunews/secuNewsView.do?menu_dist=2&curPage=1&seq=28102"
+                ]
+            },
+            "uuid": "9ba291f2-b107-402d-9083-3128395ff26e",
+            "value": "Operation Kabar Cobra",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "Since April 2018, an APT group (Blind Eagle, APT-C-36) suspected coming from South America carried out continuous targeted attacks against Colombian government institutions as well as important corporations in financial sector, petroleum industry, professional manufacturing, etc.",
+            "meta": {
+                "refs": [
+                    "https://ti.360.net/blog/articles/apt-c-36-continuous-attacks-targeting-colombian-government-institutions-and-corporations-en/"
+                ],
+                "synonyms": [
+                    "Blind Eagle"
+                ]
+            },
+            "uuid": "ae1c64ff-5a37-4291-97f8-ea402c63efd0",
+            "value": "APT-C-36",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "Resecurity\u2019s research indicates that the attack on Parliament is a part of a multi-year cyberespionage campaign orchestrated by a nation-state actor whom we are calling IRIDIUM. This actor targets sensitive government, diplomatic, and military resources in the countries comprising the Five Eyes intelligence alliance (which includes Australia, Canada, New Zealand, the United Kingdom and the United States)",
+            "meta": {
+                "attribution-confidence": "10",
+                "country": "Iran, Islamic Republic of",
+                "refs": [
+                    "https://resecurity.com/blog/parliament_races/",
+                    "https://www.nbcnews.com/politics/national-security/iranian-backed-hackers-stole-data-major-u-s-government-contractor-n980986"
+                ]
+            },
+            "uuid": "29cfe970-5446-4cfc-a2da-00e9f49e02ba",
+            "value": "IRIDIUM",
+            "aptmap": {
+                "operatingFrom": "IRN",
+                "victims": []
+            }
+        },
+        {
+            "description": "SandCat, on the other hand, is a group that was discovered more recently by Kaspersky. One of the Windows vulnerabilities patched by Microsoft in December had been exploited by both FruityArmor and SandCat in attacks targeting the Middle East and Africa.  SandCat has been using FinFisher/FinSpy spyware and CHAINSHOT, a piece of malware analyzed earlier this year by Palo Alto Networks. The group has also used the CVE-2018-8589 and CVE-2018-8611 Windows vulnerabilities in its attacks, both of which had a zero-day status when Microsoft released fixes.",
+            "meta": {
+                "refs": [
+                    "https://securelist.com/zero-day-in-windows-kernel-transaction-manager-cve-2018-8611/89253/"
+                ]
+            },
+            "uuid": "dc15f388-a353-4185-b28e-015745f708ba",
+            "value": "SandCat",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "Operation Comando is a pure cybercrime campaign, possibly with Brazilian origin, with a concrete and persistent focus on the hospitality sector, which proves how a threat actor can be successful in pursuing its objectives while maintaining a cheap budget. The use of DDNS services, publicly available remote access tools, and having a minimum knowledge on software development (in this case VB.NET) has been enough for running a campaign lasting month, and potentially gathering credit card information and other possible data. ",
+            "meta": {
+                "refs": [
+                    "https://unit42.paloaltonetworks.com/operation-comando-or-how-to-run-a-cheap-and-effective-credit-card-business/"
+                ]
+            },
+            "uuid": "35c40ce2-57c0-479e-8a56-efbb8695e395",
+            "value": "Operation Comando",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "On March 17, 2019, 360 Threat Intelligence Center captured a target attack sample against the Middle East by exploiting WinRAR vulnerability (CVE-2018-20250[6]), and it seems that the attack is carried out by the Goldmouse APT group (APT-C-27). There is a decoy Word document inside the archive regarding terrorist attacks to lure the victim into decompressing. When the archive gets decompressed on the vulnerable computer, the embedded njRAT backdoor (Telegram Desktop.exe) will be extracted to the startup folder and then triggered into execution if the victim restarts the computer or performs re-login. After that, the attacker is capable to control the compromised device.",
+            "meta": {
+                "refs": [
+                    "https://ti.360.net/blog/articles/apt-c-27-(goldmouse):-suspected-target-attack-against-the-middle-east-with-winrar-exploit-en/"
+                ],
+                "synonyms": [
+                    "GoldMouse"
+                ]
+            },
+            "uuid": "ee7f535d-cc3e-40f3-99f3-c97963cfa250",
+            "value": "APT-C-27",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "Newly discovered supply chain attack that leveraged ASUS Live Update software.\nThe goal of the attack was to surgically target an unknown pool of users, which were identified by their network adapters\u2019 MAC addresses. To achieve this, the attackers had hardcoded a list of MAC addresses in the trojanized samples and this list was used to identify the actual intended targets of this massive operation. We were able to extract more than 600 unique MAC addresses from over 200 samples used in this attack. Of course, there might be other samples out there with different MAC addresses in their list.",
+            "meta": {
+                "refs": [
+                    "https://securelist.com/operation-shadowhammer/89992/"
+                ]
+            },
+            "uuid": "401c30c7-4317-458a-9b0a-379a44d63457",
+            "value": "Operation ShadowHammer",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "In July 2018, an attack on Singapore\u2019s largest public health organization, SingHealth, resulted in a reported 1.5 million patient records being stolen. Until now, nothing was known about who was responsible for this attack. Symantec researchers have discovered that this attack group, which we call Whitefly, has been operating since at least 2017, has targeted organizations based mostly in Singapore across a wide variety of sectors, and is primarily interested in stealing large amounts of sensitive information.",
+            "meta": {
+                "refs": [
+                    "https://www.symantec.com/blogs/threat-intelligence/whitefly-espionage-singapore"
+                ]
+            },
+            "uuid": "943f490e-ac7f-40fe-b6f3-33e2623649d2",
+            "value": "Whitefly",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": " This blog post discusses the technical details of a state-sponsored attack manipulating DNS systems. While this incident is limited to targeting primarily national security organizations in the Middle East and North Africa, and we do not want to overstate the consequences of this specific campaign, we are concerned that the success of this operation will lead to actors more broadly attacking the global DNS system. DNS is a foundational technology supporting the Internet. Manipulating that system has the potential to undermine the trust users have on the internet. That trust and the stability of the DNS system as a whole drives the global economy. Responsible nations should avoid targeting this system, work together to establish an accepted global norm that this system and the organizations that control it are off-limits, and cooperate in pursuing those actors who act irresponsibly by targeting this system.",
+            "meta": {
+                "refs": [
+                    "https://blog.talosintelligence.com/2019/04/seaturtle.html"
+                ]
+            },
+            "uuid": "ce7bba52-5ae8-44ea-9979-68502d832ab7",
+            "value": "Sea Turtle",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "Last Friday, Deputy Attorney General Rod Rosenstein announced the indictment of nine Iranians who worked for an organization named the Mabna Institute. According to prosecutors, the defendants stole more than 31 terabytes of data from universities, companies, and government agencies around the world. The cost to the universities alone reportedly amounted to approximately $3.4 billion. The information stolen from these universities was used by the Islamic Revolutionary Guard Corps (IRGC) or sold for profit inside Iran. PhishLabs has been tracking this same threat group since late-2017, designating them Silent Librarian. Since discovery, we have been working with the FBI, ISAC partners, and other international law enforcement agencies to help understand and mitigate these attacks.",
+            "meta": {
+                "refs": [
+                    "https://info.phishlabs.com/blog/silent-librarian-more-to-the-story-of-the-iranian-mabna-institute-indictment",
+                    "https://info.phishlabs.com/blog/silent-librarian-university-attacks-continue-unabated-in-days-following-indictment",
+                    "https://www.justice.gov/usao-sdny/pr/nine-iranians-charged-conducting-massive-cyber-theft-campaign-behalf-islamic",
+                    "https://www.secureworks.com/blog/back-to-school-cobalt-dickens-targets-universities"
+                ],
+                "synonyms": [
+                    "COBALT DICKENS"
+                ]
+            },
+            "uuid": "5059b44d-2753-4977-b987-4922f09afe6b",
+            "value": "Silent Librarian",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "FireEye characterizes APT31 as an actor specialized on intellectual property theft, focusing on data and projects that make a particular organization competetive in its field. Based on available data (April 2016), FireEye assesses that APT31 conducts network operations at the behest of the Chinese Government.",
+            "meta": {
+                "country": "China",
+                "refs": [
+                    "https://www.microsoft.com/security/blog/2017/03/27/detecting-and-mitigating-elevation-of-privilege-exploit-for-cve-2017-0005/",
+                    "https://duo.com/decipher/apt-groups-moving-down-the-supply-chain",
+                    "https://github.com/GuardaCyber/APT-Groups-and-Operations/blob/master/Reports/FireEye%20Intel%20-%20APT31%20Threat%20Group%20Profile.pdf"
+                ],
+                "synonyms": [
+                    "APT 31",
+                    "ZIRCONIUM"
+                ]
+            },
+            "uuid": "6bf7e6b6-5917-45a6-9567-f0baba79768c",
+            "value": "APT31",
+            "aptmap": {
+                "operatingFrom": "CHN",
+                "victims": []
+            }
+        },
+        {
+            "description": "BLACKGEAR is an espionage campaign which has targeted users in Taiwan for many years. Multiple papers and talks have been released covering this campaign, which used the ELIRKS backdoor when it was first discovered in 2012. It is known for using blogs and microblogging services to hide the location of its actual command-and-control (C&C) servers. This allows an attacker to change the C&C server used quickly by changing the information in these posts.\nLike most campaigns, BLACKGEAR has evolved over time. Our research indicates that it has started targeting Japanese users. Two things led us to this conclusion: first, the fake documents that are used as part of its infection routines are now in Japanese. Secondly, it is now using blogging sites and microblogging services based in Japan for its C&C activity.",
+            "meta": {
+                "refs": [
+                    "https://blog.trendmicro.com/trendlabs-security-intelligence/blackgear-espionage-campaign-evolves-adds-japan-target-list/",
+                    "https://blog.trendmicro.com/trendlabs-security-intelligence/blackgear-cyberespionage-campaign-resurfaces-abuses-social-media-for-cc-communication/"
+                ],
+                "synonyms": [
+                    "Topgear",
+                    "Comnie",
+                    "BLACKGEAR"
+                ]
+            },
+            "uuid": "8b62b20a-5b1c-48af-8424-e8220cd2fbd7",
+            "value": "Blackgear",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "BlackOasis is a Middle Eastern threat group that is believed to be a customer of Gamma Group. The group has shown interest in prominent figures in the United Nations, as well as opposition bloggers, activists, regional news correspondents, and think tanks. A group known by Microsoft as NEODYMIUM is reportedly associated closely with BlackOasis operations, but evidence that the group names are aliases has not been identified.",
+            "meta": {
+                "refs": [
+                    "https://securelist.com/blackoasis-apt-and-new-targeted-attacks-leveraging-zero-day-exploit/82732/",
+                    "https://www.fireeye.com/blog/threat-research/2017/09/zero-day-used-to-distribute-finspy.html",
+                    "https://attack.mitre.org/groups/G0063/"
+                ]
+            },
+            "uuid": "8fbd195f-5e03-4e85-8ca5-4f1dff300bec",
+            "value": "BlackOasis",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "BlackTech is a cyber espionage group operating against targets in East Asia, particularly Taiwan, and occasionally, Japan and Hong Kong. Based on the mutexes and domain names of some of their C&C servers, BlackTech\u2019s campaigns are likely designed to steal their target\u2019s technology.\nFollowing their activities and evolving tactics and techniques helped us uncover the proverbial red string of fate that connected three seemingly disparate campaigns: PLEAD, Shrouded Crossbow, and of late, Waterbear.\nPLEAD is an information theft campaign with a penchant for confidential documents. Active since 2012, it has so far targeted Taiwanese government agencies and private organizations. PLEAD\u2019s toolset includes the self-named PLEAD backdoor and the DRIGO exfiltration tool. PLEAD uses spear-phishing emails to deliver and install their backdoor, either as an attachment or through links to cloud storage services. Some of the cloud storage accounts used to deliver PLEAD are also used as drop off points for exfiltrated documents stolen by DRIGO.\nPLEAD actors use a router scanner tool to scan for vulnerable routers, after which the attackers will enable the router\u2019s VPN feature then register a machine as virtual server. This virtual server will be used either as a C&C server or an HTTP server that delivers PLEAD malware to their targets.",
+            "meta": {
+                "refs": [
+                    "https://blog.trendmicro.com/trendlabs-security-intelligence/following-trail-blacktech-cyber-espionage-campaigns/",
+                    "https://www.welivesecurity.com/2018/07/09/certificates-stolen-taiwanese-tech-companies-plead-malware-campaign/",
+                    "https://www.welivesecurity.com/2019/05/14/plead-malware-mitm-asus-webstorage/"
+                ]
+            },
+            "uuid": "320c42f7-eab7-4ef9-b09a-74396caa6c3e",
+            "value": "BlackTech",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "FIN5 is a financially motivated threat group that has targeted personally identifiable information and payment card information. The group has been active since at least 2008 and has targeted the restaurant, gaming, and hotel industries. The group is made up of actors who likely speak Russian.",
+            "meta": {
+                "refs": [
+                    "https://www.darkreading.com/analytics/prolific-cybercrime-gang-favors-legit-login-credentials/d/d-id/1322645?",
+                    "https://attack.mitre.org/groups/G0053/"
+                ]
+            },
+            "uuid": "44dc2f9c-8c28-11e9-9b9a-7fdced8cbf70",
+            "value": "FIN5",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "FireEye has observed multiple targeted intrusions occurring in North America \u2014 predominately in Canada \u2014 dating back to at least 2013 and continuing through at least 2016, in which the attacker(s) have compromised organizations\u2019 networks and sought to monetize this illicit access by exfiltrating sensitive data and extorting victim organizations. In some cases, when the extortion demand was not met, the attacker(s) destroyed production Windows systems by deleting critical operating system files and then shutting down the impacted systems. Based on near parallel TTPs used by the attacker(s) across these targeted intrusions, we believe these clusters of activity are linked to a single, previously unobserved actor or group that we have dubbed FIN10.",
+            "meta": {
+                "refs": [
+                    "https://www2.fireeye.com/rs/848-DID-242/images/rpt-fin10.pdf",
+                    "https://attack.mitre.org/groups/G0051/"
+                ]
+            },
+            "uuid": "f2d02410-8c2c-11e9-8df1-a31c1fb33d79",
+            "value": "FIN10",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "Cyber espionage is an issue whose time has come. In this second report from the Information Warfare Monitor, we lay out the findings of a 10-month investigation of alleged Chinese cyber spying against Tibetan institutions. The investigation, consisting of fieldwork, technical scouting, and laboratory analysis, discovered a lot more. The investigation ultimately uncovered a network of over 1,295 infected hosts in 103 countries. Up to 30% of the infected hosts are considered high-value targets and include computers located at ministries of foreign affairs, embassies, international organizations, news media, and NGOs. The Tibetan computer systems we manually investigated, and from which our investigations began, were conclusively compromised by multiple infections that gave attackers unprecedented access to potentially sensitive information.\nAttacks on the Dalai Lama\u2019s Private Office The OHHDL started to suspect it was under surveillance while setting up meetings be-tween His Holiness and foreign dignitaries. They sent an email invitation on behalf of His Holiness to a foreign diplomat, but before they could follow it up with a courtesy telephone call, the diplomat\u2019s office was contacted by the Chinese government and warned not to go ahead with the meeting. The Tibetans wondered whether a computer compromise might be the explanation; they called ONI Asia who called us. (Until May 2008, the first author was employed on a studentship funded by the OpenNet Initiative and the second author was a principal investigator for ONI.)",
+            "meta": {
+                "refs": [
+                    "http://www.nartv.org/mirror/ghostnet.pdf",
+                    "https://www.cl.cam.ac.uk/techreports/UCAM-CL-TR-746.pdf",
+                    "https://en.wikipedia.org/wiki/GhostNet"
+                ],
+                "synonyms": [
+                    "Snooping Dragon"
+                ]
+            },
+            "uuid": "cacf2ffc-8c49-11e9-895e-7f5bf9c2ff6d",
+            "value": "GhostNet",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "IBM X-Force Research uncovered a Trojan hybrid spawned from the Nymaim and Gozi ISFB malware. It appears that the operators of Nymaim have recompiled its source code with part of the Gozi ISFB source code, creating a combination that is being actively used in attacks against more than 24 U.S. and Canadian banks, stealing millions of dollars so far. X-Force named this new hybrid GozNym. The new GozNym hybrid takes the best of both the Nymaim and Gozi ISFB malware to create a powerful Trojan. From the Nymaim malware, it leverages the dropper\u2019s stealth and persistence; the Gozi ISFB parts add the banking Trojan\u2019s capabilities to facilitate fraud via infected Internet browsers. The end result is a new banking Trojan in the wild.",
+            "meta": {
+                "refs": [
+                    "https://securityintelligence.com/meet-goznym-the-banking-malware-offspring-of-gozi-isfb-and-nymaim/",
+                    "https://threatpost.com/attackers-behind-goznym-trojan-set-sights-on-europe/117647/",
+                    "https://threatpost.com/goznym-banking-trojan-targeting-german-banks/120075/",
+                    "https://www.europol.europa.eu/newsroom/news/goznym-malware-cybercriminal-network-dismantled-in-international-operation"
+                ]
+            },
+            "uuid": "7803b380-8c4c-11e9-90a1-f3880ab3aaa0",
+            "value": "GozNym",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "A threat actor using Iranian-language tools, Iranian hosting companies, operating from the Iranian IP space at times was observed targeting the Syrian opposition in an elaborately staged malware operation, Citizen Lab researchers reveal.\nThe operation was first noticed in late 2015, when a member of the Syrian opposition flagged a suspicious email containing a PowerPoint slideshow, which led researchers to a watering hole website with malicious programs, malicious PowerPoint files, and Android malware.\nThe threat actor was targeting Windows and Android devices of well-connected individuals in the Syrian opposition, researchers discovered. They called the actor Group5, because it targets Syrian opposition after regime-linked malware groups, the Syrian Electronic Army, ISIS (also known as the Islamic State or ISIL), and a group linked to Lebanon did the same in the past",
+            "meta": {
+                "refs": [
+                    "https://www.securityweek.com/iranian-actor-group5-targeting-syrian-opposition",
+                    "https://attack.mitre.org/groups/G0043/"
+                ]
+            },
+            "uuid": "bc8390aa-8c4e-11e9-a9cb-e37c361210af",
+            "value": "Group5",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
+        },
+        {
+            "description": "McAfee Advanced Threat Research analysts have discovered a new operation targeting humanitarian aid organizations and using North Korean political topics as bait to lure victims into opening malicious Microsoft Word documents. Our analysts have named this Operation Honeybee, based on the names of the malicious documents used in the attacks.\nAdvanced Threat Research analysts have also discovered malicious documents authored by the same actor that indicate a tactical shift. These documents do not contain the typical lures by this actor, instead using Word compatibility messages to entice victims into opening them.\nThe Advanced Threat Research team also observed a heavy concentration of the implant in Vietnam from January 15\u201317.",
+            "meta": {
+                "refs": [
+                    "https://securingtomorrow.mcafee.com/other-blogs/mcafee-labs/mcafee-uncovers-operation-honeybee-malicious-document-campaign-targeting-humanitarian-aid-groups/",
+                    "https://attack.mitre.org/groups/G0072/"
+                ]
+            },
+            "uuid": "2d82a18e-8c53-11e9-b0ec-536b62fa3d86",
+            "value": "Honeybee",
+            "aptmap": {
+                "operatingFrom": null,
+                "victims": []
+            }
         }
     ],
-    "version": 75
+    "version": 113
 };
 
 export default actors;
