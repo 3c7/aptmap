@@ -98,7 +98,7 @@
         </div>
         <footer class="text-muted">
             <div class="container">
-                <p class="float-right">&copy; Nils Kuhnert, 2018</p>
+                <p class="float-right">Made by <a href="https://twitter.com/0x3c7">Nils Kuhnert</a></p>
                 <p>Thanks to everyone that shares infosec related threat information | Information based on <a href="https://github.com/MISP/misp-galaxy/blob/master/clusters/threat-actor.json">MISP-Galaxy</a></p>
             </div>
         </footer>
@@ -153,7 +153,7 @@
                         <li>Thomas Schreck</li>
                         <li>Timo Steffens</li>
                     </ul>
-                    <p>and the other various contributors for sharing their knowledge and researches.</p>
+                    <p>and all the other <a href="https://github.com/MISP/misp-galaxy/graphs/contributors" target="_blank">contributors</a> for sharing their knowledge and researches.</p>
                     <p>Since v.0.1.6 the updated MISP-galaxy includes information provided by the <a href="https://www.cfr.org/" target="_blank">Council of Foreign Relations</a>.</p>
                 </div>
                 <div class="modal-footer">
